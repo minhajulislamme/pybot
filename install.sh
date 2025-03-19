@@ -39,15 +39,24 @@ apt-get install -y \
     certbot \
     python3-certbot-nginx
 
-# Create Python virtual environment
+# Create and prepare Python virtual environment
 log "Setting up Python environment..."
 python3 -m venv venv
 source venv/bin/activate
 
-# Install Python dependencies
+# Pre-install critical packages
+log "Installing base Python packages..."
+pip install --upgrade pip
+pip install --upgrade setuptools wheel
+
+# Install dependencies one by one to better handle errors
 log "Installing Python packages..."
-pip install --upgrade pip setuptools wheel
-pip install -r requirements.txt
+while IFS= read -r package; do
+    if [[ ! -z "$package" && ! "$package" =~ ^#.*$ ]]; then
+        log "Installing $package..."
+        pip install --no-cache-dir "$package" || log "Warning: Failed to install $package"
+    fi
+done < requirements.txt
 
 # Set up supervisor configuration
 log "Configuring supervisor..."

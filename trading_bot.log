@@ -4753,3 +4753,1306 @@ Max Drawdown: 0.00 USDT
 2025-03-20 05:41:17,981 - __main__ - INFO - [BTCUSDT] Initializing WebSocket connection (attempt 1/3)
 2025-03-20 05:41:17,981 - websocket_client - INFO - Using Binance Futures Testnet WebSocket
 2025-03-20 05:41:18,409 - __main__ - INFO - All trading bots stopped
+2025-03-20 05:55:48,057 - binance_client - INFO - Initializing Binance Futures client in TEST mode
+2025-03-20 05:55:49,050 - binance_client - INFO - Leverage set to 5x for BTCUSDT
+2025-03-20 05:55:49,050 - binance_client - INFO - Client initialized successfully for BTCUSDT with 5x leverage
+2025-03-20 05:55:49,497 - binance_client - INFO - Leverage set to 5x for ETHUSDT
+2025-03-20 05:55:49,498 - binance_client - INFO - Client initialized successfully for ETHUSDT with 5x leverage
+2025-03-20 05:55:49,955 - binance_client - INFO - Leverage set to 5x for SOLUSDT
+2025-03-20 05:55:49,956 - binance_client - INFO - Client initialized successfully for SOLUSDT with 5x leverage
+2025-03-20 05:55:49,956 - telegram_notifier - INFO - Telegram notifications enabled
+2025-03-20 05:55:50,790 - __main__ - INFO - Multi-symbol trading bot initialized
+2025-03-20 05:55:50,790 - __main__ - INFO - Starting multi-symbol trading bot...
+2025-03-20 05:55:51,757 - __main__ - INFO - API connection working
+2025-03-20 05:55:51,757 - binance_client - INFO - Initializing Binance Futures client in TEST mode
+2025-03-20 05:55:52,919 - binance_client - INFO - Leverage set to 5x for BTCUSDT
+2025-03-20 05:55:52,919 - binance_client - INFO - Client initialized successfully for BTCUSDT with 5x leverage
+2025-03-20 05:55:53,353 - binance_client - INFO - Leverage set to 5x for ETHUSDT
+2025-03-20 05:55:53,353 - binance_client - INFO - Client initialized successfully for ETHUSDT with 5x leverage
+2025-03-20 05:55:53,800 - binance_client - INFO - Leverage set to 5x for SOLUSDT
+2025-03-20 05:55:53,801 - binance_client - INFO - Client initialized successfully for SOLUSDT with 5x leverage
+2025-03-20 05:55:53,801 - telegram_notifier - INFO - Telegram notifications enabled
+2025-03-20 05:55:54,621 - risk_manager - INFO - Risk Manager initialized: risk=1%, SL=2%, TP=3%
+2025-03-20 05:55:54,621 - strategy - INFO - Initialized SMACrossoverStrategy for BTCUSDT on 1h timeframe
+2025-03-20 05:55:54,622 - strategy - INFO - SMA Crossover: short_period=9, long_period=21
+2025-03-20 05:55:54,622 - __main__ - INFO - Trading bot initialized for BTCUSDT using SMA_CROSSOVER strategy
+2025-03-20 05:55:54,623 - __main__ - INFO - [BTCUSDT] Starting trading bot...
+2025-03-20 05:55:54,623 - __main__ - INFO - Started trading bot for BTCUSDT
+2025-03-20 05:55:55,062 - __main__ - INFO - [BTCUSDT] Fetched 200 initial historical candles
+2025-03-20 05:55:55,079 - __main__ - INFO - [BTCUSDT] Initializing WebSocket connection (attempt 1/3)
+2025-03-20 05:55:55,079 - websocket_client - INFO - Using Binance Futures Testnet WebSocket
+2025-03-20 05:55:55,625 - websocket - INFO - Websocket connected
+2025-03-20 05:55:55,625 - websocket_client - INFO - Websocket connection established for btcusdt
+2025-03-20 05:55:55,626 - websocket_client - INFO - Connected to Binance websocket for btcusdt
+2025-03-20 05:55:55,626 - __main__ - INFO - [BTCUSDT] WebSocket connected, subscribing to data streams
+2025-03-20 05:55:56,626 - websocket_client - INFO - WebSocket fully initialized for btcusdt
+2025-03-20 05:55:56,631 - websocket_client - INFO - Subscribed to btcusdt@kline_1m
+2025-03-20 05:55:56,846 - websocket_client - INFO - Received message: {"result": null, "id": 1742428556}...
+2025-03-20 05:55:56,943 - websocket_client - INFO - Received kline event for BTCUSDT
+2025-03-20 05:55:56,943 - websocket_client - INFO - Kline: BTCUSDT 1m Open: 86802.00 Close: 86770.00
+2025-03-20 05:55:56,944 - __main__ - INFO - [BTCUSDT] Received kline: BTCUSDT 1m Close time: 2025-03-20 05:55:59 Closed: False
+2025-03-20 05:55:56,944 - __main__ - INFO - [BTCUSDT] Kline data: Open: 86802.00, High: 86850.00, Low: 86766.30, Close: 86770.00
+2025-03-20 05:55:57,388 - websocket_client - INFO - Received kline event for BTCUSDT
+2025-03-20 05:55:57,389 - websocket_client - INFO - Kline: BTCUSDT 1m Open: 86802.00 Close: 86785.00
+2025-03-20 05:55:57,389 - __main__ - INFO - [BTCUSDT] Received kline: BTCUSDT 1m Close time: 2025-03-20 05:55:59 Closed: False
+2025-03-20 05:55:57,390 - __main__ - INFO - [BTCUSDT] Kline data: Open: 86802.00, High: 86850.00, Low: 86766.30, Close: 86785.00
+2025-03-20 05:55:57,634 - binance_client - INFO - Initializing Binance Futures client in TEST mode
+2025-03-20 05:55:57,638 - websocket_client - INFO - Subscribed to btcusdt@bookTicker
+2025-03-20 05:55:57,638 - __main__ - INFO - [BTCUSDT] WebSocket connection initialized with essential data streams
+2025-03-20 05:55:57,848 - websocket_client - INFO - Received message: {"result": null, "id": 1742428557}...
+2025-03-20 05:55:57,947 - __main__ - INFO - [BTCUSDT] Initial account balance: 9808.40478809 USDT
+2025-03-20 05:55:57,976 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:55:57,976 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86770.00 Ask: 86785.00
+2025-03-20 05:55:57,977 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86770.00 (505.877), Ask: 86785.00 (0.020)
+2025-03-20 05:55:57,986 - websocket_client - INFO - Received kline event for BTCUSDT
+2025-03-20 05:55:57,994 - websocket_client - INFO - Kline: BTCUSDT 1m Open: 86802.00 Close: 86770.00
+2025-03-20 05:55:57,995 - __main__ - INFO - [BTCUSDT] Received kline: BTCUSDT 1m Close time: 2025-03-20 05:55:59 Closed: False
+2025-03-20 05:55:57,996 - __main__ - INFO - [BTCUSDT] Kline data: Open: 86802.00, High: 86850.00, Low: 86766.30, Close: 86770.00
+2025-03-20 05:55:58,107 - binance_client - INFO - Leverage set to 5x for BTCUSDT
+2025-03-20 05:55:58,500 - binance_client - INFO - Leverage set to 5x for BTCUSDT
+2025-03-20 05:55:58,501 - binance_client - INFO - Client initialized successfully for BTCUSDT with 5x leverage
+2025-03-20 05:55:58,619 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:55:58,619 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86770.00 Ask: 86808.80
+2025-03-20 05:55:58,619 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86770.00 (505.877), Ask: 86808.80 (58.135)
+2025-03-20 05:55:58,624 - websocket_client - INFO - Received kline event for BTCUSDT
+2025-03-20 05:55:58,624 - websocket_client - INFO - Kline: BTCUSDT 1m Open: 86802.00 Close: 86785.00
+2025-03-20 05:55:58,624 - __main__ - INFO - [BTCUSDT] Received kline: BTCUSDT 1m Close time: 2025-03-20 05:55:59 Closed: False
+2025-03-20 05:55:58,624 - __main__ - INFO - [BTCUSDT] Kline data: Open: 86802.00, High: 86850.00, Low: 86766.30, Close: 86785.00
+2025-03-20 05:55:58,658 - binance_client - INFO - Leverage set to 5x for ETHUSDT
+2025-03-20 05:55:58,658 - binance_client - INFO - Client initialized successfully for ETHUSDT with 5x leverage
+2025-03-20 05:55:58,786 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:55:58,786 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86770.00 Ask: 86785.20
+2025-03-20 05:55:58,786 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86770.00 (505.877), Ask: 86785.20 (0.020)
+2025-03-20 05:55:58,786 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:55:58,787 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86770.00 Ask: 86785.00
+2025-03-20 05:55:58,787 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86770.00 (505.877), Ask: 86785.00 (0.020)
+2025-03-20 05:55:58,815 - binance_client - INFO - Leverage set to 5x for SOLUSDT
+2025-03-20 05:55:58,815 - binance_client - INFO - Client initialized successfully for SOLUSDT with 5x leverage
+2025-03-20 05:55:58,815 - telegram_notifier - INFO - Telegram notifications enabled
+2025-03-20 05:55:59,557 - risk_manager - INFO - Risk Manager initialized: risk=1%, SL=2%, TP=3%
+2025-03-20 05:55:59,558 - strategy - INFO - Initialized RSIStrategy for ETHUSDT on 1h timeframe
+2025-03-20 05:55:59,559 - strategy - INFO - RSI Strategy: period=14, overbought=70, oversold=30
+2025-03-20 05:55:59,559 - __main__ - INFO - Trading bot initialized for ETHUSDT using RSI strategy
+2025-03-20 05:55:59,560 - __main__ - INFO - [ETHUSDT] Starting trading bot...
+2025-03-20 05:55:59,560 - __main__ - INFO - Started trading bot for ETHUSDT
+2025-03-20 05:55:59,913 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:55:59,913 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86770.00 Ask: 86785.00
+2025-03-20 05:55:59,913 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86770.00 (472.970), Ask: 86785.00 (0.020)
+2025-03-20 05:55:59,921 - websocket_client - INFO - Received kline event for BTCUSDT
+2025-03-20 05:55:59,921 - websocket_client - INFO - Kline: BTCUSDT 1m Open: 86802.00 Close: 86770.00
+2025-03-20 05:55:59,922 - __main__ - INFO - [BTCUSDT] Received kline: BTCUSDT 1m Close time: 2025-03-20 05:55:59 Closed: False
+2025-03-20 05:55:59,922 - __main__ - INFO - [BTCUSDT] Kline data: Open: 86802.00, High: 86850.00, Low: 86766.30, Close: 86770.00
+2025-03-20 05:56:00,002 - __main__ - INFO - [ETHUSDT] Fetched 200 initial historical candles
+2025-03-20 05:56:00,007 - __main__ - INFO - [ETHUSDT] Initializing WebSocket connection (attempt 1/3)
+2025-03-20 05:56:00,007 - websocket_client - INFO - Using Binance Futures Testnet WebSocket
+2025-03-20 05:56:00,126 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:56:00,126 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86770.00 Ask: 86785.00
+2025-03-20 05:56:00,126 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86770.00 (453.835), Ask: 86785.00 (0.020)
+2025-03-20 05:56:00,184 - websocket_client - INFO - Received kline event for BTCUSDT
+2025-03-20 05:56:00,184 - websocket_client - INFO - Kline: BTCUSDT 1m Open: 86802.00 Close: 86770.00
+2025-03-20 05:56:00,184 - __main__ - INFO - [BTCUSDT] Closed candle: 1742428500000 - Open: 86802.00, Close: 86770.00
+2025-03-20 05:56:00,194 - __main__ - INFO - [BTCUSDT] Received kline: BTCUSDT 1m Close time: 2025-03-20 05:55:59 Closed: True
+2025-03-20 05:56:00,194 - __main__ - INFO - [BTCUSDT] Kline data: Open: 86802.00, High: 86850.00, Low: 86766.30, Close: 86770.00
+2025-03-20 05:56:00,519 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:56:00,519 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86770.00 Ask: 86785.00
+2025-03-20 05:56:00,519 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86770.00 (363.167), Ask: 86785.00 (0.020)
+2025-03-20 05:56:00,528 - websocket_client - INFO - Received kline event for BTCUSDT
+2025-03-20 05:56:00,528 - websocket_client - INFO - Kline: BTCUSDT 1m Open: 86770.00 Close: 86770.00
+2025-03-20 05:56:00,528 - __main__ - INFO - [BTCUSDT] Received kline: BTCUSDT 1m Close time: 2025-03-20 05:56:59 Closed: False
+2025-03-20 05:56:00,529 - websocket - INFO - Websocket connected
+2025-03-20 05:56:00,529 - __main__ - INFO - [BTCUSDT] Kline data: Open: 86770.00, High: 86770.00, Low: 86770.00, Close: 86770.00
+2025-03-20 05:56:00,530 - websocket_client - INFO - Websocket connection established for ethusdt
+2025-03-20 05:56:00,530 - websocket_client - INFO - Connected to Binance websocket for ethusdt
+2025-03-20 05:56:00,530 - __main__ - INFO - [ETHUSDT] WebSocket connected, subscribing to data streams
+2025-03-20 05:56:00,719 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:56:00,719 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86770.00 Ask: 86808.80
+2025-03-20 05:56:00,719 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86770.00 (363.167), Ask: 86808.80 (47.522)
+2025-03-20 05:56:00,786 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:56:00,786 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86770.00 Ask: 86785.10
+2025-03-20 05:56:00,787 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86770.00 (363.167), Ask: 86785.10 (0.020)
+2025-03-20 05:56:01,137 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:56:01,137 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86770.00 Ask: 86785.10
+2025-03-20 05:56:01,137 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86770.00 (266.349), Ask: 86785.10 (0.020)
+2025-03-20 05:56:01,203 - websocket_client - INFO - Received kline event for BTCUSDT
+2025-03-20 05:56:01,203 - websocket_client - INFO - Kline: BTCUSDT 1m Open: 86770.00 Close: 86770.00
+2025-03-20 05:56:01,204 - __main__ - INFO - [BTCUSDT] Received kline: BTCUSDT 1m Close time: 2025-03-20 05:56:59 Closed: False
+2025-03-20 05:56:01,204 - __main__ - INFO - [BTCUSDT] Kline data: Open: 86770.00, High: 86808.80, Low: 86770.00, Close: 86770.00
+2025-03-20 05:56:01,314 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:56:01,314 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86770.00 Ask: 86808.80
+2025-03-20 05:56:01,314 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86770.00 (266.349), Ask: 86808.80 (21.646)
+2025-03-20 05:56:01,389 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:56:01,390 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86770.00 Ask: 86785.20
+2025-03-20 05:56:01,390 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86770.00 (266.349), Ask: 86785.20 (0.020)
+2025-03-20 05:56:01,391 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:56:01,391 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86770.00 Ask: 86785.10
+2025-03-20 05:56:01,391 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86770.00 (266.349), Ask: 86785.10 (0.020)
+2025-03-20 05:56:01,530 - websocket_client - INFO - WebSocket fully initialized for ethusdt
+2025-03-20 05:56:01,536 - websocket_client - INFO - Subscribed to ethusdt@kline_1m
+2025-03-20 05:56:01,546 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:56:01,547 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86770.00 Ask: 86810.10
+2025-03-20 05:56:01,548 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86770.00 (266.349), Ask: 86810.10 (33.498)
+2025-03-20 05:56:01,551 - websocket_client - INFO - Received kline event for BTCUSDT
+2025-03-20 05:56:01,552 - websocket_client - INFO - Kline: BTCUSDT 1m Open: 86770.00 Close: 86785.10
+2025-03-20 05:56:01,556 - __main__ - INFO - [BTCUSDT] Received kline: BTCUSDT 1m Close time: 2025-03-20 05:56:59 Closed: False
+2025-03-20 05:56:01,556 - __main__ - INFO - [BTCUSDT] Kline data: Open: 86770.00, High: 86808.80, Low: 86770.00, Close: 86785.10
+2025-03-20 05:56:01,736 - websocket_client - INFO - Received message: {"result": null, "id": 1742428561}...
+2025-03-20 05:56:02,017 - websocket_client - INFO - Received kline event for ETHUSDT
+2025-03-20 05:56:02,018 - websocket_client - INFO - Kline: ETHUSDT 1m Open: 2045.72 Close: 2045.72
+2025-03-20 05:56:02,018 - __main__ - INFO - [ETHUSDT] Received kline: ETHUSDT 1m Close time: 2025-03-20 05:56:59 Closed: False
+2025-03-20 05:56:02,018 - __main__ - INFO - [ETHUSDT] Kline data: Open: 2045.72, High: 2045.72, Low: 2045.72, Close: 2045.72
+2025-03-20 05:56:02,380 - websocket_client - INFO - Received kline event for ETHUSDT
+2025-03-20 05:56:02,380 - websocket_client - INFO - Kline: ETHUSDT 1m Open: 2045.72 Close: 2045.72
+2025-03-20 05:56:02,381 - __main__ - INFO - [ETHUSDT] Received kline: ETHUSDT 1m Close time: 2025-03-20 05:56:59 Closed: False
+2025-03-20 05:56:02,381 - __main__ - INFO - [ETHUSDT] Kline data: Open: 2045.72, High: 2045.72, Low: 2045.72, Close: 2045.72
+2025-03-20 05:56:02,543 - websocket_client - INFO - Subscribed to ethusdt@bookTicker
+2025-03-20 05:56:02,543 - __main__ - INFO - [ETHUSDT] WebSocket connection initialized with essential data streams
+2025-03-20 05:56:02,577 - binance_client - INFO - Initializing Binance Futures client in TEST mode
+2025-03-20 05:56:02,663 - websocket_client - INFO - Received message: {"result": null, "id": 1742428562}...
+2025-03-20 05:56:02,728 - websocket_client - INFO - Received bookTicker event for ETHUSDT
+2025-03-20 05:56:02,728 - websocket_client - INFO - BookTicker: ETHUSDT Bid: 2037.36 Ask: 2045.72
+2025-03-20 05:56:02,728 - __main__ - INFO - [ETHUSDT] Book Ticker: ETHUSDT Bid: 2037.36 (5774.130), Ask: 2045.72 (12453.643)
+2025-03-20 05:56:02,736 - websocket_client - INFO - Received kline event for ETHUSDT
+2025-03-20 05:56:02,737 - websocket_client - INFO - Kline: ETHUSDT 1m Open: 2045.72 Close: 2045.72
+2025-03-20 05:56:02,737 - __main__ - INFO - [ETHUSDT] Received kline: ETHUSDT 1m Close time: 2025-03-20 05:56:59 Closed: False
+2025-03-20 05:56:02,737 - __main__ - INFO - [ETHUSDT] Kline data: Open: 2045.72, High: 2045.72, Low: 2045.72, Close: 2045.72
+2025-03-20 05:56:02,902 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:56:02,903 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86770.00 Ask: 86810.10
+2025-03-20 05:56:02,903 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86770.00 (201.374), Ask: 86810.10 (33.498)
+2025-03-20 05:56:02,909 - websocket_client - INFO - Received kline event for BTCUSDT
+2025-03-20 05:56:02,909 - websocket_client - INFO - Kline: BTCUSDT 1m Open: 86770.00 Close: 86770.00
+2025-03-20 05:56:02,910 - __main__ - INFO - [BTCUSDT] Received kline: BTCUSDT 1m Close time: 2025-03-20 05:56:59 Closed: False
+2025-03-20 05:56:02,910 - __main__ - INFO - [BTCUSDT] Kline data: Open: 86770.00, High: 86810.10, Low: 86770.00, Close: 86770.00
+2025-03-20 05:56:02,916 - websocket_client - INFO - Received bookTicker event for ETHUSDT
+2025-03-20 05:56:02,917 - websocket_client - INFO - BookTicker: ETHUSDT Bid: 2037.36 Ask: 2045.72
+2025-03-20 05:56:02,917 - __main__ - INFO - [ETHUSDT] Book Ticker: ETHUSDT Bid: 2037.36 (5774.130), Ask: 2045.72 (11581.129)
+2025-03-20 05:56:02,918 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:56:02,919 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86770.00 Ask: 86810.10
+2025-03-20 05:56:02,919 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86770.00 (201.374), Ask: 86810.10 (33.475)
+2025-03-20 05:56:03,110 - __main__ - INFO - [ETHUSDT] Initial account balance: 9808.40478809 USDT
+2025-03-20 05:56:03,117 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:56:03,118 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86770.00 Ask: 86810.10
+2025-03-20 05:56:03,118 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86770.00 (181.905), Ask: 86810.10 (33.475)
+2025-03-20 05:56:03,186 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:56:03,186 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86770.00 Ask: 86810.10
+2025-03-20 05:56:03,186 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86770.00 (181.722), Ask: 86810.10 (33.475)
+2025-03-20 05:56:03,246 - websocket_client - INFO - Received kline event for BTCUSDT
+2025-03-20 05:56:03,246 - websocket_client - INFO - Kline: BTCUSDT 1m Open: 86770.00 Close: 86770.00
+2025-03-20 05:56:03,246 - __main__ - INFO - [BTCUSDT] Received kline: BTCUSDT 1m Close time: 2025-03-20 05:56:59 Closed: False
+2025-03-20 05:56:03,246 - __main__ - INFO - [BTCUSDT] Kline data: Open: 86770.00, High: 86810.10, Low: 86770.00, Close: 86770.00
+2025-03-20 05:56:03,267 - binance_client - INFO - Leverage set to 5x for ETHUSDT
+2025-03-20 05:56:03,305 - websocket_client - INFO - Received bookTicker event for ETHUSDT
+2025-03-20 05:56:03,305 - websocket_client - INFO - BookTicker: ETHUSDT Bid: 2037.36 Ask: 2045.72
+2025-03-20 05:56:03,305 - __main__ - INFO - [ETHUSDT] Book Ticker: ETHUSDT Bid: 2037.36 (5774.130), Ask: 2045.72 (11343.067)
+2025-03-20 05:56:03,333 - websocket_client - INFO - Received kline event for ETHUSDT
+2025-03-20 05:56:03,333 - websocket_client - INFO - Kline: ETHUSDT 1m Open: 2045.72 Close: 2045.72
+2025-03-20 05:56:03,333 - __main__ - INFO - [ETHUSDT] Received kline: ETHUSDT 1m Close time: 2025-03-20 05:56:59 Closed: False
+2025-03-20 05:56:03,333 - __main__ - INFO - [ETHUSDT] Kline data: Open: 2045.72, High: 2045.72, Low: 2045.72, Close: 2045.72
+2025-03-20 05:56:03,406 - binance_client - INFO - Leverage set to 5x for BTCUSDT
+2025-03-20 05:56:03,406 - binance_client - INFO - Client initialized successfully for BTCUSDT with 5x leverage
+2025-03-20 05:56:03,701 - websocket_client - INFO - Received bookTicker event for ETHUSDT
+2025-03-20 05:56:03,702 - websocket_client - INFO - BookTicker: ETHUSDT Bid: 2037.36 Ask: 2045.72
+2025-03-20 05:56:03,702 - __main__ - INFO - [ETHUSDT] Book Ticker: ETHUSDT Bid: 2037.36 (5774.130), Ask: 2045.72 (11129.158)
+2025-03-20 05:56:03,710 - websocket_client - INFO - Received kline event for ETHUSDT
+2025-03-20 05:56:03,711 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:56:03,712 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86770.00 Ask: 86813.10
+2025-03-20 05:56:03,713 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86770.00 (181.722), Ask: 86813.10 (75.724)
+2025-03-20 05:56:03,712 - websocket_client - INFO - Kline: ETHUSDT 1m Open: 2045.72 Close: 2045.72
+2025-03-20 05:56:03,715 - __main__ - INFO - [ETHUSDT] Received kline: ETHUSDT 1m Close time: 2025-03-20 05:56:59 Closed: False
+2025-03-20 05:56:03,716 - __main__ - INFO - [ETHUSDT] Kline data: Open: 2045.72, High: 2045.72, Low: 2045.72, Close: 2045.72
+2025-03-20 05:56:03,720 - websocket_client - INFO - Received kline event for BTCUSDT
+2025-03-20 05:56:03,721 - websocket_client - INFO - Kline: BTCUSDT 1m Open: 86770.00 Close: 86810.10
+2025-03-20 05:56:03,722 - __main__ - INFO - [BTCUSDT] Received kline: BTCUSDT 1m Close time: 2025-03-20 05:56:59 Closed: False
+2025-03-20 05:56:03,723 - __main__ - INFO - [BTCUSDT] Kline data: Open: 86770.00, High: 86810.10, Low: 86770.00, Close: 86810.10
+2025-03-20 05:56:03,836 - binance_client - INFO - Leverage set to 5x for ETHUSDT
+2025-03-20 05:56:03,836 - binance_client - INFO - Client initialized successfully for ETHUSDT with 5x leverage
+2025-03-20 05:56:03,860 - websocket_client - INFO - Received bookTicker event for ETHUSDT
+2025-03-20 05:56:03,860 - websocket_client - INFO - BookTicker: ETHUSDT Bid: 2037.36 Ask: 2045.72
+2025-03-20 05:56:03,861 - __main__ - INFO - [ETHUSDT] Book Ticker: ETHUSDT Bid: 2037.36 (5774.130), Ask: 2045.72 (10916.812)
+2025-03-20 05:56:03,908 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:56:03,908 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86770.00 Ask: 86813.10
+2025-03-20 05:56:03,908 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86770.00 (137.901), Ask: 86813.10 (75.724)
+2025-03-20 05:56:04,271 - binance_client - INFO - Leverage set to 5x for SOLUSDT
+2025-03-20 05:56:04,272 - binance_client - INFO - Client initialized successfully for SOLUSDT with 5x leverage
+2025-03-20 05:56:04,272 - telegram_notifier - INFO - Telegram notifications enabled
+2025-03-20 05:56:04,279 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:56:04,279 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86770.00 Ask: 86813.10
+2025-03-20 05:56:04,279 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86770.00 (53.288), Ask: 86813.10 (75.724)
+2025-03-20 05:56:04,289 - websocket_client - INFO - Received kline event for BTCUSDT
+2025-03-20 05:56:04,290 - websocket_client - INFO - Kline: BTCUSDT 1m Open: 86770.00 Close: 86770.00
+2025-03-20 05:56:04,290 - __main__ - INFO - [BTCUSDT] Received kline: BTCUSDT 1m Close time: 2025-03-20 05:56:59 Closed: False
+2025-03-20 05:56:04,290 - __main__ - INFO - [BTCUSDT] Kline data: Open: 86770.00, High: 86813.10, Low: 86770.00, Close: 86770.00
+2025-03-20 05:56:04,407 - websocket_client - INFO - Received bookTicker event for ETHUSDT
+2025-03-20 05:56:04,408 - websocket_client - INFO - BookTicker: ETHUSDT Bid: 2037.36 Ask: 2045.72
+2025-03-20 05:56:04,408 - __main__ - INFO - [ETHUSDT] Book Ticker: ETHUSDT Bid: 2037.36 (5774.130), Ask: 2045.72 (10770.660)
+2025-03-20 05:56:04,414 - websocket_client - INFO - Received kline event for ETHUSDT
+2025-03-20 05:56:04,415 - websocket_client - INFO - Kline: ETHUSDT 1m Open: 2045.72 Close: 2045.72
+2025-03-20 05:56:04,416 - __main__ - INFO - [ETHUSDT] Received kline: ETHUSDT 1m Close time: 2025-03-20 05:56:59 Closed: False
+2025-03-20 05:56:04,417 - __main__ - INFO - [ETHUSDT] Kline data: Open: 2045.72, High: 2045.72, Low: 2045.72, Close: 2045.72
+2025-03-20 05:56:04,617 - websocket_client - INFO - Received bookTicker event for ETHUSDT
+2025-03-20 05:56:04,617 - websocket_client - INFO - BookTicker: ETHUSDT Bid: 2037.36 Ask: 2045.72
+2025-03-20 05:56:04,617 - __main__ - INFO - [ETHUSDT] Book Ticker: ETHUSDT Bid: 2037.36 (5774.130), Ask: 2045.72 (10240.817)
+2025-03-20 05:56:04,688 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:56:04,689 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86770.00 Ask: 86813.10
+2025-03-20 05:56:04,689 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86770.00 (53.288), Ask: 86813.10 (12.837)
+2025-03-20 05:56:04,696 - websocket_client - INFO - Received kline event for BTCUSDT
+2025-03-20 05:56:04,697 - websocket_client - INFO - Kline: BTCUSDT 1m Open: 86770.00 Close: 86813.10
+2025-03-20 05:56:04,697 - __main__ - INFO - [BTCUSDT] Received kline: BTCUSDT 1m Close time: 2025-03-20 05:56:59 Closed: False
+2025-03-20 05:56:04,698 - __main__ - INFO - [BTCUSDT] Kline data: Open: 86770.00, High: 86813.10, Low: 86770.00, Close: 86813.10
+2025-03-20 05:56:04,803 - websocket_client - INFO - Received bookTicker event for ETHUSDT
+2025-03-20 05:56:04,804 - websocket_client - INFO - BookTicker: ETHUSDT Bid: 2037.36 Ask: 2045.72
+2025-03-20 05:56:04,804 - __main__ - INFO - [ETHUSDT] Book Ticker: ETHUSDT Bid: 2037.36 (5774.130), Ask: 2045.72 (9811.989)
+2025-03-20 05:56:04,813 - websocket_client - INFO - Received kline event for ETHUSDT
+2025-03-20 05:56:04,813 - websocket_client - INFO - Kline: ETHUSDT 1m Open: 2045.72 Close: 2045.72
+2025-03-20 05:56:04,813 - __main__ - INFO - [ETHUSDT] Received kline: ETHUSDT 1m Close time: 2025-03-20 05:56:59 Closed: False
+2025-03-20 05:56:04,813 - __main__ - INFO - [ETHUSDT] Kline data: Open: 2045.72, High: 2045.72, Low: 2045.72, Close: 2045.72
+2025-03-20 05:56:04,900 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:56:04,900 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86770.00 Ask: 86807.30
+2025-03-20 05:56:04,900 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86770.00 (53.288), Ask: 86807.30 (98.848)
+2025-03-20 05:56:05,095 - risk_manager - INFO - Risk Manager initialized: risk=0.8%, SL=2.5%, TP=4%
+2025-03-20 05:56:05,095 - strategy - INFO - Initialized MACDStrategy for SOLUSDT on 1h timeframe
+2025-03-20 05:56:05,095 - strategy - INFO - MACD Strategy: fast_period=12, slow_period=26, signal_period=9
+2025-03-20 05:56:05,096 - __main__ - INFO - Trading bot initialized for SOLUSDT using MACD strategy
+2025-03-20 05:56:05,096 - __main__ - INFO - [SOLUSDT] Starting trading bot...
+2025-03-20 05:56:05,096 - __main__ - INFO - Started trading bot for SOLUSDT
+2025-03-20 05:56:05,207 - websocket_client - INFO - Received bookTicker event for ETHUSDT
+2025-03-20 05:56:05,207 - websocket_client - INFO - BookTicker: ETHUSDT Bid: 2037.36 Ask: 2045.72
+2025-03-20 05:56:05,207 - __main__ - INFO - [ETHUSDT] Book Ticker: ETHUSDT Bid: 2037.36 (5774.130), Ask: 2045.72 (9296.151)
+2025-03-20 05:56:05,229 - websocket_client - INFO - Received kline event for ETHUSDT
+2025-03-20 05:56:05,229 - websocket_client - INFO - Kline: ETHUSDT 1m Open: 2045.72 Close: 2045.72
+2025-03-20 05:56:05,229 - __main__ - INFO - [ETHUSDT] Received kline: ETHUSDT 1m Close time: 2025-03-20 05:56:59 Closed: False
+2025-03-20 05:56:05,229 - __main__ - INFO - [ETHUSDT] Kline data: Open: 2045.72, High: 2045.72, Low: 2045.72, Close: 2045.72
+2025-03-20 05:56:05,256 - __main__ - INFO - [SOLUSDT] Fetched 200 initial historical candles
+2025-03-20 05:56:05,267 - __main__ - INFO - [SOLUSDT] Initializing WebSocket connection (attempt 1/3)
+2025-03-20 05:56:05,267 - websocket_client - INFO - Using Binance Futures Testnet WebSocket
+2025-03-20 05:56:05,417 - websocket_client - INFO - Received bookTicker event for ETHUSDT
+2025-03-20 05:56:05,418 - websocket_client - INFO - BookTicker: ETHUSDT Bid: 2037.36 Ask: 2045.72
+2025-03-20 05:56:05,418 - __main__ - INFO - [ETHUSDT] Book Ticker: ETHUSDT Bid: 2037.36 (5774.130), Ask: 2045.72 (8708.303)
+2025-03-20 05:56:05,657 - websocket_client - INFO - Received bookTicker event for ETHUSDT
+2025-03-20 05:56:05,657 - websocket_client - INFO - BookTicker: ETHUSDT Bid: 2037.36 Ask: 2045.72
+2025-03-20 05:56:05,658 - __main__ - INFO - [ETHUSDT] Book Ticker: ETHUSDT Bid: 2037.36 (5774.130), Ask: 2045.72 (8438.917)
+2025-03-20 05:56:05,665 - websocket_client - INFO - Received kline event for ETHUSDT
+2025-03-20 05:56:05,665 - websocket_client - INFO - Kline: ETHUSDT 1m Open: 2045.72 Close: 2045.72
+2025-03-20 05:56:05,666 - __main__ - INFO - [ETHUSDT] Received kline: ETHUSDT 1m Close time: 2025-03-20 05:56:59 Closed: False
+2025-03-20 05:56:05,666 - __main__ - INFO - [ETHUSDT] Kline data: Open: 2045.72, High: 2045.72, Low: 2045.72, Close: 2045.72
+2025-03-20 05:56:05,781 - websocket - INFO - Websocket connected
+2025-03-20 05:56:05,782 - websocket_client - INFO - Websocket connection established for solusdt
+2025-03-20 05:56:05,783 - websocket_client - INFO - Connected to Binance websocket for solusdt
+2025-03-20 05:56:05,784 - __main__ - INFO - [SOLUSDT] WebSocket connected, subscribing to data streams
+2025-03-20 05:56:05,794 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:56:05,795 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86770.00 Ask: 86813.10
+2025-03-20 05:56:05,795 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86770.00 (53.288), Ask: 86813.10 (12.429)
+2025-03-20 05:56:05,806 - websocket_client - INFO - Received kline event for BTCUSDT
+2025-03-20 05:56:05,807 - websocket_client - INFO - Kline: BTCUSDT 1m Open: 86770.00 Close: 86807.30
+2025-03-20 05:56:05,808 - __main__ - INFO - [BTCUSDT] Received kline: BTCUSDT 1m Close time: 2025-03-20 05:56:59 Closed: False
+2025-03-20 05:56:05,809 - __main__ - INFO - [BTCUSDT] Kline data: Open: 86770.00, High: 86813.10, Low: 86770.00, Close: 86807.30
+2025-03-20 05:56:05,833 - websocket_client - INFO - Received bookTicker event for ETHUSDT
+2025-03-20 05:56:05,833 - websocket_client - INFO - BookTicker: ETHUSDT Bid: 2037.36 Ask: 2045.72
+2025-03-20 05:56:05,834 - __main__ - INFO - [ETHUSDT] Book Ticker: ETHUSDT Bid: 2037.36 (5774.130), Ask: 2045.72 (7598.818)
+2025-03-20 05:56:05,876 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:56:05,877 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86766.30 Ask: 86813.10
+2025-03-20 05:56:05,877 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86766.30 (1.735), Ask: 86813.10 (12.429)
+2025-03-20 05:56:05,891 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:56:05,893 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86766.30 Ask: 86813.10
+2025-03-20 05:56:05,895 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86766.30 (1.735), Ask: 86813.10 (12.363)
+2025-03-20 05:56:05,967 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:56:05,967 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86769.00 Ask: 86813.10
+2025-03-20 05:56:05,968 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86769.00 (0.020), Ask: 86813.10 (12.363)
+2025-03-20 05:56:05,968 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:56:05,968 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86770.00 Ask: 86813.10
+2025-03-20 05:56:05,968 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86770.00 (0.020), Ask: 86813.10 (12.363)
+2025-03-20 05:56:05,969 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:56:05,969 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86770.00 Ask: 86813.10
+2025-03-20 05:56:05,969 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86770.00 (0.020), Ask: 86813.10 (12.383)
+2025-03-20 05:56:06,028 - websocket_client - INFO - Received bookTicker event for ETHUSDT
+2025-03-20 05:56:06,028 - websocket_client - INFO - BookTicker: ETHUSDT Bid: 2037.36 Ask: 2045.72
+2025-03-20 05:56:06,029 - __main__ - INFO - [ETHUSDT] Book Ticker: ETHUSDT Bid: 2037.36 (5774.130), Ask: 2045.72 (6738.422)
+2025-03-20 05:56:06,036 - websocket_client - INFO - Received kline event for ETHUSDT
+2025-03-20 05:56:06,037 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:56:06,039 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86765.70 Ask: 86813.10
+2025-03-20 05:56:06,039 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86765.70 (24.358), Ask: 86813.10 (12.383)
+2025-03-20 05:56:06,038 - websocket_client - INFO - Kline: ETHUSDT 1m Open: 2045.72 Close: 2045.72
+2025-03-20 05:56:06,040 - __main__ - INFO - [ETHUSDT] Received kline: ETHUSDT 1m Close time: 2025-03-20 05:56:59 Closed: False
+2025-03-20 05:56:06,041 - __main__ - INFO - [ETHUSDT] Kline data: Open: 2045.72, High: 2045.72, Low: 2045.72, Close: 2045.72
+2025-03-20 05:56:06,156 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:56:06,156 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86765.60 Ask: 86813.10
+2025-03-20 05:56:06,157 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86765.60 (83.114), Ask: 86813.10 (12.383)
+2025-03-20 05:56:06,208 - websocket_client - INFO - Received kline event for BTCUSDT
+2025-03-20 05:56:06,208 - websocket_client - INFO - Kline: BTCUSDT 1m Open: 86770.00 Close: 86765.70
+2025-03-20 05:56:06,208 - __main__ - INFO - [BTCUSDT] Received kline: BTCUSDT 1m Close time: 2025-03-20 05:56:59 Closed: False
+2025-03-20 05:56:06,208 - __main__ - INFO - [BTCUSDT] Kline data: Open: 86770.00, High: 86813.10, Low: 86765.70, Close: 86765.70
+2025-03-20 05:56:06,327 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:56:06,328 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86765.60 Ask: 86814.70
+2025-03-20 05:56:06,328 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86765.60 (83.114), Ask: 86814.70 (19.514)
+2025-03-20 05:56:06,360 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:56:06,362 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86765.60 Ask: 86766.90
+2025-03-20 05:56:06,363 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86765.60 (83.114), Ask: 86766.90 (49.669)
+2025-03-20 05:56:06,427 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:56:06,427 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86765.60 Ask: 86766.90
+2025-03-20 05:56:06,427 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86765.60 (83.114), Ask: 86766.90 (3.414)
+2025-03-20 05:56:06,430 - websocket_client - INFO - Received kline event for BTCUSDT
+2025-03-20 05:56:06,430 - websocket_client - INFO - Kline: BTCUSDT 1m Open: 86770.00 Close: 86766.90
+2025-03-20 05:56:06,430 - __main__ - INFO - [BTCUSDT] Received kline: BTCUSDT 1m Close time: 2025-03-20 05:56:59 Closed: False
+2025-03-20 05:56:06,430 - __main__ - INFO - [BTCUSDT] Kline data: Open: 86770.00, High: 86814.70, Low: 86765.60, Close: 86766.90
+2025-03-20 05:56:06,489 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:56:06,489 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86765.60 Ask: 86766.90
+2025-03-20 05:56:06,490 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86765.60 (64.753), Ask: 86766.90 (3.414)
+2025-03-20 05:56:06,601 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:56:06,601 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86765.60 Ask: 86766.90
+2025-03-20 05:56:06,602 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86765.60 (32.867), Ask: 86766.90 (3.414)
+2025-03-20 05:56:06,645 - websocket_client - INFO - Received bookTicker event for ETHUSDT
+2025-03-20 05:56:06,646 - websocket_client - INFO - BookTicker: ETHUSDT Bid: 2037.36 Ask: 2045.72
+2025-03-20 05:56:06,647 - __main__ - INFO - [ETHUSDT] Book Ticker: ETHUSDT Bid: 2037.36 (4824.065), Ask: 2045.72 (6738.422)
+2025-03-20 05:56:06,652 - websocket_client - INFO - Received kline event for ETHUSDT
+2025-03-20 05:56:06,652 - websocket_client - INFO - Kline: ETHUSDT 1m Open: 2045.72 Close: 2037.36
+2025-03-20 05:56:06,653 - __main__ - INFO - [ETHUSDT] Received kline: ETHUSDT 1m Close time: 2025-03-20 05:56:59 Closed: False
+2025-03-20 05:56:06,653 - __main__ - INFO - [ETHUSDT] Kline data: Open: 2045.72, High: 2045.72, Low: 2037.36, Close: 2037.36
+2025-03-20 05:56:06,784 - websocket_client - INFO - WebSocket fully initialized for solusdt
+2025-03-20 05:56:06,790 - websocket_client - INFO - Subscribed to solusdt@kline_1m
+2025-03-20 05:56:06,824 - websocket_client - INFO - Received bookTicker event for ETHUSDT
+2025-03-20 05:56:06,825 - websocket_client - INFO - BookTicker: ETHUSDT Bid: 2037.36 Ask: 2045.72
+2025-03-20 05:56:06,825 - __main__ - INFO - [ETHUSDT] Book Ticker: ETHUSDT Bid: 2037.36 (4824.065), Ask: 2045.72 (6139.375)
+2025-03-20 05:56:06,879 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:56:06,879 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86765.60 Ask: 86766.90
+2025-03-20 05:56:06,880 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86765.60 (32.867), Ask: 86766.90 (3.434)
+2025-03-20 05:56:06,958 - websocket_client - INFO - Received message: {"result": null, "id": 1742428566}...
+2025-03-20 05:56:07,027 - websocket_client - INFO - Received bookTicker event for ETHUSDT
+2025-03-20 05:56:07,027 - websocket_client - INFO - BookTicker: ETHUSDT Bid: 2037.36 Ask: 2045.72
+2025-03-20 05:56:07,027 - __main__ - INFO - [ETHUSDT] Book Ticker: ETHUSDT Bid: 2037.36 (4824.065), Ask: 2045.72 (5662.303)
+2025-03-20 05:56:07,032 - websocket_client - INFO - Received kline event for ETHUSDT
+2025-03-20 05:56:07,032 - websocket_client - INFO - Kline: ETHUSDT 1m Open: 2045.72 Close: 2045.72
+2025-03-20 05:56:07,032 - __main__ - INFO - [ETHUSDT] Received kline: ETHUSDT 1m Close time: 2025-03-20 05:56:59 Closed: False
+2025-03-20 05:56:07,033 - __main__ - INFO - [ETHUSDT] Kline data: Open: 2045.72, High: 2045.72, Low: 2037.36, Close: 2045.72
+2025-03-20 05:56:07,146 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:56:07,146 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86765.40 Ask: 86766.90
+2025-03-20 05:56:07,146 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86765.40 (70.802), Ask: 86766.90 (3.434)
+2025-03-20 05:56:07,189 - websocket_client - INFO - Received kline event for BTCUSDT
+2025-03-20 05:56:07,189 - websocket_client - INFO - Kline: BTCUSDT 1m Open: 86770.00 Close: 86765.60
+2025-03-20 05:56:07,189 - __main__ - INFO - [BTCUSDT] Received kline: BTCUSDT 1m Close time: 2025-03-20 05:56:59 Closed: False
+2025-03-20 05:56:07,190 - __main__ - INFO - [BTCUSDT] Kline data: Open: 86770.00, High: 86814.70, Low: 86765.60, Close: 86765.60
+2025-03-20 05:56:07,219 - websocket_client - INFO - Received bookTicker event for ETHUSDT
+2025-03-20 05:56:07,219 - websocket_client - INFO - BookTicker: ETHUSDT Bid: 2037.36 Ask: 2045.72
+2025-03-20 05:56:07,220 - __main__ - INFO - [ETHUSDT] Book Ticker: ETHUSDT Bid: 2037.36 (3989.490), Ask: 2045.72 (5662.303)
+2025-03-20 05:56:07,438 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:56:07,438 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86765.60 Ask: 86766.90
+2025-03-20 05:56:07,438 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86765.60 (0.020), Ask: 86766.90 (3.434)
+2025-03-20 05:56:07,796 - websocket_client - INFO - Subscribed to solusdt@bookTicker
+2025-03-20 05:56:07,797 - __main__ - INFO - [SOLUSDT] WebSocket connection initialized with essential data streams
+2025-03-20 05:56:07,950 - websocket_client - INFO - Received bookTicker event for ETHUSDT
+2025-03-20 05:56:07,950 - websocket_client - INFO - BookTicker: ETHUSDT Bid: 2037.36 Ask: 2045.72
+2025-03-20 05:56:07,950 - __main__ - INFO - [ETHUSDT] Book Ticker: ETHUSDT Bid: 2037.36 (3989.490), Ask: 2045.72 (5255.557)
+2025-03-20 05:56:07,960 - websocket_client - INFO - Received kline event for ETHUSDT
+2025-03-20 05:56:07,960 - websocket_client - INFO - Kline: ETHUSDT 1m Open: 2045.72 Close: 2045.72
+2025-03-20 05:56:07,961 - __main__ - INFO - [ETHUSDT] Received kline: ETHUSDT 1m Close time: 2025-03-20 05:56:59 Closed: False
+2025-03-20 05:56:07,961 - __main__ - INFO - [ETHUSDT] Kline data: Open: 2045.72, High: 2045.72, Low: 2037.36, Close: 2045.72
+2025-03-20 05:56:07,961 - websocket_client - INFO - Received message: {"result": null, "id": 1742428567}...
+2025-03-20 05:56:08,114 - __main__ - INFO - Waiting for WebSocket connections to establish...
+2025-03-20 05:56:08,256 - websocket_client - INFO - Received bookTicker event for ETHUSDT
+2025-03-20 05:56:08,256 - websocket_client - INFO - BookTicker: ETHUSDT Bid: 2037.36 Ask: 2045.72
+2025-03-20 05:56:08,256 - __main__ - INFO - [ETHUSDT] Book Ticker: ETHUSDT Bid: 2037.36 (3989.490), Ask: 2045.72 (4480.228)
+2025-03-20 05:56:08,359 - websocket_client - INFO - Received bookTicker event for ETHUSDT
+2025-03-20 05:56:08,359 - websocket_client - INFO - BookTicker: ETHUSDT Bid: 2037.36 Ask: 2045.72
+2025-03-20 05:56:08,360 - __main__ - INFO - [ETHUSDT] Book Ticker: ETHUSDT Bid: 2037.36 (3989.490), Ask: 2045.72 (3958.323)
+2025-03-20 05:56:08,362 - websocket_client - INFO - Received kline event for ETHUSDT
+2025-03-20 05:56:08,362 - websocket_client - INFO - Kline: ETHUSDT 1m Open: 2045.72 Close: 2045.72
+2025-03-20 05:56:08,363 - __main__ - INFO - [ETHUSDT] Received kline: ETHUSDT 1m Close time: 2025-03-20 05:56:59 Closed: False
+2025-03-20 05:56:08,363 - __main__ - INFO - [ETHUSDT] Kline data: Open: 2045.72, High: 2045.72, Low: 2037.36, Close: 2045.72
+2025-03-20 05:56:08,464 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:56:08,466 - __main__ - INFO - [SOLUSDT] Initial account balance: 9808.40478809 USDT
+2025-03-20 05:56:08,466 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86765.60 Ask: 86766.90
+2025-03-20 05:56:08,469 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86765.60 (0.009), Ask: 86766.90 (3.434)
+2025-03-20 05:56:08,471 - websocket_client - INFO - Received kline event for BTCUSDT
+2025-03-20 05:56:08,471 - websocket_client - INFO - Kline: BTCUSDT 1m Open: 86770.00 Close: 86765.60
+2025-03-20 05:56:08,471 - __main__ - INFO - [BTCUSDT] Received kline: BTCUSDT 1m Close time: 2025-03-20 05:56:59 Closed: False
+2025-03-20 05:56:08,472 - __main__ - INFO - [BTCUSDT] Kline data: Open: 86770.00, High: 86814.70, Low: 86765.40, Close: 86765.60
+2025-03-20 05:56:08,563 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:56:08,563 - websocket_client - INFO - Received bookTicker event for ETHUSDT
+2025-03-20 05:56:08,564 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86765.40 Ask: 86766.90
+2025-03-20 05:56:08,564 - websocket_client - INFO - BookTicker: ETHUSDT Bid: 2037.36 Ask: 2045.72
+2025-03-20 05:56:08,564 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86765.40 (6.023), Ask: 86766.90 (3.434)
+2025-03-20 05:56:08,564 - __main__ - INFO - [ETHUSDT] Book Ticker: ETHUSDT Bid: 2037.36 (3103.682), Ask: 2045.72 (3958.323)
+2025-03-20 05:56:08,872 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:56:08,872 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86765.40 Ask: 86766.90
+2025-03-20 05:56:08,873 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86765.40 (6.023), Ask: 86766.90 (3.411)
+2025-03-20 05:56:08,874 - websocket_client - INFO - Received kline event for BTCUSDT
+2025-03-20 05:56:08,874 - websocket_client - INFO - Kline: BTCUSDT 1m Open: 86770.00 Close: 86766.90
+2025-03-20 05:56:08,875 - __main__ - INFO - [BTCUSDT] Received kline: BTCUSDT 1m Close time: 2025-03-20 05:56:59 Closed: False
+2025-03-20 05:56:08,875 - __main__ - INFO - [BTCUSDT] Kline data: Open: 86770.00, High: 86814.70, Low: 86765.40, Close: 86766.90
+2025-03-20 05:56:08,907 - binance_client - INFO - Leverage set to 5x for SOLUSDT
+2025-03-20 05:56:09,302 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:56:09,304 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86765.10 Ask: 86766.90
+2025-03-20 05:56:09,304 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86765.10 (72.501), Ask: 86766.90 (3.411)
+2025-03-20 05:56:09,305 - websocket_client - INFO - Received bookTicker event for ETHUSDT
+2025-03-20 05:56:09,307 - websocket_client - INFO - BookTicker: ETHUSDT Bid: 2037.36 Ask: 2045.72
+2025-03-20 05:56:09,308 - __main__ - INFO - [ETHUSDT] Book Ticker: ETHUSDT Bid: 2037.36 (3103.682), Ask: 2045.72 (3545.192)
+2025-03-20 05:56:09,338 - websocket_client - INFO - Received kline event for BTCUSDT
+2025-03-20 05:56:09,339 - websocket_client - INFO - Kline: BTCUSDT 1m Open: 86770.00 Close: 86765.40
+2025-03-20 05:56:09,339 - __main__ - INFO - [BTCUSDT] Received kline: BTCUSDT 1m Close time: 2025-03-20 05:56:59 Closed: False
+2025-03-20 05:56:09,339 - __main__ - INFO - [BTCUSDT] Kline data: Open: 86770.00, High: 86814.70, Low: 86765.40, Close: 86765.40
+2025-03-20 05:56:09,345 - websocket_client - INFO - Received kline event for ETHUSDT
+2025-03-20 05:56:09,345 - websocket_client - INFO - Kline: ETHUSDT 1m Open: 2045.72 Close: 2045.72
+2025-03-20 05:56:09,345 - __main__ - INFO - [ETHUSDT] Received kline: ETHUSDT 1m Close time: 2025-03-20 05:56:59 Closed: False
+2025-03-20 05:56:09,345 - __main__ - INFO - [ETHUSDT] Kline data: Open: 2045.72, High: 2045.72, Low: 2037.36, Close: 2045.72
+2025-03-20 05:56:09,391 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:56:09,392 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86765.30 Ask: 86766.90
+2025-03-20 05:56:09,395 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86765.30 (0.020), Ask: 86766.90 (3.411)
+2025-03-20 05:56:09,492 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:56:09,492 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86764.90 Ask: 86766.90
+2025-03-20 05:56:09,492 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86764.90 (50.955), Ask: 86766.90 (3.411)
+2025-03-20 05:56:09,511 - websocket_client - INFO - Received bookTicker event for ETHUSDT
+2025-03-20 05:56:09,511 - websocket_client - INFO - BookTicker: ETHUSDT Bid: 2037.36 Ask: 2045.72
+2025-03-20 05:56:09,512 - __main__ - INFO - [ETHUSDT] Book Ticker: ETHUSDT Bid: 2037.36 (3103.682), Ask: 2045.72 (3278.388)
+2025-03-20 05:56:09,589 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:56:09,592 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86765.10 Ask: 86766.90
+2025-03-20 05:56:09,592 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86765.10 (0.020), Ask: 86766.90 (3.411)
+2025-03-20 05:56:10,077 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:56:10,077 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86765.00 Ask: 86766.90
+2025-03-20 05:56:10,077 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86765.00 (0.020), Ask: 86766.90 (3.411)
+2025-03-20 05:56:10,330 - websocket_client - INFO - Received kline event for ETHUSDT
+2025-03-20 05:56:10,331 - websocket_client - INFO - Kline: ETHUSDT 1m Open: 2045.72 Close: 2045.72
+2025-03-20 05:56:10,331 - __main__ - INFO - [ETHUSDT] Received kline: ETHUSDT 1m Close time: 2025-03-20 05:56:59 Closed: False
+2025-03-20 05:56:10,331 - __main__ - INFO - [ETHUSDT] Kline data: Open: 2045.72, High: 2045.72, Low: 2037.36, Close: 2045.72
+2025-03-20 05:56:10,336 - websocket_client - INFO - Received bookTicker event for ETHUSDT
+2025-03-20 05:56:10,336 - websocket_client - INFO - BookTicker: ETHUSDT Bid: 2037.36 Ask: 2045.72
+2025-03-20 05:56:10,337 - __main__ - INFO - [ETHUSDT] Book Ticker: ETHUSDT Bid: 2037.36 (3103.682), Ask: 2045.72 (2732.313)
+2025-03-20 05:56:10,923 - websocket_client - INFO - Received bookTicker event for ETHUSDT
+2025-03-20 05:56:10,924 - websocket_client - INFO - BookTicker: ETHUSDT Bid: 2037.36 Ask: 2045.72
+2025-03-20 05:56:10,924 - __main__ - INFO - [ETHUSDT] Book Ticker: ETHUSDT Bid: 2037.36 (3103.682), Ask: 2045.72 (1923.687)
+2025-03-20 05:56:10,932 - websocket_client - INFO - Received kline event for ETHUSDT
+2025-03-20 05:56:10,933 - websocket_client - INFO - Kline: ETHUSDT 1m Open: 2045.72 Close: 2045.72
+2025-03-20 05:56:10,934 - __main__ - INFO - [ETHUSDT] Received kline: ETHUSDT 1m Close time: 2025-03-20 05:56:59 Closed: False
+2025-03-20 05:56:10,934 - __main__ - INFO - [ETHUSDT] Kline data: Open: 2045.72, High: 2045.72, Low: 2037.36, Close: 2045.72
+2025-03-20 05:56:11,385 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:56:11,386 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86764.90 Ask: 86766.90
+2025-03-20 05:56:11,386 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86764.90 (33.255), Ask: 86766.90 (3.411)
+2025-03-20 05:56:11,390 - websocket_client - INFO - Received kline event for BTCUSDT
+2025-03-20 05:56:11,391 - websocket_client - INFO - Kline: BTCUSDT 1m Open: 86770.00 Close: 86765.00
+2025-03-20 05:56:11,391 - __main__ - INFO - [BTCUSDT] Received kline: BTCUSDT 1m Close time: 2025-03-20 05:56:59 Closed: False
+2025-03-20 05:56:11,392 - __main__ - INFO - [BTCUSDT] Kline data: Open: 86770.00, High: 86814.70, Low: 86764.90, Close: 86765.00
+2025-03-20 05:56:11,704 - websocket_client - INFO - Received bookTicker event for ETHUSDT
+2025-03-20 05:56:11,705 - websocket_client - INFO - BookTicker: ETHUSDT Bid: 2037.36 Ask: 2045.72
+2025-03-20 05:56:11,705 - __main__ - INFO - [ETHUSDT] Book Ticker: ETHUSDT Bid: 2037.36 (3103.682), Ask: 2045.72 (1923.197)
+2025-03-20 05:56:11,711 - websocket_client - INFO - Received kline event for ETHUSDT
+2025-03-20 05:56:11,711 - websocket_client - INFO - Kline: ETHUSDT 1m Open: 2045.72 Close: 2045.72
+2025-03-20 05:56:11,712 - __main__ - INFO - [ETHUSDT] Received kline: ETHUSDT 1m Close time: 2025-03-20 05:56:59 Closed: False
+2025-03-20 05:56:11,712 - __main__ - INFO - [ETHUSDT] Kline data: Open: 2045.72, High: 2045.72, Low: 2037.36, Close: 2045.72
+2025-03-20 05:56:11,748 - websocket_client - INFO - Received bookTicker event for ETHUSDT
+2025-03-20 05:56:11,749 - websocket_client - INFO - BookTicker: ETHUSDT Bid: 2037.36 Ask: 2045.72
+2025-03-20 05:56:11,749 - __main__ - INFO - [ETHUSDT] Book Ticker: ETHUSDT Bid: 2037.36 (3103.682), Ask: 2045.72 (1386.807)
+2025-03-20 05:56:11,930 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:56:11,930 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86764.70 Ask: 86766.90
+2025-03-20 05:56:11,930 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86764.70 (58.253), Ask: 86766.90 (3.411)
+2025-03-20 05:56:11,934 - websocket_client - INFO - Received bookTicker event for ETHUSDT
+2025-03-20 05:56:11,937 - websocket_client - INFO - BookTicker: ETHUSDT Bid: 2037.36 Ask: 2045.72
+2025-03-20 05:56:11,937 - __main__ - INFO - [ETHUSDT] Book Ticker: ETHUSDT Bid: 2037.36 (3103.682), Ask: 2045.72 (933.831)
+2025-03-20 05:56:11,937 - websocket_client - INFO - Received kline event for BTCUSDT
+2025-03-20 05:56:11,940 - websocket_client - INFO - Kline: BTCUSDT 1m Open: 86770.00 Close: 86764.90
+2025-03-20 05:56:11,940 - __main__ - INFO - [BTCUSDT] Received kline: BTCUSDT 1m Close time: 2025-03-20 05:56:59 Closed: False
+2025-03-20 05:56:11,940 - __main__ - INFO - [BTCUSDT] Kline data: Open: 86770.00, High: 86814.70, Low: 86764.90, Close: 86764.90
+2025-03-20 05:56:12,014 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:56:12,014 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86764.90 Ask: 86766.90
+2025-03-20 05:56:12,014 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86764.90 (0.020), Ask: 86766.90 (3.411)
+2025-03-20 05:56:12,100 - websocket_client - INFO - Received bookTicker event for ETHUSDT
+2025-03-20 05:56:12,100 - websocket_client - INFO - BookTicker: ETHUSDT Bid: 2037.36 Ask: 2045.72
+2025-03-20 05:56:12,100 - __main__ - INFO - [ETHUSDT] Book Ticker: ETHUSDT Bid: 2037.36 (2277.711), Ask: 2045.72 (933.831)
+2025-03-20 05:56:12,115 - websocket_client - INFO - Received kline event for ETHUSDT
+2025-03-20 05:56:12,115 - websocket_client - INFO - Kline: ETHUSDT 1m Open: 2045.72 Close: 2037.36
+2025-03-20 05:56:12,115 - __main__ - INFO - [ETHUSDT] Received kline: ETHUSDT 1m Close time: 2025-03-20 05:56:59 Closed: False
+2025-03-20 05:56:12,115 - __main__ - INFO - [ETHUSDT] Kline data: Open: 2045.72, High: 2045.72, Low: 2037.36, Close: 2037.36
+2025-03-20 05:56:12,273 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:56:12,273 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86764.90 Ask: 86780.60
+2025-03-20 05:56:12,273 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86764.90 (0.020), Ask: 86780.60 (2.597)
+2025-03-20 05:56:12,307 - websocket_client - INFO - Received kline event for BTCUSDT
+2025-03-20 05:56:12,307 - websocket_client - INFO - Kline: BTCUSDT 1m Open: 86770.00 Close: 86766.90
+2025-03-20 05:56:12,307 - __main__ - INFO - [BTCUSDT] Received kline: BTCUSDT 1m Close time: 2025-03-20 05:56:59 Closed: False
+2025-03-20 05:56:12,307 - __main__ - INFO - [BTCUSDT] Kline data: Open: 86770.00, High: 86814.70, Low: 86764.70, Close: 86766.90
+2025-03-20 05:56:12,310 - websocket_client - INFO - Received bookTicker event for ETHUSDT
+2025-03-20 05:56:12,310 - websocket_client - INFO - BookTicker: ETHUSDT Bid: 2037.36 Ask: 2045.72
+2025-03-20 05:56:12,310 - __main__ - INFO - [ETHUSDT] Book Ticker: ETHUSDT Bid: 2037.36 (2277.711), Ask: 2045.72 (761.042)
+2025-03-20 05:56:12,354 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:56:12,354 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86764.90 Ask: 86766.90
+2025-03-20 05:56:12,354 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86764.90 (0.020), Ask: 86766.90 (0.020)
+2025-03-20 05:56:12,718 - websocket_client - INFO - Received kline event for BTCUSDT
+2025-03-20 05:56:12,719 - websocket_client - INFO - Kline: BTCUSDT 1m Open: 86770.00 Close: 86766.90
+2025-03-20 05:56:12,719 - __main__ - INFO - [BTCUSDT] Received kline: BTCUSDT 1m Close time: 2025-03-20 05:56:59 Closed: False
+2025-03-20 05:56:12,720 - __main__ - INFO - [BTCUSDT] Kline data: Open: 86770.00, High: 86814.70, Low: 86764.70, Close: 86766.90
+2025-03-20 05:56:12,731 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:56:12,731 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86764.90 Ask: 86808.50
+2025-03-20 05:56:12,731 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86764.90 (0.020), Ask: 86808.50 (2.609)
+2025-03-20 05:56:12,829 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:56:12,830 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86764.90 Ask: 86806.40
+2025-03-20 05:56:12,830 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86764.90 (0.020), Ask: 86806.40 (0.020)
+2025-03-20 05:56:12,867 - websocket_client - INFO - Received bookTicker event for ETHUSDT
+2025-03-20 05:56:12,868 - websocket_client - INFO - BookTicker: ETHUSDT Bid: 2037.36 Ask: 2045.72
+2025-03-20 05:56:12,868 - __main__ - INFO - [ETHUSDT] Book Ticker: ETHUSDT Bid: 2037.36 (2277.711), Ask: 2045.72 (300.690)
+2025-03-20 05:56:12,878 - websocket_client - INFO - Received kline event for ETHUSDT
+2025-03-20 05:56:12,880 - websocket_client - INFO - Kline: ETHUSDT 1m Open: 2045.72 Close: 2045.72
+2025-03-20 05:56:12,880 - __main__ - INFO - [ETHUSDT] Received kline: ETHUSDT 1m Close time: 2025-03-20 05:56:59 Closed: False
+2025-03-20 05:56:12,881 - __main__ - INFO - [ETHUSDT] Kline data: Open: 2045.72, High: 2045.72, Low: 2037.36, Close: 2045.72
+2025-03-20 05:56:13,273 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:56:13,273 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86764.90 Ask: 86814.70
+2025-03-20 05:56:13,273 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86764.90 (0.020), Ask: 86814.70 (10.364)
+2025-03-20 05:56:13,281 - websocket_client - INFO - Received kline event for BTCUSDT
+2025-03-20 05:56:13,281 - websocket_client - INFO - Kline: BTCUSDT 1m Open: 86770.00 Close: 86806.40
+2025-03-20 05:56:13,281 - __main__ - INFO - [BTCUSDT] Received kline: BTCUSDT 1m Close time: 2025-03-20 05:56:59 Closed: False
+2025-03-20 05:56:13,281 - __main__ - INFO - [BTCUSDT] Kline data: Open: 86770.00, High: 86814.70, Low: 86764.70, Close: 86806.40
+2025-03-20 05:56:13,546 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:56:13,547 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86764.90 Ask: 86809.00
+2025-03-20 05:56:13,547 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86764.90 (0.020), Ask: 86809.00 (46.487)
+2025-03-20 05:56:13,571 - websocket_client - INFO - Received bookTicker event for ETHUSDT
+2025-03-20 05:56:13,572 - websocket_client - INFO - BookTicker: ETHUSDT Bid: 2037.36 Ask: 2045.73
+2025-03-20 05:56:13,573 - __main__ - INFO - [ETHUSDT] Book Ticker: ETHUSDT Bid: 2037.36 (2277.711), Ask: 2045.73 (14068.410)
+2025-03-20 05:56:13,578 - websocket_client - INFO - Received kline event for ETHUSDT
+2025-03-20 05:56:13,579 - websocket_client - INFO - Kline: ETHUSDT 1m Open: 2045.72 Close: 2045.72
+2025-03-20 05:56:13,580 - __main__ - INFO - [ETHUSDT] Received kline: ETHUSDT 1m Close time: 2025-03-20 05:56:59 Closed: False
+2025-03-20 05:56:13,580 - __main__ - INFO - [ETHUSDT] Kline data: Open: 2045.72, High: 2045.72, Low: 2037.36, Close: 2045.72
+2025-03-20 05:56:13,807 - websocket_client - INFO - Received bookTicker event for ETHUSDT
+2025-03-20 05:56:13,807 - websocket_client - INFO - BookTicker: ETHUSDT Bid: 2037.36 Ask: 2045.73
+2025-03-20 05:56:13,807 - __main__ - INFO - [ETHUSDT] Book Ticker: ETHUSDT Bid: 2037.36 (1642.735), Ask: 2045.73 (14068.410)
+2025-03-20 05:56:14,008 - websocket_client - INFO - Received bookTicker event for ETHUSDT
+2025-03-20 05:56:14,008 - websocket_client - INFO - BookTicker: ETHUSDT Bid: 2037.36 Ask: 2045.73
+2025-03-20 05:56:14,008 - __main__ - INFO - [ETHUSDT] Book Ticker: ETHUSDT Bid: 2037.36 (1642.735), Ask: 2045.73 (13083.530)
+2025-03-20 05:56:14,014 - websocket_client - INFO - Received kline event for ETHUSDT
+2025-03-20 05:56:14,017 - websocket_client - INFO - Kline: ETHUSDT 1m Open: 2045.72 Close: 2045.73
+2025-03-20 05:56:14,017 - __main__ - INFO - [ETHUSDT] Received kline: ETHUSDT 1m Close time: 2025-03-20 05:56:59 Closed: False
+2025-03-20 05:56:14,019 - __main__ - INFO - [ETHUSDT] Kline data: Open: 2045.72, High: 2045.73, Low: 2037.36, Close: 2045.73
+2025-03-20 05:56:14,190 - websocket_client - INFO - Received bookTicker event for ETHUSDT
+2025-03-20 05:56:14,190 - websocket_client - INFO - BookTicker: ETHUSDT Bid: 2037.36 Ask: 2045.73
+2025-03-20 05:56:14,190 - __main__ - INFO - [ETHUSDT] Book Ticker: ETHUSDT Bid: 2037.36 (1642.735), Ask: 2045.73 (12427.216)
+2025-03-20 05:56:14,446 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:56:14,446 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86764.90 Ask: 86809.00
+2025-03-20 05:56:14,447 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86764.90 (0.020), Ask: 86809.00 (25.926)
+2025-03-20 05:56:14,452 - websocket_client - INFO - Received kline event for BTCUSDT
+2025-03-20 05:56:14,452 - websocket_client - INFO - Kline: BTCUSDT 1m Open: 86770.00 Close: 86809.00
+2025-03-20 05:56:14,453 - __main__ - INFO - [BTCUSDT] Received kline: BTCUSDT 1m Close time: 2025-03-20 05:56:59 Closed: False
+2025-03-20 05:56:14,453 - __main__ - INFO - [BTCUSDT] Kline data: Open: 86770.00, High: 86814.70, Low: 86764.70, Close: 86809.00
+2025-03-20 05:56:14,582 - websocket_client - INFO - Received bookTicker event for ETHUSDT
+2025-03-20 05:56:14,583 - websocket_client - INFO - BookTicker: ETHUSDT Bid: 2037.36 Ask: 2045.73
+2025-03-20 05:56:14,583 - __main__ - INFO - [ETHUSDT] Book Ticker: ETHUSDT Bid: 2037.36 (1381.823), Ask: 2045.73 (12427.216)
+2025-03-20 05:56:14,590 - websocket_client - INFO - Received kline event for ETHUSDT
+2025-03-20 05:56:14,591 - websocket_client - INFO - Kline: ETHUSDT 1m Open: 2045.72 Close: 2037.36
+2025-03-20 05:56:14,593 - __main__ - INFO - [ETHUSDT] Received kline: ETHUSDT 1m Close time: 2025-03-20 05:56:59 Closed: False
+2025-03-20 05:56:14,593 - __main__ - INFO - [ETHUSDT] Kline data: Open: 2045.72, High: 2045.73, Low: 2037.36, Close: 2037.36
+2025-03-20 05:56:14,845 - websocket_client - INFO - Received bookTicker event for ETHUSDT
+2025-03-20 05:56:14,846 - websocket_client - INFO - BookTicker: ETHUSDT Bid: 2037.36 Ask: 2045.73
+2025-03-20 05:56:14,846 - __main__ - INFO - [ETHUSDT] Book Ticker: ETHUSDT Bid: 2037.36 (1381.823), Ask: 2045.73 (11894.342)
+2025-03-20 05:56:14,853 - websocket_client - INFO - Received kline event for ETHUSDT
+2025-03-20 05:56:14,854 - websocket_client - INFO - Kline: ETHUSDT 1m Open: 2045.72 Close: 2045.73
+2025-03-20 05:56:14,854 - __main__ - INFO - [ETHUSDT] Received kline: ETHUSDT 1m Close time: 2025-03-20 05:56:59 Closed: False
+2025-03-20 05:56:14,855 - __main__ - INFO - [ETHUSDT] Kline data: Open: 2045.72, High: 2045.73, Low: 2037.36, Close: 2045.73
+2025-03-20 05:56:14,897 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:56:14,898 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86764.90 Ask: 86817.00
+2025-03-20 05:56:14,899 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86764.90 (0.020), Ask: 86817.00 (88.440)
+2025-03-20 05:56:14,902 - websocket_client - INFO - Received kline event for BTCUSDT
+2025-03-20 05:56:14,910 - websocket_client - INFO - Kline: BTCUSDT 1m Open: 86770.00 Close: 86809.00
+2025-03-20 05:56:14,911 - __main__ - INFO - [BTCUSDT] Received kline: BTCUSDT 1m Close time: 2025-03-20 05:56:59 Closed: False
+2025-03-20 05:56:14,912 - __main__ - INFO - [BTCUSDT] Kline data: Open: 86770.00, High: 86814.70, Low: 86764.70, Close: 86809.00
+2025-03-20 05:56:15,015 - websocket_client - INFO - Received bookTicker event for ETHUSDT
+2025-03-20 05:56:15,016 - websocket_client - INFO - BookTicker: ETHUSDT Bid: 2037.36 Ask: 2045.73
+2025-03-20 05:56:15,016 - __main__ - INFO - [ETHUSDT] Book Ticker: ETHUSDT Bid: 2037.36 (1381.823), Ask: 2045.73 (11453.826)
+2025-03-20 05:56:15,219 - websocket_client - INFO - Received bookTicker event for ETHUSDT
+2025-03-20 05:56:15,219 - websocket_client - INFO - BookTicker: ETHUSDT Bid: 2037.36 Ask: 2045.73
+2025-03-20 05:56:15,220 - __main__ - INFO - [ETHUSDT] Book Ticker: ETHUSDT Bid: 2037.36 (741.649), Ask: 2045.73 (11453.826)
+2025-03-20 05:56:15,220 - websocket_client - INFO - Received kline event for ETHUSDT
+2025-03-20 05:56:15,220 - websocket_client - INFO - Kline: ETHUSDT 1m Open: 2045.72 Close: 2037.36
+2025-03-20 05:56:15,221 - __main__ - INFO - [ETHUSDT] Received kline: ETHUSDT 1m Close time: 2025-03-20 05:56:59 Closed: False
+2025-03-20 05:56:15,221 - __main__ - INFO - [ETHUSDT] Kline data: Open: 2045.72, High: 2045.73, Low: 2037.36, Close: 2037.36
+2025-03-20 05:56:15,322 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:56:15,322 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86764.70 Ask: 86817.00
+2025-03-20 05:56:15,323 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86764.70 (24.150), Ask: 86817.00 (88.440)
+2025-03-20 05:56:15,323 - websocket_client - INFO - Received kline event for BTCUSDT
+2025-03-20 05:56:15,324 - websocket_client - INFO - Kline: BTCUSDT 1m Open: 86770.00 Close: 86764.90
+2025-03-20 05:56:15,324 - __main__ - INFO - [BTCUSDT] Received kline: BTCUSDT 1m Close time: 2025-03-20 05:56:59 Closed: False
+2025-03-20 05:56:15,324 - __main__ - INFO - [BTCUSDT] Kline data: Open: 86770.00, High: 86817.00, Low: 86764.70, Close: 86764.90
+2025-03-20 05:56:15,423 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:56:15,424 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86764.70 Ask: 86817.00
+2025-03-20 05:56:15,424 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86764.70 (24.150), Ask: 86817.00 (88.460)
+2025-03-20 05:56:15,731 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:56:15,731 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86764.70 Ask: 86817.00
+2025-03-20 05:56:15,731 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86764.70 (24.150), Ask: 86817.00 (46.292)
+2025-03-20 05:56:15,732 - websocket_client - INFO - Received kline event for BTCUSDT
+2025-03-20 05:56:15,732 - websocket_client - INFO - Kline: BTCUSDT 1m Open: 86770.00 Close: 86817.00
+2025-03-20 05:56:15,732 - __main__ - INFO - [BTCUSDT] Received kline: BTCUSDT 1m Close time: 2025-03-20 05:56:59 Closed: False
+2025-03-20 05:56:15,732 - __main__ - INFO - [BTCUSDT] Kline data: Open: 86770.00, High: 86817.00, Low: 86764.70, Close: 86817.00
+2025-03-20 05:56:15,732 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:56:15,732 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86764.70 Ask: 86817.00
+2025-03-20 05:56:15,733 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86764.70 (24.150), Ask: 86817.00 (46.269)
+2025-03-20 05:56:15,937 - websocket_client - INFO - Received bookTicker event for ETHUSDT
+2025-03-20 05:56:15,937 - websocket_client - INFO - BookTicker: ETHUSDT Bid: 2037.36 Ask: 2045.73
+2025-03-20 05:56:15,937 - __main__ - INFO - [ETHUSDT] Book Ticker: ETHUSDT Bid: 2037.36 (741.649), Ask: 2045.73 (10585.844)
+2025-03-20 05:56:15,938 - websocket_client - INFO - Received kline event for ETHUSDT
+2025-03-20 05:56:15,938 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:56:15,939 - websocket_client - INFO - Kline: ETHUSDT 1m Open: 2045.72 Close: 2045.73
+2025-03-20 05:56:15,939 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86764.70 Ask: 86817.10
+2025-03-20 05:56:15,939 - __main__ - INFO - [ETHUSDT] Received kline: ETHUSDT 1m Close time: 2025-03-20 05:56:59 Closed: False
+2025-03-20 05:56:15,939 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86764.70 (24.150), Ask: 86817.10 (65.333)
+2025-03-20 05:56:15,939 - __main__ - INFO - [ETHUSDT] Kline data: Open: 2045.72, High: 2045.73, Low: 2037.36, Close: 2045.73
+2025-03-20 05:56:15,940 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:56:15,940 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86764.40 Ask: 86817.10
+2025-03-20 05:56:15,940 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86764.40 (52.925), Ask: 86817.10 (65.333)
+2025-03-20 05:56:15,940 - websocket_client - INFO - Received kline event for BTCUSDT
+2025-03-20 05:56:15,940 - websocket_client - INFO - Kline: BTCUSDT 1m Open: 86770.00 Close: 86764.40
+2025-03-20 05:56:15,940 - __main__ - INFO - [BTCUSDT] Received kline: BTCUSDT 1m Close time: 2025-03-20 05:56:59 Closed: False
+2025-03-20 05:56:15,940 - __main__ - INFO - [BTCUSDT] Kline data: Open: 86770.00, High: 86817.10, Low: 86764.40, Close: 86764.40
+2025-03-20 05:56:15,959 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:56:15,960 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86764.40 Ask: 86817.00
+2025-03-20 05:56:15,960 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86764.40 (52.925), Ask: 86817.00 (0.020)
+2025-03-20 05:56:16,042 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:56:16,043 - websocket_client - INFO - Received bookTicker event for ETHUSDT
+2025-03-20 05:56:16,043 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86764.70 Ask: 86817.00
+2025-03-20 05:56:16,043 - websocket_client - INFO - BookTicker: ETHUSDT Bid: 2037.36 Ask: 2045.73
+2025-03-20 05:56:16,044 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86764.70 (0.020), Ask: 86817.00 (0.020)
+2025-03-20 05:56:16,044 - __main__ - INFO - [ETHUSDT] Book Ticker: ETHUSDT Bid: 2037.36 (741.649), Ask: 2045.73 (10307.836)
+2025-03-20 05:56:16,244 - websocket_client - INFO - Received bookTicker event for ETHUSDT
+2025-03-20 05:56:16,245 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:56:16,246 - websocket_client - INFO - BookTicker: ETHUSDT Bid: 2037.36 Ask: 2045.73
+2025-03-20 05:56:16,247 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86764.70 Ask: 86817.10
+2025-03-20 05:56:16,247 - __main__ - INFO - [ETHUSDT] Book Ticker: ETHUSDT Bid: 2037.36 (741.649), Ask: 2045.73 (9711.731)
+2025-03-20 05:56:16,248 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86764.70 (0.020), Ask: 86817.10 (3.482)
+2025-03-20 05:56:16,250 - websocket_client - INFO - Received kline event for ETHUSDT
+2025-03-20 05:56:16,251 - websocket_client - INFO - Kline: ETHUSDT 1m Open: 2045.72 Close: 2045.73
+2025-03-20 05:56:16,251 - __main__ - INFO - [ETHUSDT] Received kline: ETHUSDT 1m Close time: 2025-03-20 05:56:59 Closed: False
+2025-03-20 05:56:16,251 - __main__ - INFO - [ETHUSDT] Kline data: Open: 2045.72, High: 2045.73, Low: 2037.36, Close: 2045.73
+2025-03-20 05:56:16,262 - websocket_client - INFO - Received kline event for BTCUSDT
+2025-03-20 05:56:16,263 - websocket_client - INFO - Kline: BTCUSDT 1m Open: 86770.00 Close: 86817.00
+2025-03-20 05:56:16,263 - __main__ - INFO - [BTCUSDT] Received kline: BTCUSDT 1m Close time: 2025-03-20 05:56:59 Closed: False
+2025-03-20 05:56:16,265 - __main__ - INFO - [BTCUSDT] Kline data: Open: 86770.00, High: 86817.10, Low: 86764.40, Close: 86817.00
+2025-03-20 05:56:16,449 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:56:16,449 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86764.60 Ask: 86817.10
+2025-03-20 05:56:16,450 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86764.60 (0.020), Ask: 86817.10 (3.482)
+2025-03-20 05:56:16,451 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:56:16,452 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86764.60 Ask: 86817.10
+2025-03-20 05:56:16,452 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86764.60 (0.020), Ask: 86817.10 (3.502)
+2025-03-20 05:56:16,453 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:56:16,453 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86764.50 Ask: 86817.10
+2025-03-20 05:56:16,454 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86764.50 (0.020), Ask: 86817.10 (3.502)
+2025-03-20 05:56:16,455 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:56:16,455 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86764.40 Ask: 86817.10
+2025-03-20 05:56:16,455 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86764.40 (52.925), Ask: 86817.10 (3.502)
+2025-03-20 05:56:16,456 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:56:16,457 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86764.40 Ask: 86821.40
+2025-03-20 05:56:16,458 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86764.40 (52.925), Ask: 86821.40 (33.931)
+2025-03-20 05:56:16,550 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:56:16,551 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86764.30 Ask: 86821.40
+2025-03-20 05:56:16,551 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86764.30 (128.566), Ask: 86821.40 (33.931)
+2025-03-20 05:56:16,551 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:56:16,551 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86764.30 Ask: 86817.10
+2025-03-20 05:56:16,551 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86764.30 (128.566), Ask: 86817.10 (0.020)
+2025-03-20 05:56:16,552 - websocket_client - INFO - Received kline event for BTCUSDT
+2025-03-20 05:56:16,552 - websocket_client - INFO - Kline: BTCUSDT 1m Open: 86770.00 Close: 86764.40
+2025-03-20 05:56:16,552 - __main__ - INFO - [BTCUSDT] Received kline: BTCUSDT 1m Close time: 2025-03-20 05:56:59 Closed: False
+2025-03-20 05:56:16,552 - __main__ - INFO - [BTCUSDT] Kline data: Open: 86770.00, High: 86821.40, Low: 86764.40, Close: 86764.40
+2025-03-20 05:56:16,553 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:56:16,553 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86764.30 Ask: 86825.80
+2025-03-20 05:56:16,553 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86764.30 (128.566), Ask: 86825.80 (7.722)
+2025-03-20 05:56:16,652 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:56:16,653 - websocket_client - INFO - Received bookTicker event for ETHUSDT
+2025-03-20 05:56:16,653 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86764.40 Ask: 86825.80
+2025-03-20 05:56:16,653 - websocket_client - INFO - BookTicker: ETHUSDT Bid: 2037.36 Ask: 2045.73
+2025-03-20 05:56:16,653 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86764.40 (0.020), Ask: 86825.80 (7.722)
+2025-03-20 05:56:16,654 - __main__ - INFO - [ETHUSDT] Book Ticker: ETHUSDT Bid: 2037.36 (741.649), Ask: 2045.73 (8967.669)
+2025-03-20 05:56:16,654 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:56:16,655 - websocket_client - INFO - Received kline event for ETHUSDT
+2025-03-20 05:56:16,655 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86764.30 Ask: 86825.80
+2025-03-20 05:56:16,655 - websocket_client - INFO - Kline: ETHUSDT 1m Open: 2045.72 Close: 2045.73
+2025-03-20 05:56:16,655 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86764.30 (83.779), Ask: 86825.80 (7.722)
+2025-03-20 05:56:16,655 - __main__ - INFO - [ETHUSDT] Received kline: ETHUSDT 1m Close time: 2025-03-20 05:56:59 Closed: False
+2025-03-20 05:56:16,656 - __main__ - INFO - [ETHUSDT] Kline data: Open: 2045.72, High: 2045.73, Low: 2037.36, Close: 2045.73
+2025-03-20 05:56:16,755 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:56:16,755 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86764.30 Ask: 86825.80
+2025-03-20 05:56:16,755 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86764.30 (83.779), Ask: 86825.80 (7.742)
+2025-03-20 05:56:16,756 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:56:16,756 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86764.20 Ask: 86825.80
+2025-03-20 05:56:16,756 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86764.20 (18.947), Ask: 86825.80 (7.742)
+2025-03-20 05:56:16,788 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:56:16,788 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86764.30 Ask: 86825.80
+2025-03-20 05:56:16,788 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86764.30 (0.020), Ask: 86825.80 (7.742)
+2025-03-20 05:56:16,951 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:56:16,952 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86764.30 Ask: 86813.20
+2025-03-20 05:56:16,952 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86764.30 (0.020), Ask: 86813.20 (64.918)
+2025-03-20 05:56:17,128 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:56:17,129 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86764.30 Ask: 86794.60
+2025-03-20 05:56:17,129 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86764.30 (0.020), Ask: 86794.60 (44.005)
+2025-03-20 05:56:17,188 - websocket_client - INFO - Received bookTicker event for ETHUSDT
+2025-03-20 05:56:17,188 - websocket_client - INFO - BookTicker: ETHUSDT Bid: 2037.36 Ask: 2045.73
+2025-03-20 05:56:17,189 - __main__ - INFO - [ETHUSDT] Book Ticker: ETHUSDT Bid: 2037.36 (741.649), Ask: 2045.73 (8633.562)
+2025-03-20 05:56:17,234 - websocket_client - INFO - Received kline event for ETHUSDT
+2025-03-20 05:56:17,234 - websocket_client - INFO - Kline: ETHUSDT 1m Open: 2045.72 Close: 2045.73
+2025-03-20 05:56:17,234 - __main__ - INFO - [ETHUSDT] Received kline: ETHUSDT 1m Close time: 2025-03-20 05:56:59 Closed: False
+2025-03-20 05:56:17,234 - __main__ - INFO - [ETHUSDT] Kline data: Open: 2045.72, High: 2045.73, Low: 2037.36, Close: 2045.73
+2025-03-20 05:56:17,368 - websocket_client - INFO - Received bookTicker event for ETHUSDT
+2025-03-20 05:56:17,368 - websocket_client - INFO - BookTicker: ETHUSDT Bid: 2037.36 Ask: 2045.73
+2025-03-20 05:56:17,368 - __main__ - INFO - [ETHUSDT] Book Ticker: ETHUSDT Bid: 2037.36 (741.649), Ask: 2045.73 (7895.391)
+2025-03-20 05:56:17,665 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:56:17,665 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86764.00 Ask: 86794.60
+2025-03-20 05:56:17,666 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86764.00 (19.836), Ask: 86794.60 (44.005)
+2025-03-20 05:56:17,672 - websocket_client - INFO - Received kline event for BTCUSDT
+2025-03-20 05:56:17,674 - websocket_client - INFO - Kline: BTCUSDT 1m Open: 86770.00 Close: 86764.30
+2025-03-20 05:56:17,675 - __main__ - INFO - [BTCUSDT] Received kline: BTCUSDT 1m Close time: 2025-03-20 05:56:59 Closed: False
+2025-03-20 05:56:17,675 - __main__ - INFO - [BTCUSDT] Kline data: Open: 86770.00, High: 86825.80, Low: 86764.20, Close: 86764.30
+2025-03-20 05:56:17,735 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:56:17,736 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86764.30 Ask: 86794.60
+2025-03-20 05:56:17,737 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86764.30 (0.020), Ask: 86794.60 (44.005)
+2025-03-20 05:56:17,738 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:56:17,739 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86764.30 Ask: 86794.60
+2025-03-20 05:56:17,739 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86764.30 (0.020), Ask: 86794.60 (44.025)
+2025-03-20 05:56:18,094 - websocket_client - INFO - Received bookTicker event for ETHUSDT
+2025-03-20 05:56:18,095 - websocket_client - INFO - BookTicker: ETHUSDT Bid: 2037.36 Ask: 2045.73
+2025-03-20 05:56:18,095 - __main__ - INFO - [ETHUSDT] Book Ticker: ETHUSDT Bid: 2037.36 (741.649), Ask: 2045.73 (7548.892)
+2025-03-20 05:56:18,124 - websocket_client - INFO - Received kline event for ETHUSDT
+2025-03-20 05:56:18,125 - websocket_client - INFO - Kline: ETHUSDT 1m Open: 2045.72 Close: 2045.73
+2025-03-20 05:56:18,125 - __main__ - INFO - [ETHUSDT] Received kline: ETHUSDT 1m Close time: 2025-03-20 05:56:59 Closed: False
+2025-03-20 05:56:18,126 - __main__ - INFO - [ETHUSDT] Kline data: Open: 2045.72, High: 2045.73, Low: 2037.36, Close: 2045.73
+2025-03-20 05:56:18,542 - websocket_client - INFO - Received bookTicker event for ETHUSDT
+2025-03-20 05:56:18,542 - websocket_client - INFO - BookTicker: ETHUSDT Bid: 2037.36 Ask: 2045.73
+2025-03-20 05:56:18,543 - __main__ - INFO - [ETHUSDT] Book Ticker: ETHUSDT Bid: 2037.36 (741.649), Ask: 2045.73 (7344.542)
+2025-03-20 05:56:18,553 - websocket_client - INFO - Received kline event for ETHUSDT
+2025-03-20 05:56:18,554 - websocket_client - INFO - Kline: ETHUSDT 1m Open: 2045.72 Close: 2045.73
+2025-03-20 05:56:18,554 - __main__ - INFO - [ETHUSDT] Received kline: ETHUSDT 1m Close time: 2025-03-20 05:56:59 Closed: False
+2025-03-20 05:56:18,555 - __main__ - INFO - [ETHUSDT] Kline data: Open: 2045.72, High: 2045.73, Low: 2037.36, Close: 2045.73
+2025-03-20 05:56:18,610 - __main__ - INFO - API connection working
+2025-03-20 05:56:18,636 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:56:18,636 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86764.30 Ask: 86776.00
+2025-03-20 05:56:18,636 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86764.30 (0.020), Ask: 86776.00 (48.596)
+2025-03-20 05:56:18,699 - websocket_client - INFO - Received bookTicker event for ETHUSDT
+2025-03-20 05:56:18,700 - websocket_client - INFO - BookTicker: ETHUSDT Bid: 2037.36 Ask: 2045.73
+2025-03-20 05:56:18,700 - __main__ - INFO - [ETHUSDT] Book Ticker: ETHUSDT Bid: 2037.36 (741.649), Ask: 2045.73 (7176.742)
+2025-03-20 05:56:19,117 - websocket_client - INFO - Received bookTicker event for ETHUSDT
+2025-03-20 05:56:19,117 - websocket_client - INFO - BookTicker: ETHUSDT Bid: 2037.36 Ask: 2045.73
+2025-03-20 05:56:19,117 - __main__ - INFO - [ETHUSDT] Book Ticker: ETHUSDT Bid: 2037.36 (741.649), Ask: 2045.73 (6386.101)
+2025-03-20 05:56:19,166 - websocket_client - INFO - Received kline event for ETHUSDT
+2025-03-20 05:56:19,166 - websocket_client - INFO - Kline: ETHUSDT 1m Open: 2045.72 Close: 2045.73
+2025-03-20 05:56:19,166 - __main__ - INFO - [ETHUSDT] Received kline: ETHUSDT 1m Close time: 2025-03-20 05:56:59 Closed: False
+2025-03-20 05:56:19,166 - __main__ - INFO - [ETHUSDT] Kline data: Open: 2045.72, High: 2045.73, Low: 2037.36, Close: 2045.73
+2025-03-20 05:56:19,338 - websocket_client - INFO - Received bookTicker event for ETHUSDT
+2025-03-20 05:56:19,338 - websocket_client - INFO - BookTicker: ETHUSDT Bid: 2037.36 Ask: 2045.73
+2025-03-20 05:56:19,338 - __main__ - INFO - [ETHUSDT] Book Ticker: ETHUSDT Bid: 2037.36 (496.698), Ask: 2045.73 (6386.101)
+2025-03-20 05:56:19,721 - websocket_client - INFO - Received bookTicker event for ETHUSDT
+2025-03-20 05:56:19,721 - websocket_client - INFO - BookTicker: ETHUSDT Bid: 2037.36 Ask: 2045.73
+2025-03-20 05:56:19,722 - __main__ - INFO - [ETHUSDT] Book Ticker: ETHUSDT Bid: 2037.36 (496.698), Ask: 2045.73 (6017.318)
+2025-03-20 05:56:19,729 - websocket_client - INFO - Received kline event for ETHUSDT
+2025-03-20 05:56:19,730 - websocket_client - INFO - Kline: ETHUSDT 1m Open: 2045.72 Close: 2045.73
+2025-03-20 05:56:19,731 - __main__ - INFO - [ETHUSDT] Received kline: ETHUSDT 1m Close time: 2025-03-20 05:56:59 Closed: False
+2025-03-20 05:56:19,731 - __main__ - INFO - [ETHUSDT] Kline data: Open: 2045.72, High: 2045.73, Low: 2037.36, Close: 2045.73
+2025-03-20 05:56:19,782 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:56:19,782 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86763.80 Ask: 86776.00
+2025-03-20 05:56:19,783 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86763.80 (58.527), Ask: 86776.00 (48.596)
+2025-03-20 05:56:19,789 - websocket_client - INFO - Received kline event for BTCUSDT
+2025-03-20 05:56:19,790 - websocket_client - INFO - Kline: BTCUSDT 1m Open: 86770.00 Close: 86764.30
+2025-03-20 05:56:19,790 - __main__ - INFO - [BTCUSDT] Received kline: BTCUSDT 1m Close time: 2025-03-20 05:56:59 Closed: False
+2025-03-20 05:56:19,791 - __main__ - INFO - [BTCUSDT] Kline data: Open: 86770.00, High: 86825.80, Low: 86764.00, Close: 86764.30
+2025-03-20 05:56:19,861 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:56:19,862 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86763.80 Ask: 86776.00
+2025-03-20 05:56:19,863 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86763.80 (58.527), Ask: 86776.00 (48.616)
+2025-03-20 05:56:19,865 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:56:19,865 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86764.30 Ask: 86776.00
+2025-03-20 05:56:19,865 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86764.30 (0.020), Ask: 86776.00 (48.616)
+2025-03-20 05:56:20,464 - websocket_client - INFO - Received bookTicker event for ETHUSDT
+2025-03-20 05:56:20,464 - websocket_client - INFO - BookTicker: ETHUSDT Bid: 2037.36 Ask: 2045.73
+2025-03-20 05:56:20,465 - __main__ - INFO - [ETHUSDT] Book Ticker: ETHUSDT Bid: 2037.36 (496.698), Ask: 2045.73 (5028.775)
+2025-03-20 05:56:20,473 - websocket_client - INFO - Received kline event for ETHUSDT
+2025-03-20 05:56:20,473 - websocket_client - INFO - Kline: ETHUSDT 1m Open: 2045.72 Close: 2045.73
+2025-03-20 05:56:20,473 - __main__ - INFO - [ETHUSDT] Received kline: ETHUSDT 1m Close time: 2025-03-20 05:56:59 Closed: False
+2025-03-20 05:56:20,474 - __main__ - INFO - [ETHUSDT] Kline data: Open: 2045.72, High: 2045.73, Low: 2037.36, Close: 2045.73
+2025-03-20 05:56:20,801 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:56:20,801 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86764.10 Ask: 86776.00
+2025-03-20 05:56:20,801 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86764.10 (0.020), Ask: 86776.00 (48.616)
+2025-03-20 05:56:20,802 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:56:20,803 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86764.00 Ask: 86776.00
+2025-03-20 05:56:20,803 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86764.00 (0.020), Ask: 86776.00 (48.616)
+2025-03-20 05:56:21,080 - websocket_client - INFO - Received bookTicker event for ETHUSDT
+2025-03-20 05:56:21,080 - websocket_client - INFO - BookTicker: ETHUSDT Bid: 2037.36 Ask: 2045.73
+2025-03-20 05:56:21,080 - __main__ - INFO - [ETHUSDT] Book Ticker: ETHUSDT Bid: 2037.36 (496.698), Ask: 2045.73 (4774.152)
+2025-03-20 05:56:21,094 - websocket_client - INFO - Received kline event for ETHUSDT
+2025-03-20 05:56:21,094 - websocket_client - INFO - Kline: ETHUSDT 1m Open: 2045.72 Close: 2045.73
+2025-03-20 05:56:21,094 - __main__ - INFO - [ETHUSDT] Received kline: ETHUSDT 1m Close time: 2025-03-20 05:56:59 Closed: False
+2025-03-20 05:56:21,094 - __main__ - INFO - [ETHUSDT] Kline data: Open: 2045.72, High: 2045.73, Low: 2037.36, Close: 2045.73
+2025-03-20 05:56:21,283 - websocket_client - INFO - Received bookTicker event for ETHUSDT
+2025-03-20 05:56:21,283 - websocket_client - INFO - BookTicker: ETHUSDT Bid: 2037.36 Ask: 2045.73
+2025-03-20 05:56:21,283 - __main__ - INFO - [ETHUSDT] Book Ticker: ETHUSDT Bid: 2037.36 (496.698), Ask: 2045.73 (4671.480)
+2025-03-20 05:56:21,466 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:56:21,467 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86764.00 Ask: 86776.00
+2025-03-20 05:56:21,467 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86764.00 (0.020), Ask: 86776.00 (48.593)
+2025-03-20 05:56:21,470 - websocket_client - INFO - Received kline event for BTCUSDT
+2025-03-20 05:56:21,470 - websocket_client - INFO - Kline: BTCUSDT 1m Open: 86770.00 Close: 86776.00
+2025-03-20 05:56:21,470 - __main__ - INFO - [BTCUSDT] Received kline: BTCUSDT 1m Close time: 2025-03-20 05:56:59 Closed: False
+2025-03-20 05:56:21,471 - __main__ - INFO - [BTCUSDT] Kline data: Open: 86770.00, High: 86825.80, Low: 86763.80, Close: 86776.00
+2025-03-20 05:56:21,482 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:56:21,483 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86763.80 Ask: 86776.00
+2025-03-20 05:56:21,483 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86763.80 (9.816), Ask: 86776.00 (48.593)
+2025-03-20 05:56:22,081 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:56:22,082 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86763.50 Ask: 86776.00
+2025-03-20 05:56:22,083 - websocket_client - INFO - Received bookTicker event for ETHUSDT
+2025-03-20 05:56:22,083 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86763.50 (82.132), Ask: 86776.00 (48.593)
+2025-03-20 05:56:22,084 - websocket_client - INFO - BookTicker: ETHUSDT Bid: 2037.36 Ask: 2045.73
+2025-03-20 05:56:22,086 - websocket_client - INFO - Received kline event for BTCUSDT
+2025-03-20 05:56:22,086 - __main__ - INFO - [ETHUSDT] Book Ticker: ETHUSDT Bid: 2037.36 (496.698), Ask: 2045.73 (4027.505)
+2025-03-20 05:56:22,086 - websocket_client - INFO - Kline: BTCUSDT 1m Open: 86770.00 Close: 86763.80
+2025-03-20 05:56:22,088 - websocket_client - INFO - Received kline event for ETHUSDT
+2025-03-20 05:56:22,089 - __main__ - INFO - [BTCUSDT] Received kline: BTCUSDT 1m Close time: 2025-03-20 05:56:59 Closed: False
+2025-03-20 05:56:22,090 - websocket_client - INFO - Kline: ETHUSDT 1m Open: 2045.72 Close: 2045.73
+2025-03-20 05:56:22,091 - __main__ - INFO - [BTCUSDT] Kline data: Open: 86770.00, High: 86825.80, Low: 86763.80, Close: 86763.80
+2025-03-20 05:56:22,091 - __main__ - INFO - [ETHUSDT] Received kline: ETHUSDT 1m Close time: 2025-03-20 05:56:59 Closed: False
+2025-03-20 05:56:22,092 - __main__ - INFO - [ETHUSDT] Kline data: Open: 2045.72, High: 2045.73, Low: 2037.36, Close: 2045.73
+2025-03-20 05:56:22,183 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:56:22,183 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86763.80 Ask: 86776.00
+2025-03-20 05:56:22,183 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86763.80 (0.020), Ask: 86776.00 (48.593)
+2025-03-20 05:56:22,199 - websocket_client - INFO - Received bookTicker event for ETHUSDT
+2025-03-20 05:56:22,199 - websocket_client - INFO - BookTicker: ETHUSDT Bid: 2037.36 Ask: 2045.73
+2025-03-20 05:56:22,199 - __main__ - INFO - [ETHUSDT] Book Ticker: ETHUSDT Bid: 2037.36 (496.698), Ask: 2045.73 (3723.577)
+2025-03-20 05:56:22,695 - websocket_client - INFO - Received bookTicker event for ETHUSDT
+2025-03-20 05:56:22,696 - websocket_client - INFO - BookTicker: ETHUSDT Bid: 2037.36 Ask: 2045.73
+2025-03-20 05:56:22,696 - __main__ - INFO - [ETHUSDT] Book Ticker: ETHUSDT Bid: 2037.36 (496.698), Ask: 2045.73 (2783.838)
+2025-03-20 05:56:22,697 - websocket_client - INFO - Received kline event for ETHUSDT
+2025-03-20 05:56:22,698 - websocket_client - INFO - Kline: ETHUSDT 1m Open: 2045.72 Close: 2045.73
+2025-03-20 05:56:22,698 - __main__ - INFO - [ETHUSDT] Received kline: ETHUSDT 1m Close time: 2025-03-20 05:56:59 Closed: False
+2025-03-20 05:56:22,698 - __main__ - INFO - [ETHUSDT] Kline data: Open: 2045.72, High: 2045.73, Low: 2037.36, Close: 2045.73
+2025-03-20 05:56:22,899 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:56:22,899 - websocket_client - INFO - Received bookTicker event for ETHUSDT
+2025-03-20 05:56:22,899 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86763.80 Ask: 86778.00
+2025-03-20 05:56:22,900 - websocket_client - INFO - BookTicker: ETHUSDT Bid: 2037.36 Ask: 2045.73
+2025-03-20 05:56:22,900 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86763.80 (0.020), Ask: 86778.00 (12.252)
+2025-03-20 05:56:22,900 - __main__ - INFO - [ETHUSDT] Book Ticker: ETHUSDT Bid: 2037.36 (496.698), Ask: 2045.73 (2188.687)
+2025-03-20 05:56:22,900 - websocket_client - INFO - Received kline event for BTCUSDT
+2025-03-20 05:56:22,901 - websocket_client - INFO - Kline: BTCUSDT 1m Open: 86770.00 Close: 86776.00
+2025-03-20 05:56:22,901 - __main__ - INFO - [BTCUSDT] Received kline: BTCUSDT 1m Close time: 2025-03-20 05:56:59 Closed: False
+2025-03-20 05:56:22,901 - __main__ - INFO - [BTCUSDT] Kline data: Open: 86770.00, High: 86825.80, Low: 86763.50, Close: 86776.00
+2025-03-20 05:56:23,001 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:56:23,002 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86763.50 Ask: 86778.00
+2025-03-20 05:56:23,002 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86763.50 (82.132), Ask: 86778.00 (12.252)
+2025-03-20 05:56:23,003 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:56:23,003 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86763.50 Ask: 86777.10
+2025-03-20 05:56:23,003 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86763.50 (82.132), Ask: 86777.10 (0.020)
+2025-03-20 05:56:23,004 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:56:23,005 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86763.50 Ask: 86777.00
+2025-03-20 05:56:23,005 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86763.50 (82.132), Ask: 86777.00 (0.020)
+2025-03-20 05:56:23,006 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:56:23,007 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86763.70 Ask: 86777.00
+2025-03-20 05:56:23,007 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86763.70 (0.020), Ask: 86777.00 (0.020)
+2025-03-20 05:56:23,105 - websocket_client - INFO - Received bookTicker event for ETHUSDT
+2025-03-20 05:56:23,105 - websocket_client - INFO - BookTicker: ETHUSDT Bid: 2037.36 Ask: 2045.73
+2025-03-20 05:56:23,105 - __main__ - INFO - [ETHUSDT] Book Ticker: ETHUSDT Bid: 2037.36 (496.698), Ask: 2045.73 (1749.738)
+2025-03-20 05:56:23,120 - websocket_client - INFO - Received kline event for ETHUSDT
+2025-03-20 05:56:23,121 - websocket_client - INFO - Kline: ETHUSDT 1m Open: 2045.72 Close: 2045.73
+2025-03-20 05:56:23,121 - __main__ - INFO - [ETHUSDT] Received kline: ETHUSDT 1m Close time: 2025-03-20 05:56:59 Closed: False
+2025-03-20 05:56:23,122 - __main__ - INFO - [ETHUSDT] Kline data: Open: 2045.72, High: 2045.73, Low: 2037.36, Close: 2045.73
+2025-03-20 05:56:23,309 - websocket_client - INFO - Received bookTicker event for ETHUSDT
+2025-03-20 05:56:23,309 - websocket_client - INFO - BookTicker: ETHUSDT Bid: 2037.36 Ask: 2045.73
+2025-03-20 05:56:23,309 - __main__ - INFO - [ETHUSDT] Book Ticker: ETHUSDT Bid: 2037.36 (496.698), Ask: 2045.73 (1041.832)
+2025-03-20 05:56:23,411 - websocket_client - INFO - Received bookTicker event for ETHUSDT
+2025-03-20 05:56:23,411 - websocket_client - INFO - BookTicker: ETHUSDT Bid: 2037.36 Ask: 2045.73
+2025-03-20 05:56:23,411 - __main__ - INFO - [ETHUSDT] Book Ticker: ETHUSDT Bid: 2037.36 (496.698), Ask: 2045.73 (1041.732)
+2025-03-20 05:56:23,412 - websocket_client - INFO - Received kline event for ETHUSDT
+2025-03-20 05:56:23,412 - websocket_client - INFO - Kline: ETHUSDT 1m Open: 2045.72 Close: 2045.73
+2025-03-20 05:56:23,413 - __main__ - INFO - [ETHUSDT] Received kline: ETHUSDT 1m Close time: 2025-03-20 05:56:59 Closed: False
+2025-03-20 05:56:23,413 - __main__ - INFO - [ETHUSDT] Kline data: Open: 2045.72, High: 2045.73, Low: 2037.36, Close: 2045.73
+2025-03-20 05:56:23,513 - websocket_client - INFO - Received bookTicker event for ETHUSDT
+2025-03-20 05:56:23,513 - websocket_client - INFO - BookTicker: ETHUSDT Bid: 2037.36 Ask: 2045.73
+2025-03-20 05:56:23,513 - __main__ - INFO - [ETHUSDT] Book Ticker: ETHUSDT Bid: 2037.36 (496.698), Ask: 2045.73 (157.144)
+2025-03-20 05:56:23,617 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:56:23,617 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86763.50 Ask: 86777.00
+2025-03-20 05:56:23,617 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86763.50 (24.684), Ask: 86777.00 (0.020)
+2025-03-20 05:56:23,617 - websocket_client - INFO - Received kline event for BTCUSDT
+2025-03-20 05:56:23,618 - websocket_client - INFO - Kline: BTCUSDT 1m Open: 86770.00 Close: 86763.70
+2025-03-20 05:56:23,618 - __main__ - INFO - [BTCUSDT] Received kline: BTCUSDT 1m Close time: 2025-03-20 05:56:59 Closed: False
+2025-03-20 05:56:23,618 - __main__ - INFO - [BTCUSDT] Kline data: Open: 86770.00, High: 86825.80, Low: 86763.50, Close: 86763.70
+2025-03-20 05:56:23,634 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:56:23,634 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86763.50 Ask: 86777.30
+2025-03-20 05:56:23,634 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86763.50 (24.684), Ask: 86777.30 (0.020)
+2025-03-20 05:56:23,634 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:56:23,634 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86763.60 Ask: 86777.30
+2025-03-20 05:56:23,634 - __main__ - INFO - WebSocket connection working for BTCUSDT
+2025-03-20 05:56:23,634 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86763.60 (0.020), Ask: 86777.30 (0.020)
+2025-03-20 05:56:23,822 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:56:23,822 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86763.60 Ask: 86778.00
+2025-03-20 05:56:23,823 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86763.60 (0.020), Ask: 86778.00 (12.252)
+2025-03-20 05:56:23,823 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:56:23,823 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86763.60 Ask: 86778.00
+2025-03-20 05:56:23,823 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86763.60 (0.020), Ask: 86778.00 (12.272)
+2025-03-20 05:56:24,026 - websocket_client - INFO - Received bookTicker event for ETHUSDT
+2025-03-20 05:56:24,026 - websocket_client - INFO - BookTicker: ETHUSDT Bid: 2037.36 Ask: 2045.74
+2025-03-20 05:56:24,026 - __main__ - INFO - [ETHUSDT] Book Ticker: ETHUSDT Bid: 2037.36 (496.698), Ask: 2045.74 (15858.839)
+2025-03-20 05:56:24,027 - websocket_client - INFO - Received kline event for ETHUSDT
+2025-03-20 05:56:24,027 - websocket_client - INFO - Kline: ETHUSDT 1m Open: 2045.72 Close: 2045.73
+2025-03-20 05:56:24,027 - __main__ - INFO - [ETHUSDT] Received kline: ETHUSDT 1m Close time: 2025-03-20 05:56:59 Closed: False
+2025-03-20 05:56:24,027 - __main__ - INFO - [ETHUSDT] Kline data: Open: 2045.72, High: 2045.73, Low: 2037.36, Close: 2045.73
+2025-03-20 05:56:24,059 - websocket_client - INFO - Received bookTicker event for ETHUSDT
+2025-03-20 05:56:24,059 - websocket_client - INFO - BookTicker: ETHUSDT Bid: 2037.36 Ask: 2045.74
+2025-03-20 05:56:24,060 - __main__ - INFO - [ETHUSDT] Book Ticker: ETHUSDT Bid: 2037.36 (496.698), Ask: 2045.74 (15704.509)
+2025-03-20 05:56:24,440 - __main__ - INFO - Sent startup confirmation: All systems operational
+2025-03-20 05:56:24,641 - websocket_client - INFO - Received bookTicker event for ETHUSDT
+2025-03-20 05:56:24,641 - websocket_client - INFO - BookTicker: ETHUSDT Bid: 2037.36 Ask: 2045.74
+2025-03-20 05:56:24,641 - __main__ - INFO - [ETHUSDT] Book Ticker: ETHUSDT Bid: 2037.36 (496.698), Ask: 2045.74 (15583.645)
+2025-03-20 05:56:24,642 - websocket_client - INFO - Received kline event for ETHUSDT
+2025-03-20 05:56:24,642 - websocket_client - INFO - Kline: ETHUSDT 1m Open: 2045.72 Close: 2045.74
+2025-03-20 05:56:24,642 - __main__ - INFO - [ETHUSDT] Received kline: ETHUSDT 1m Close time: 2025-03-20 05:56:59 Closed: False
+2025-03-20 05:56:24,643 - __main__ - INFO - [ETHUSDT] Kline data: Open: 2045.72, High: 2045.74, Low: 2037.36, Close: 2045.74
+2025-03-20 05:56:24,643 - websocket_client - INFO - Received bookTicker event for ETHUSDT
+2025-03-20 05:56:24,643 - websocket_client - INFO - BookTicker: ETHUSDT Bid: 2037.36 Ask: 2045.74
+2025-03-20 05:56:24,643 - __main__ - INFO - [ETHUSDT] Book Ticker: ETHUSDT Bid: 2037.36 (496.698), Ask: 2045.74 (14672.121)
+2025-03-20 05:56:25,168 - websocket_client - INFO - Received bookTicker event for ETHUSDT
+2025-03-20 05:56:25,168 - websocket_client - INFO - BookTicker: ETHUSDT Bid: 2037.35 Ask: 2045.74
+2025-03-20 05:56:25,168 - __main__ - INFO - [ETHUSDT] Book Ticker: ETHUSDT Bid: 2037.35 (13014.010), Ask: 2045.74 (14672.121)
+2025-03-20 05:56:25,211 - websocket_client - INFO - Received kline event for ETHUSDT
+2025-03-20 05:56:25,211 - websocket_client - INFO - Kline: ETHUSDT 1m Open: 2045.72 Close: 2037.36
+2025-03-20 05:56:25,211 - __main__ - INFO - [ETHUSDT] Received kline: ETHUSDT 1m Close time: 2025-03-20 05:56:59 Closed: False
+2025-03-20 05:56:25,211 - __main__ - INFO - [ETHUSDT] Kline data: Open: 2045.72, High: 2045.74, Low: 2037.36, Close: 2037.36
+2025-03-20 05:56:25,631 - websocket_client - INFO - Received bookTicker event for ETHUSDT
+2025-03-20 05:56:25,631 - websocket_client - INFO - BookTicker: ETHUSDT Bid: 2037.35 Ask: 2045.74
+2025-03-20 05:56:25,632 - __main__ - INFO - [ETHUSDT] Book Ticker: ETHUSDT Bid: 2037.35 (13014.010), Ask: 2045.74 (13954.833)
+2025-03-20 05:56:25,642 - websocket_client - INFO - Received kline event for ETHUSDT
+2025-03-20 05:56:25,643 - websocket_client - INFO - Kline: ETHUSDT 1m Open: 2045.72 Close: 2045.74
+2025-03-20 05:56:25,644 - __main__ - INFO - [ETHUSDT] Received kline: ETHUSDT 1m Close time: 2025-03-20 05:56:59 Closed: False
+2025-03-20 05:56:25,644 - __main__ - INFO - [ETHUSDT] Kline data: Open: 2045.72, High: 2045.74, Low: 2037.35, Close: 2045.74
+2025-03-20 05:56:25,647 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:56:25,648 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86763.60 Ask: 86788.40
+2025-03-20 05:56:25,649 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86763.60 (0.020), Ask: 86788.40 (3.581)
+2025-03-20 05:56:25,650 - websocket_client - INFO - Received kline event for BTCUSDT
+2025-03-20 05:56:25,651 - websocket_client - INFO - Kline: BTCUSDT 1m Open: 86770.00 Close: 86778.00
+2025-03-20 05:56:25,651 - __main__ - INFO - [BTCUSDT] Received kline: BTCUSDT 1m Close time: 2025-03-20 05:56:59 Closed: False
+2025-03-20 05:56:25,651 - __main__ - INFO - [BTCUSDT] Kline data: Open: 86770.00, High: 86825.80, Low: 86763.50, Close: 86778.00
+2025-03-20 05:56:25,762 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:56:25,763 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86763.60 Ask: 86778.20
+2025-03-20 05:56:25,763 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86763.60 (0.020), Ask: 86778.20 (0.020)
+2025-03-20 05:56:25,764 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:56:25,765 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86763.60 Ask: 86778.00
+2025-03-20 05:56:25,765 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86763.60 (0.020), Ask: 86778.00 (0.020)
+2025-03-20 05:56:25,839 - websocket_client - INFO - Received bookTicker event for ETHUSDT
+2025-03-20 05:56:25,840 - websocket_client - INFO - BookTicker: ETHUSDT Bid: 2037.35 Ask: 2045.74
+2025-03-20 05:56:25,840 - __main__ - INFO - [ETHUSDT] Book Ticker: ETHUSDT Bid: 2037.35 (13014.010), Ask: 2045.74 (13171.063)
+2025-03-20 05:56:26,080 - websocket_client - INFO - Received bookTicker event for ETHUSDT
+2025-03-20 05:56:26,080 - websocket_client - INFO - BookTicker: ETHUSDT Bid: 2037.35 Ask: 2045.74
+2025-03-20 05:56:26,080 - __main__ - INFO - [ETHUSDT] Book Ticker: ETHUSDT Bid: 2037.35 (13014.010), Ask: 2045.74 (12673.042)
+2025-03-20 05:56:26,082 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:56:26,082 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86763.60 Ask: 86791.80
+2025-03-20 05:56:26,082 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86763.60 (0.020), Ask: 86791.80 (16.751)
+2025-03-20 05:56:26,096 - websocket_client - INFO - Received kline event for BTCUSDT
+2025-03-20 05:56:26,096 - websocket_client - INFO - Received kline event for ETHUSDT
+2025-03-20 05:56:26,096 - websocket_client - INFO - Kline: BTCUSDT 1m Open: 86770.00 Close: 86778.00
+2025-03-20 05:56:26,097 - websocket_client - INFO - Kline: ETHUSDT 1m Open: 2045.72 Close: 2045.74
+2025-03-20 05:56:26,097 - __main__ - INFO - [BTCUSDT] Received kline: BTCUSDT 1m Close time: 2025-03-20 05:56:59 Closed: False
+2025-03-20 05:56:26,097 - __main__ - INFO - [ETHUSDT] Received kline: ETHUSDT 1m Close time: 2025-03-20 05:56:59 Closed: False
+2025-03-20 05:56:26,097 - __main__ - INFO - [BTCUSDT] Kline data: Open: 86770.00, High: 86825.80, Low: 86763.50, Close: 86778.00
+2025-03-20 05:56:26,097 - __main__ - INFO - [ETHUSDT] Kline data: Open: 2045.72, High: 2045.74, Low: 2037.35, Close: 2045.74
+2025-03-20 05:56:26,304 - websocket_client - INFO - Received bookTicker event for ETHUSDT
+2025-03-20 05:56:26,304 - websocket_client - INFO - BookTicker: ETHUSDT Bid: 2037.35 Ask: 2045.74
+2025-03-20 05:56:26,304 - __main__ - INFO - [ETHUSDT] Book Ticker: ETHUSDT Bid: 2037.35 (13014.010), Ask: 2045.74 (12566.731)
+2025-03-20 05:56:26,357 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:56:26,357 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86763.60 Ask: 86794.60
+2025-03-20 05:56:26,357 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86763.60 (0.020), Ask: 86794.60 (0.234)
+2025-03-20 05:56:26,381 - websocket_client - INFO - Received kline event for BTCUSDT
+2025-03-20 05:56:26,381 - websocket_client - INFO - Kline: BTCUSDT 1m Open: 86770.00 Close: 86791.80
+2025-03-20 05:56:26,381 - __main__ - INFO - [BTCUSDT] Received kline: BTCUSDT 1m Close time: 2025-03-20 05:56:59 Closed: False
+2025-03-20 05:56:26,381 - __main__ - INFO - [BTCUSDT] Kline data: Open: 86770.00, High: 86825.80, Low: 86763.50, Close: 86791.80
+2025-03-20 05:56:26,516 - __main__ - INFO - Sent detailed account status notification
+2025-03-20 05:56:26,522 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:56:26,522 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86763.60 Ask: 86797.30
+2025-03-20 05:56:26,522 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86763.60 (0.020), Ask: 86797.30 (6.907)
+2025-03-20 05:56:26,634 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:56:26,634 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86763.60 Ask: 86809.70
+2025-03-20 05:56:26,635 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86763.60 (0.020), Ask: 86809.70 (52.856)
+2025-03-20 05:56:26,644 - websocket_client - INFO - Received kline event for BTCUSDT
+2025-03-20 05:56:26,645 - websocket_client - INFO - Kline: BTCUSDT 1m Open: 86770.00 Close: 86797.30
+2025-03-20 05:56:26,645 - __main__ - INFO - [BTCUSDT] Received kline: BTCUSDT 1m Close time: 2025-03-20 05:56:59 Closed: False
+2025-03-20 05:56:26,646 - __main__ - INFO - [BTCUSDT] Kline data: Open: 86770.00, High: 86825.80, Low: 86763.50, Close: 86797.30
+2025-03-20 05:56:26,772 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:56:26,773 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86763.60 Ask: 86810.30
+2025-03-20 05:56:26,773 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86763.60 (0.020), Ask: 86810.30 (1.226)
+2025-03-20 05:56:26,849 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:56:26,849 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86763.30 Ask: 86810.30
+2025-03-20 05:56:26,849 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86763.30 (39.835), Ask: 86810.30 (1.226)
+2025-03-20 05:56:26,923 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:56:26,923 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86763.60 Ask: 86810.30
+2025-03-20 05:56:26,923 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86763.60 (0.020), Ask: 86810.30 (1.226)
+2025-03-20 05:56:26,924 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:56:26,924 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86763.60 Ask: 86810.30
+2025-03-20 05:56:26,924 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86763.60 (0.020), Ask: 86810.30 (1.246)
+2025-03-20 05:56:27,116 - websocket_client - INFO - Received bookTicker event for ETHUSDT
+2025-03-20 05:56:27,116 - websocket_client - INFO - BookTicker: ETHUSDT Bid: 2037.35 Ask: 2045.74
+2025-03-20 05:56:27,117 - __main__ - INFO - [ETHUSDT] Book Ticker: ETHUSDT Bid: 2037.35 (13014.010), Ask: 2045.74 (11662.219)
+2025-03-20 05:56:27,158 - websocket_client - INFO - Received kline event for ETHUSDT
+2025-03-20 05:56:27,159 - websocket_client - INFO - Kline: ETHUSDT 1m Open: 2045.72 Close: 2045.74
+2025-03-20 05:56:27,159 - __main__ - INFO - [ETHUSDT] Received kline: ETHUSDT 1m Close time: 2025-03-20 05:56:59 Closed: False
+2025-03-20 05:56:27,160 - __main__ - INFO - [ETHUSDT] Kline data: Open: 2045.72, High: 2045.74, Low: 2037.35, Close: 2045.74
+2025-03-20 05:56:27,334 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:56:27,334 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86763.50 Ask: 86810.30
+2025-03-20 05:56:27,334 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86763.50 (0.020), Ask: 86810.30 (1.246)
+2025-03-20 05:56:27,335 - websocket_client - INFO - Received bookTicker event for ETHUSDT
+2025-03-20 05:56:27,336 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:56:27,336 - websocket_client - INFO - BookTicker: ETHUSDT Bid: 2037.35 Ask: 2045.74
+2025-03-20 05:56:27,336 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86763.40 Ask: 86810.30
+2025-03-20 05:56:27,336 - __main__ - INFO - [ETHUSDT] Book Ticker: ETHUSDT Bid: 2037.35 (13014.010), Ask: 2045.74 (10871.174)
+2025-03-20 05:56:27,336 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86763.40 (0.020), Ask: 86810.30 (1.246)
+2025-03-20 05:56:27,537 - websocket_client - INFO - Received bookTicker event for ETHUSDT
+2025-03-20 05:56:27,537 - websocket_client - INFO - BookTicker: ETHUSDT Bid: 2037.35 Ask: 2045.74
+2025-03-20 05:56:27,537 - __main__ - INFO - [ETHUSDT] Book Ticker: ETHUSDT Bid: 2037.35 (13014.010), Ask: 2045.74 (10074.584)
+2025-03-20 05:56:27,540 - websocket_client - INFO - Received kline event for ETHUSDT
+2025-03-20 05:56:27,540 - websocket_client - INFO - Kline: ETHUSDT 1m Open: 2045.72 Close: 2045.74
+2025-03-20 05:56:27,540 - __main__ - INFO - [ETHUSDT] Received kline: ETHUSDT 1m Close time: 2025-03-20 05:56:59 Closed: False
+2025-03-20 05:56:27,541 - __main__ - INFO - [ETHUSDT] Kline data: Open: 2045.72, High: 2045.74, Low: 2037.35, Close: 2045.74
+2025-03-20 05:56:27,617 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:56:27,617 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86763.30 Ask: 86810.30
+2025-03-20 05:56:27,617 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86763.30 (17.279), Ask: 86810.30 (1.246)
+2025-03-20 05:56:27,622 - websocket_client - INFO - Received kline event for BTCUSDT
+2025-03-20 05:56:27,622 - websocket_client - INFO - Kline: BTCUSDT 1m Open: 86770.00 Close: 86763.40
+2025-03-20 05:56:27,622 - __main__ - INFO - [BTCUSDT] Received kline: BTCUSDT 1m Close time: 2025-03-20 05:56:59 Closed: False
+2025-03-20 05:56:27,623 - __main__ - INFO - [BTCUSDT] Kline data: Open: 86770.00, High: 86825.80, Low: 86763.30, Close: 86763.40
+2025-03-20 05:56:27,697 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:56:27,697 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86763.60 Ask: 86810.30
+2025-03-20 05:56:27,698 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86763.60 (0.020), Ask: 86810.30 (1.246)
+2025-03-20 05:56:27,986 - websocket_client - INFO - Received kline event for BTCUSDT
+2025-03-20 05:56:27,986 - websocket_client - INFO - Kline: BTCUSDT 1m Open: 86770.00 Close: 86763.60
+2025-03-20 05:56:27,987 - __main__ - INFO - [BTCUSDT] Received kline: BTCUSDT 1m Close time: 2025-03-20 05:56:59 Closed: False
+2025-03-20 05:56:27,987 - __main__ - INFO - [BTCUSDT] Kline data: Open: 86770.00, High: 86825.80, Low: 86763.30, Close: 86763.60
+2025-03-20 05:56:28,100 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:56:28,100 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86763.30 Ask: 86810.30
+2025-03-20 05:56:28,101 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86763.30 (11.441), Ask: 86810.30 (1.246)
+2025-03-20 05:56:28,190 - websocket_client - INFO - Received bookTicker event for ETHUSDT
+2025-03-20 05:56:28,191 - websocket_client - INFO - BookTicker: ETHUSDT Bid: 2037.35 Ask: 2045.74
+2025-03-20 05:56:28,191 - __main__ - INFO - [ETHUSDT] Book Ticker: ETHUSDT Bid: 2037.35 (13014.010), Ask: 2045.74 (9306.838)
+2025-03-20 05:56:28,223 - websocket_client - INFO - Received kline event for ETHUSDT
+2025-03-20 05:56:28,223 - websocket_client - INFO - Kline: ETHUSDT 1m Open: 2045.72 Close: 2045.74
+2025-03-20 05:56:28,223 - __main__ - INFO - [ETHUSDT] Received kline: ETHUSDT 1m Close time: 2025-03-20 05:56:59 Closed: False
+2025-03-20 05:56:28,223 - __main__ - INFO - [ETHUSDT] Kline data: Open: 2045.72, High: 2045.74, Low: 2037.35, Close: 2045.74
+2025-03-20 05:56:28,292 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:56:28,292 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86763.30 Ask: 86813.20
+2025-03-20 05:56:28,292 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86763.30 (11.441), Ask: 86813.20 (13.144)
+2025-03-20 05:56:28,306 - websocket_client - INFO - Received kline event for BTCUSDT
+2025-03-20 05:56:28,306 - websocket_client - INFO - Kline: BTCUSDT 1m Open: 86770.00 Close: 86810.30
+2025-03-20 05:56:28,307 - __main__ - INFO - [BTCUSDT] Received kline: BTCUSDT 1m Close time: 2025-03-20 05:56:59 Closed: False
+2025-03-20 05:56:28,307 - __main__ - INFO - [BTCUSDT] Kline data: Open: 86770.00, High: 86825.80, Low: 86763.30, Close: 86810.30
+2025-03-20 05:56:28,420 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:56:28,420 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86763.30 Ask: 86810.30
+2025-03-20 05:56:28,420 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86763.30 (11.441), Ask: 86810.30 (0.020)
+2025-03-20 05:56:28,450 - websocket_client - INFO - Received bookTicker event for ETHUSDT
+2025-03-20 05:56:28,450 - websocket_client - INFO - BookTicker: ETHUSDT Bid: 2037.35 Ask: 2045.74
+2025-03-20 05:56:28,450 - __main__ - INFO - [ETHUSDT] Book Ticker: ETHUSDT Bid: 2037.35 (13014.010), Ask: 2045.74 (8513.477)
+2025-03-20 05:56:28,456 - websocket_client - INFO - Received kline event for ETHUSDT
+2025-03-20 05:56:28,456 - websocket_client - INFO - Kline: ETHUSDT 1m Open: 2045.72 Close: 2045.74
+2025-03-20 05:56:28,456 - __main__ - INFO - [ETHUSDT] Received kline: ETHUSDT 1m Close time: 2025-03-20 05:56:59 Closed: False
+2025-03-20 05:56:28,457 - __main__ - INFO - [ETHUSDT] Kline data: Open: 2045.72, High: 2045.74, Low: 2037.35, Close: 2045.74
+2025-03-20 05:56:28,691 - websocket_client - INFO - Received bookTicker event for ETHUSDT
+2025-03-20 05:56:28,691 - websocket_client - INFO - BookTicker: ETHUSDT Bid: 2037.35 Ask: 2045.74
+2025-03-20 05:56:28,691 - __main__ - INFO - [ETHUSDT] Book Ticker: ETHUSDT Bid: 2037.35 (13014.010), Ask: 2045.74 (7918.797)
+2025-03-20 05:56:28,693 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:56:28,693 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86763.30 Ask: 86793.60
+2025-03-20 05:56:28,693 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86763.30 (11.441), Ask: 86793.60 (88.621)
+2025-03-20 05:56:28,828 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:56:28,828 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86763.10 Ask: 86793.60
+2025-03-20 05:56:28,828 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86763.10 (16.795), Ask: 86793.60 (88.621)
+2025-03-20 05:56:28,838 - websocket_client - INFO - Received kline event for BTCUSDT
+2025-03-20 05:56:28,839 - websocket_client - INFO - Kline: BTCUSDT 1m Open: 86770.00 Close: 86763.30
+2025-03-20 05:56:28,839 - __main__ - INFO - [BTCUSDT] Received kline: BTCUSDT 1m Close time: 2025-03-20 05:56:59 Closed: False
+2025-03-20 05:56:28,839 - __main__ - INFO - [BTCUSDT] Kline data: Open: 86770.00, High: 86825.80, Low: 86763.30, Close: 86763.30
+2025-03-20 05:56:28,935 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:56:28,935 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86763.30 Ask: 86793.60
+2025-03-20 05:56:28,935 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86763.30 (0.020), Ask: 86793.60 (88.621)
+2025-03-20 05:56:29,123 - websocket_client - INFO - Received bookTicker event for ETHUSDT
+2025-03-20 05:56:29,124 - websocket_client - INFO - BookTicker: ETHUSDT Bid: 2037.35 Ask: 2045.74
+2025-03-20 05:56:29,124 - __main__ - INFO - [ETHUSDT] Book Ticker: ETHUSDT Bid: 2037.35 (13014.010), Ask: 2045.74 (6946.063)
+2025-03-20 05:56:29,145 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:56:29,145 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86763.30 Ask: 86793.60
+2025-03-20 05:56:29,146 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86763.30 (0.020), Ask: 86793.60 (88.598)
+2025-03-20 05:56:29,170 - websocket_client - INFO - Received kline event for ETHUSDT
+2025-03-20 05:56:29,171 - websocket_client - INFO - Kline: ETHUSDT 1m Open: 2045.72 Close: 2045.74
+2025-03-20 05:56:29,174 - __main__ - INFO - [ETHUSDT] Received kline: ETHUSDT 1m Close time: 2025-03-20 05:56:59 Closed: False
+2025-03-20 05:56:29,176 - __main__ - INFO - [ETHUSDT] Kline data: Open: 2045.72, High: 2045.74, Low: 2037.35, Close: 2045.74
+2025-03-20 05:56:29,193 - websocket_client - INFO - Received kline event for BTCUSDT
+2025-03-20 05:56:29,193 - websocket_client - INFO - Kline: BTCUSDT 1m Open: 86770.00 Close: 86793.60
+2025-03-20 05:56:29,194 - __main__ - INFO - [BTCUSDT] Received kline: BTCUSDT 1m Close time: 2025-03-20 05:56:59 Closed: False
+2025-03-20 05:56:29,194 - __main__ - INFO - [BTCUSDT] Kline data: Open: 86770.00, High: 86825.80, Low: 86763.10, Close: 86793.60
+2025-03-20 05:56:29,562 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:56:29,563 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86763.00 Ask: 86793.60
+2025-03-20 05:56:29,563 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86763.00 (45.383), Ask: 86793.60 (88.598)
+2025-03-20 05:56:29,566 - websocket_client - INFO - Received kline event for BTCUSDT
+2025-03-20 05:56:29,566 - websocket_client - INFO - Kline: BTCUSDT 1m Open: 86770.00 Close: 86763.30
+2025-03-20 05:56:29,567 - __main__ - INFO - [BTCUSDT] Received kline: BTCUSDT 1m Close time: 2025-03-20 05:56:59 Closed: False
+2025-03-20 05:56:29,567 - __main__ - INFO - [BTCUSDT] Kline data: Open: 86770.00, High: 86825.80, Low: 86763.10, Close: 86763.30
+2025-03-20 05:56:29,569 - websocket_client - INFO - Received bookTicker event for ETHUSDT
+2025-03-20 05:56:29,569 - websocket_client - INFO - BookTicker: ETHUSDT Bid: 2037.35 Ask: 2045.74
+2025-03-20 05:56:29,570 - __main__ - INFO - [ETHUSDT] Book Ticker: ETHUSDT Bid: 2037.35 (13014.010), Ask: 2045.74 (6551.728)
+2025-03-20 05:56:29,580 - websocket_client - INFO - Received kline event for ETHUSDT
+2025-03-20 05:56:29,581 - websocket_client - INFO - Kline: ETHUSDT 1m Open: 2045.72 Close: 2045.74
+2025-03-20 05:56:29,582 - __main__ - INFO - [ETHUSDT] Received kline: ETHUSDT 1m Close time: 2025-03-20 05:56:59 Closed: False
+2025-03-20 05:56:29,583 - __main__ - INFO - [ETHUSDT] Kline data: Open: 2045.72, High: 2045.74, Low: 2037.35, Close: 2045.74
+2025-03-20 05:56:29,698 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:56:29,698 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86763.00 Ask: 86793.60
+2025-03-20 05:56:29,699 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86763.00 (45.383), Ask: 86793.60 (88.618)
+2025-03-20 05:56:29,700 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:56:29,700 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86763.30 Ask: 86793.60
+2025-03-20 05:56:29,700 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86763.30 (0.020), Ask: 86793.60 (88.618)
+2025-03-20 05:56:29,800 - websocket_client - INFO - Received bookTicker event for ETHUSDT
+2025-03-20 05:56:29,801 - websocket_client - INFO - BookTicker: ETHUSDT Bid: 2037.35 Ask: 2045.74
+2025-03-20 05:56:29,801 - __main__ - INFO - [ETHUSDT] Book Ticker: ETHUSDT Bid: 2037.35 (13014.010), Ask: 2045.74 (5979.470)
+2025-03-20 05:56:30,032 - websocket_client - INFO - Received bookTicker event for ETHUSDT
+2025-03-20 05:56:30,032 - websocket_client - INFO - BookTicker: ETHUSDT Bid: 2037.35 Ask: 2045.74
+2025-03-20 05:56:30,033 - __main__ - INFO - [ETHUSDT] Book Ticker: ETHUSDT Bid: 2037.35 (13014.010), Ask: 2045.74 (4986.951)
+2025-03-20 05:56:30,040 - websocket_client - INFO - Received kline event for ETHUSDT
+2025-03-20 05:56:30,040 - websocket_client - INFO - Kline: ETHUSDT 1m Open: 2045.72 Close: 2045.74
+2025-03-20 05:56:30,040 - __main__ - INFO - [ETHUSDT] Received kline: ETHUSDT 1m Close time: 2025-03-20 05:56:59 Closed: False
+2025-03-20 05:56:30,041 - __main__ - INFO - [ETHUSDT] Kline data: Open: 2045.72, High: 2045.74, Low: 2037.35, Close: 2045.74
+2025-03-20 05:56:30,232 - websocket_client - INFO - Received bookTicker event for ETHUSDT
+2025-03-20 05:56:30,232 - websocket_client - INFO - BookTicker: ETHUSDT Bid: 2037.35 Ask: 2045.74
+2025-03-20 05:56:30,233 - __main__ - INFO - [ETHUSDT] Book Ticker: ETHUSDT Bid: 2037.35 (13014.010), Ask: 2045.74 (4466.548)
+2025-03-20 05:56:30,321 - __main__ - INFO - Shutdown signal received, closing all trading bots...
+2025-03-20 05:56:30,814 - websocket_client - INFO - Received bookTicker event for ETHUSDT
+2025-03-20 05:56:30,815 - websocket_client - INFO - BookTicker: ETHUSDT Bid: 2037.35 Ask: 2045.74
+2025-03-20 05:56:30,815 - __main__ - INFO - [ETHUSDT] Book Ticker: ETHUSDT Bid: 2037.35 (13014.010), Ask: 2045.74 (3742.436)
+2025-03-20 05:56:30,823 - websocket_client - INFO - Received kline event for ETHUSDT
+2025-03-20 05:56:30,823 - websocket_client - INFO - Kline: ETHUSDT 1m Open: 2045.72 Close: 2045.74
+2025-03-20 05:56:30,824 - __main__ - INFO - [ETHUSDT] Received kline: ETHUSDT 1m Close time: 2025-03-20 05:56:59 Closed: False
+2025-03-20 05:56:30,824 - __main__ - INFO - [ETHUSDT] Kline data: Open: 2045.72, High: 2045.74, Low: 2037.35, Close: 2045.74
+2025-03-20 05:56:31,078 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:56:31,078 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86763.30 Ask: 86793.60
+2025-03-20 05:56:31,078 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86763.30 (0.020), Ask: 86793.60 (65.686)
+2025-03-20 05:56:31,086 - websocket_client - INFO - Received kline event for BTCUSDT
+2025-03-20 05:56:31,089 - __main__ - INFO - Stopping all trading bots...
+2025-03-20 05:56:31,089 - websocket_client - INFO - Kline: BTCUSDT 1m Open: 86770.00 Close: 86793.60
+2025-03-20 05:56:31,090 - __main__ - INFO - [BTCUSDT] Received kline: BTCUSDT 1m Close time: 2025-03-20 05:56:59 Closed: False
+2025-03-20 05:56:31,096 - __main__ - INFO - [BTCUSDT] Kline data: Open: 86770.00, High: 86825.80, Low: 86763.00, Close: 86793.60
+2025-03-20 05:56:31,152 - websocket_client - INFO - Received bookTicker event for ETHUSDT
+2025-03-20 05:56:31,152 - websocket_client - INFO - BookTicker: ETHUSDT Bid: 2037.35 Ask: 2045.74
+2025-03-20 05:56:31,152 - __main__ - INFO - [ETHUSDT] Book Ticker: ETHUSDT Bid: 2037.35 (13014.010), Ask: 2045.74 (3132.003)
+2025-03-20 05:56:31,202 - websocket_client - INFO - Received kline event for ETHUSDT
+2025-03-20 05:56:31,202 - websocket_client - INFO - Kline: ETHUSDT 1m Open: 2045.72 Close: 2045.74
+2025-03-20 05:56:31,202 - __main__ - INFO - [ETHUSDT] Received kline: ETHUSDT 1m Close time: 2025-03-20 05:56:59 Closed: False
+2025-03-20 05:56:31,202 - __main__ - INFO - [ETHUSDT] Kline data: Open: 2045.72, High: 2045.74, Low: 2037.35, Close: 2045.74
+2025-03-20 05:56:31,298 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:56:31,298 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86763.00 Ask: 86793.60
+2025-03-20 05:56:31,298 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86763.00 (34.951), Ask: 86793.60 (65.686)
+2025-03-20 05:56:31,300 - websocket_client - INFO - Received bookTicker event for ETHUSDT
+2025-03-20 05:56:31,301 - websocket_client - INFO - BookTicker: ETHUSDT Bid: 2037.35 Ask: 2045.00
+2025-03-20 05:56:31,301 - __main__ - INFO - [ETHUSDT] Book Ticker: ETHUSDT Bid: 2037.35 (13014.010), Ask: 2045.00 (0.110)
+2025-03-20 05:56:31,352 - websocket_client - INFO - Received bookTicker event for ETHUSDT
+2025-03-20 05:56:31,352 - websocket_client - INFO - BookTicker: ETHUSDT Bid: 2037.35 Ask: 2045.00
+2025-03-20 05:56:31,353 - __main__ - INFO - [ETHUSDT] Book Ticker: ETHUSDT Bid: 2037.35 (12326.117), Ask: 2045.00 (0.110)
+2025-03-20 05:56:31,385 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:56:31,385 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86763.30 Ask: 86793.60
+2025-03-20 05:56:31,385 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86763.30 (0.020), Ask: 86793.60 (65.686)
+2025-03-20 05:56:31,526 - websocket_client - INFO - Received bookTicker event for ETHUSDT
+2025-03-20 05:56:31,526 - websocket_client - INFO - BookTicker: ETHUSDT Bid: 2037.35 Ask: 2045.74
+2025-03-20 05:56:31,526 - __main__ - INFO - [ETHUSDT] Book Ticker: ETHUSDT Bid: 2037.35 (12326.117), Ask: 2045.74 (2839.849)
+2025-03-20 05:56:31,531 - websocket_client - INFO - Received kline event for ETHUSDT
+2025-03-20 05:56:31,532 - websocket_client - INFO - Kline: ETHUSDT 1m Open: 2045.72 Close: 2045.00
+2025-03-20 05:56:31,532 - __main__ - INFO - [ETHUSDT] Received kline: ETHUSDT 1m Close time: 2025-03-20 05:56:59 Closed: False
+2025-03-20 05:56:31,532 - __main__ - INFO - [ETHUSDT] Kline data: Open: 2045.72, High: 2045.74, Low: 2037.35, Close: 2045.00
+2025-03-20 05:56:31,698 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:56:31,699 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86763.30 Ask: 86814.50
+2025-03-20 05:56:31,699 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86763.30 (0.020), Ask: 86814.50 (85.157)
+2025-03-20 05:56:31,700 - websocket_client - INFO - Received kline event for BTCUSDT
+2025-03-20 05:56:31,700 - websocket_client - INFO - Kline: BTCUSDT 1m Open: 86770.00 Close: 86793.60
+2025-03-20 05:56:31,700 - __main__ - INFO - [BTCUSDT] Received kline: BTCUSDT 1m Close time: 2025-03-20 05:56:59 Closed: False
+2025-03-20 05:56:31,700 - __main__ - INFO - [BTCUSDT] Kline data: Open: 86770.00, High: 86825.80, Low: 86763.00, Close: 86793.60
+2025-03-20 05:56:31,732 - websocket_client - INFO - Received bookTicker event for ETHUSDT
+2025-03-20 05:56:31,732 - websocket_client - INFO - BookTicker: ETHUSDT Bid: 2037.35 Ask: 2045.74
+2025-03-20 05:56:31,732 - __main__ - INFO - [ETHUSDT] Book Ticker: ETHUSDT Bid: 2037.35 (12326.117), Ask: 2045.74 (2260.942)
+2025-03-20 05:56:31,775 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:56:31,777 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86763.20 Ask: 86814.50
+2025-03-20 05:56:31,777 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86763.20 (0.020), Ask: 86814.50 (85.157)
+2025-03-20 05:56:31,779 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:56:31,780 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86763.20 Ask: 86793.70
+2025-03-20 05:56:31,780 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86763.20 (0.020), Ask: 86793.70 (0.020)
+2025-03-20 05:56:31,863 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:56:31,864 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86763.00 Ask: 86793.70
+2025-03-20 05:56:31,864 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86763.00 (23.122), Ask: 86793.70 (0.020)
+2025-03-20 05:56:31,952 - websocket_client - INFO - Received bookTicker event for ETHUSDT
+2025-03-20 05:56:31,952 - websocket_client - INFO - BookTicker: ETHUSDT Bid: 2037.35 Ask: 2045.74
+2025-03-20 05:56:31,952 - __main__ - INFO - [ETHUSDT] Book Ticker: ETHUSDT Bid: 2037.35 (12326.117), Ask: 2045.74 (1306.914)
+2025-03-20 05:56:31,961 - websocket_client - INFO - Received kline event for ETHUSDT
+2025-03-20 05:56:31,962 - websocket_client - INFO - Kline: ETHUSDT 1m Open: 2045.72 Close: 2045.74
+2025-03-20 05:56:31,962 - __main__ - INFO - [ETHUSDT] Received kline: ETHUSDT 1m Close time: 2025-03-20 05:56:59 Closed: False
+2025-03-20 05:56:31,962 - __main__ - INFO - [ETHUSDT] Kline data: Open: 2045.72, High: 2045.74, Low: 2037.35, Close: 2045.74
+2025-03-20 05:56:31,993 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:56:31,993 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86763.00 Ask: 86814.50
+2025-03-20 05:56:31,993 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86763.00 (23.122), Ask: 86814.50 (85.157)
+2025-03-20 05:56:32,363 - websocket_client - INFO - Received bookTicker event for ETHUSDT
+2025-03-20 05:56:32,363 - websocket_client - INFO - BookTicker: ETHUSDT Bid: 2037.35 Ask: 2045.74
+2025-03-20 05:56:32,363 - __main__ - INFO - [ETHUSDT] Book Ticker: ETHUSDT Bid: 2037.35 (11461.792), Ask: 2045.74 (1306.914)
+2025-03-20 05:56:32,382 - websocket_client - INFO - Received kline event for ETHUSDT
+2025-03-20 05:56:32,382 - websocket_client - INFO - Kline: ETHUSDT 1m Open: 2045.72 Close: 2037.35
+2025-03-20 05:56:32,382 - __main__ - INFO - [ETHUSDT] Received kline: ETHUSDT 1m Close time: 2025-03-20 05:56:59 Closed: False
+2025-03-20 05:56:32,382 - __main__ - INFO - [ETHUSDT] Kline data: Open: 2045.72, High: 2045.74, Low: 2037.35, Close: 2037.35
+2025-03-20 05:56:32,395 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:56:32,395 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86763.00 Ask: 86796.30
+2025-03-20 05:56:32,395 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86763.00 (23.122), Ask: 86796.30 (85.967)
+2025-03-20 05:56:32,812 - websocket_client - INFO - Received bookTicker event for BTCUSDT
+2025-03-20 05:56:32,813 - websocket_client - INFO - Received bookTicker event for ETHUSDT
+2025-03-20 05:56:32,814 - websocket_client - INFO - BookTicker: BTCUSDT Bid: 86763.00 Ask: 86796.30
+2025-03-20 05:56:32,814 - websocket_client - INFO - BookTicker: ETHUSDT Bid: 2037.35 Ask: 2045.74
+2025-03-20 05:56:32,815 - __main__ - INFO - [BTCUSDT] Book Ticker: BTCUSDT Bid: 86763.00 (23.122), Ask: 86796.30 (85.987)
+2025-03-20 05:56:32,815 - __main__ - INFO - [ETHUSDT] Book Ticker: ETHUSDT Bid: 2037.35 (11461.792), Ask: 2045.74 (1168.267)
+2025-03-20 05:56:32,824 - websocket_client - INFO - Received kline event for ETHUSDT
+2025-03-20 05:56:32,824 - websocket_client - INFO - Kline: ETHUSDT 1m Open: 2045.72 Close: 2045.74
+2025-03-20 05:56:32,824 - __main__ - INFO - [ETHUSDT] Received kline: ETHUSDT 1m Close time: 2025-03-20 05:56:59 Closed: False
+2025-03-20 05:56:32,825 - __main__ - INFO - [ETHUSDT] Kline data: Open: 2045.72, High: 2045.74, Low: 2037.35, Close: 2045.74
+2025-03-20 05:56:33,063 - __main__ - INFO - Sent detailed account status notification
+2025-03-20 05:56:33,064 - __main__ - INFO - Stopping bot for BTCUSDT...
+2025-03-20 05:56:33,064 - __main__ - INFO - [BTCUSDT] Stopping trading bot...
+2025-03-20 05:56:33,151 - websocket_client - INFO - Received bookTicker event for ETHUSDT
+2025-03-20 05:56:33,151 - websocket_client - INFO - BookTicker: ETHUSDT Bid: 2037.35 Ask: 2045.74
+2025-03-20 05:56:33,151 - __main__ - INFO - [ETHUSDT] Book Ticker: ETHUSDT Bid: 2037.35 (11461.792), Ask: 2045.74 (860.220)
+2025-03-20 05:56:33,208 - websocket_client - INFO - Websocket connection closed for btcusdt: close_status_code=None, close_msg=None
+2025-03-20 05:56:33,209 - __main__ - WARNING - [BTCUSDT] WebSocket connection closed, attempting to reconnect...
+2025-03-20 05:56:33,217 - websocket_client - INFO - Received kline event for ETHUSDT
+2025-03-20 05:56:33,219 - websocket_client - INFO - Kline: ETHUSDT 1m Open: 2045.72 Close: 2045.74
+2025-03-20 05:56:33,220 - __main__ - INFO - [ETHUSDT] Received kline: ETHUSDT 1m Close time: 2025-03-20 05:56:59 Closed: False
+2025-03-20 05:56:33,221 - __main__ - INFO - [ETHUSDT] Kline data: Open: 2045.72, High: 2045.74, Low: 2037.35, Close: 2045.74
+2025-03-20 05:56:33,230 - websocket_client - INFO - Websocket connection closed
+2025-03-20 05:56:33,450 - websocket_client - INFO - Received bookTicker event for ETHUSDT
+2025-03-20 05:56:33,450 - websocket_client - INFO - BookTicker: ETHUSDT Bid: 2037.35 Ask: 2045.74
+2025-03-20 05:56:33,450 - __main__ - INFO - [ETHUSDT] Book Ticker: ETHUSDT Bid: 2037.35 (11461.744), Ask: 2045.74 (860.220)
+2025-03-20 05:56:33,455 - websocket_client - INFO - Received kline event for ETHUSDT
+2025-03-20 05:56:33,456 - websocket_client - INFO - Kline: ETHUSDT 1m Open: 2045.72 Close: 2037.35
+2025-03-20 05:56:33,456 - __main__ - INFO - [ETHUSDT] Received kline: ETHUSDT 1m Close time: 2025-03-20 05:56:59 Closed: False
+2025-03-20 05:56:33,456 - __main__ - INFO - [ETHUSDT] Kline data: Open: 2045.72, High: 2045.74, Low: 2037.35, Close: 2037.35
+2025-03-20 05:56:33,529 - websocket_client - INFO - Received bookTicker event for ETHUSDT
+2025-03-20 05:56:33,529 - websocket_client - INFO - BookTicker: ETHUSDT Bid: 2037.35 Ask: 2045.74
+2025-03-20 05:56:33,529 - __main__ - INFO - [ETHUSDT] Book Ticker: ETHUSDT Bid: 2037.35 (11461.744), Ask: 2045.74 (379.288)
+2025-03-20 05:56:33,753 - websocket_client - INFO - Received bookTicker event for ETHUSDT
+2025-03-20 05:56:33,754 - websocket_client - INFO - BookTicker: ETHUSDT Bid: 2037.35 Ask: 2045.75
+2025-03-20 05:56:33,754 - __main__ - INFO - [ETHUSDT] Book Ticker: ETHUSDT Bid: 2037.35 (11461.744), Ask: 2045.75 (18010.621)
+2025-03-20 05:56:33,764 - websocket_client - INFO - Received kline event for ETHUSDT
+2025-03-20 05:56:33,764 - websocket_client - INFO - Kline: ETHUSDT 1m Open: 2045.72 Close: 2045.74
+2025-03-20 05:56:33,764 - __main__ - INFO - [ETHUSDT] Received kline: ETHUSDT 1m Close time: 2025-03-20 05:56:59 Closed: False
+2025-03-20 05:56:33,764 - __main__ - INFO - [ETHUSDT] Kline data: Open: 2045.72, High: 2045.74, Low: 2037.35, Close: 2045.74
+2025-03-20 05:56:33,860 - __main__ - INFO - 
+===== Trading Summary for BTCUSDT =====
+Strategy: SMA_CROSSOVER
+Initial Balance: 9808.40 USDT
+Final Balance: 9808.40 USDT
+Profit/Loss: 0.00 USDT (0.00%)
+Total Trades: 0
+Max Drawdown: 0.00 USDT
+==========================
+
+2025-03-20 05:56:34,000 - websocket_client - INFO - Received bookTicker event for ETHUSDT
+2025-03-20 05:56:34,001 - websocket_client - INFO - BookTicker: ETHUSDT Bid: 2037.35 Ask: 2045.75
+2025-03-20 05:56:34,001 - __main__ - INFO - [ETHUSDT] Book Ticker: ETHUSDT Bid: 2037.35 (11461.744), Ask: 2045.75 (17808.752)
+2025-03-20 05:56:34,662 - __main__ - INFO - Stopping bot for ETHUSDT...
+2025-03-20 05:56:34,664 - __main__ - INFO - [ETHUSDT] Stopping trading bot...
+2025-03-20 05:56:34,816 - websocket_client - INFO - Websocket connection closed
+2025-03-20 05:56:35,680 - __main__ - INFO - 
+===== Trading Summary for ETHUSDT =====
+Strategy: RSI
+Initial Balance: 9808.40 USDT
+Final Balance: 9808.40 USDT
+Profit/Loss: 0.00 USDT (0.00%)
+Total Trades: 0
+Max Drawdown: 0.00 USDT
+==========================
+
+2025-03-20 05:56:36,444 - __main__ - INFO - Stopping bot for SOLUSDT...
+2025-03-20 05:56:36,445 - __main__ - INFO - [SOLUSDT] Stopping trading bot...
+2025-03-20 05:56:36,651 - websocket_client - INFO - Websocket connection closed for solusdt: close_status_code=None, close_msg=None
+2025-03-20 05:56:36,651 - __main__ - WARNING - [SOLUSDT] WebSocket connection closed, attempting to reconnect...
+2025-03-20 05:56:36,651 - websocket_client - INFO - Websocket connection closed
+2025-03-20 05:56:37,239 - __main__ - INFO - 
+===== Trading Summary for SOLUSDT =====
+Strategy: MACD
+Initial Balance: 9808.40 USDT
+Final Balance: 9808.40 USDT
+Profit/Loss: 0.00 USDT (0.00%)
+Total Trades: 0
+Max Drawdown: 0.00 USDT
+==========================
+
+2025-03-20 05:56:38,874 - __main__ - INFO - All trading bots stopped
