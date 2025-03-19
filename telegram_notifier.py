@@ -231,3 +231,95 @@ class TelegramNotifier:
                  f"<b>Date:</b> {datetime.now().strftime('%Y-%m-%d')}"
                  
         self.send_message(message)
+        
+    def send_system_status_notification(self, api_status=True, websocket_status=True):
+        """Send a notification about the system status"""
+        # Status emojis
+        api_emoji = "✅" if api_status else "❌"
+        websocket_emoji = "✅" if websocket_status else "❌"
+        
+        # Status text
+        api_text = "CONNECTED" if api_status else "DISCONNECTED"
+        websocket_text = "CONNECTED" if websocket_status else "DISCONNECTED"
+        
+        message = f"🤖 <b>TRADING BOT STATUS UPDATE</b>\n\n" \
+                  f"API Status: {api_emoji} {api_text}\n" \
+                  f"WebSocket Status: {websocket_emoji} {websocket_text}\n\n" \
+                  f"<b>Time:</b> {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"
+                  
+        self.send_message(message)
+        
+    def send_periodic_status_notification(self, uptime_hours, active_symbols=None, last_trade_time=None, balance=None, positions=None):
+        """Send a periodic notification about the bot's status"""
+        if active_symbols is None:
+            active_symbols = []
+            
+        # Create message
+        message = f"📊 <b>TRADING BOT PERIODIC UPDATE</b>\n\n" \
+                  f"<b>Status:</b> Running\n" \
+                  f"<b>Uptime:</b> {uptime_hours:.1f} hours\n" \
+                  f"<b>Active Symbols:</b> {', '.join(active_symbols)}\n"
+        
+        if last_trade_time:
+            time_since_trade = datetime.now() - last_trade_time
+            hours_since_trade = time_since_trade.total_seconds() / 3600
+            message += f"<b>Last Trade:</b> {last_trade_time.strftime('%Y-%m-%d %H:%M:%S')} ({hours_since_trade:.1f} hours ago)\n"
+        else:
+            message += "<b>Last Trade:</b> No trades yet\n"
+        
+        if balance:
+            message += f"<b>Current Balance:</b> {balance:.2f} USDT\n"
+            
+        # Add open positions if any
+        if positions and len(positions) > 0:
+            message += "\n<b>OPEN POSITIONS:</b>\n"
+            
+            for pos in positions:
+                symbol = pos.get('symbol', '')
+                position_amt = float(pos.get('positionAmt', 0))
+                
+                # Skip positions with zero amount
+                if position_amt == 0:
+                    continue
+                
+                entry_price = float(pos.get('entryPrice', 0))
+                mark_price = float(pos.get('markPrice', 0))
+                unrealized_profit = float(pos.get('unrealizedProfit', 0))
+                
+                # Determine position side and emoji
+                if position_amt > 0:
+                    side_emoji = "🟢"
+                    side = "LONG"
+                else:
+                    side_emoji = "🔴"
+                    side = "SHORT"
+                    position_amt = abs(position_amt)
+                
+                # Format values
+                position_formatted = f"{position_amt:.4f}"
+                entry_formatted = f"{entry_price:.2f}"
+                mark_formatted = f"{mark_price:.2f}"
+                profit_formatted = f"{unrealized_profit:.2f}"
+                
+                # Determine profit emoji
+                pos_profit_emoji = "✅" if unrealized_profit >= 0 else "❌"
+                
+                message += f"{side_emoji} <b>{symbol}</b> - {side}\n" \
+                          f"  Amount: {position_formatted}\n" \
+                          f"  Entry: {entry_formatted} → Current: {mark_formatted}\n" \
+                          f"  P&L: {profit_formatted} USDT {pos_profit_emoji}\n"
+        
+        message += f"\n<b>Time:</b> {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"
+        
+        self.send_message(message)
+        
+    def send_startup_confirmation(self):
+        """Send a confirmation that the bot has started successfully"""
+        message = f"🚀 <b>TRADING BOT STARTED SUCCESSFULLY</b>\n\n" \
+                 f"✅ API connection established\n" \
+                 f"✅ WebSocket connection established\n" \
+                 f"✅ Trading systems initialized\n\n" \
+                 f"Bot is now monitoring markets and will execute trades according to strategy.\n\n" \
+                 f"<b>Started at:</b> {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"
+        
+        self.send_message(message)

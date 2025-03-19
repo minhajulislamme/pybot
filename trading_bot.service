@@ -1,0 +1,17 @@
+[Unit]
+Description=Binance Futures Trading Bot
+After=network.target
+
+[Service]
+Type=simple
+User=minhajulislam
+WorkingDirectory=/home/minhajulislam/binance-futuer-trading-bot
+ExecStart=/usr/bin/python3 /home/minhajulislam/binance-futuer-trading-bot/watchdog.py
+Restart=always
+RestartSec=10
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=trading_bot
+
+[Install]
+WantedBy=multi-user.target
