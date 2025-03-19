@@ -30,7 +30,8 @@ apt-get install -y \
     python3-venv \
     python3-dev \
     python3.12-dev \
-    python3-distutils \
+    python3-setuptools \
+    python3-wheel \
     build-essential \
     git \
     supervisor \
@@ -45,8 +46,7 @@ source venv/bin/activate
 
 # Install Python dependencies
 log "Installing Python packages..."
-pip install --upgrade pip
-pip install wheel
+pip install --upgrade pip setuptools wheel
 pip install -r requirements.txt
 
 # Set up supervisor configuration
