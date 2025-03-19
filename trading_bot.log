@@ -1,0 +1,296 @@
+2025-03-20 03:16:42,125 - binance_client - INFO - Initializing Binance Futures client in TEST mode
+2025-03-20 03:16:43,529 - binance_client - INFO - Leverage set to 5x for BTCUSDT
+2025-03-20 03:16:43,530 - binance_client - INFO - Client initialized successfully for BTCUSDT with 5x leverage
+2025-03-20 03:16:43,987 - binance_client - INFO - Leverage set to 5x for ETHUSDT
+2025-03-20 03:16:43,987 - binance_client - INFO - Client initialized successfully for ETHUSDT with 5x leverage
+2025-03-20 03:16:44,433 - binance_client - INFO - Leverage set to 5x for SOLUSDT
+2025-03-20 03:16:44,435 - binance_client - INFO - Client initialized successfully for SOLUSDT with 5x leverage
+2025-03-20 03:16:44,439 - telegram_notifier - INFO - Telegram notifications enabled
+2025-03-20 03:16:45,292 - __main__ - INFO - Multi-symbol trading bot initialized
+2025-03-20 03:16:45,294 - __main__ - INFO - Starting multi-symbol trading bot...
+2025-03-20 03:16:47,521 - __main__ - INFO - Sent detailed account status notification
+2025-03-20 03:16:47,523 - binance_client - INFO - Initializing Binance Futures client in TEST mode
+2025-03-20 03:16:48,839 - binance_client - INFO - Leverage set to 5x for BTCUSDT
+2025-03-20 03:16:48,839 - binance_client - INFO - Client initialized successfully for BTCUSDT with 5x leverage
+2025-03-20 03:16:49,273 - binance_client - INFO - Leverage set to 5x for ETHUSDT
+2025-03-20 03:16:49,273 - binance_client - INFO - Client initialized successfully for ETHUSDT with 5x leverage
+2025-03-20 03:16:49,733 - binance_client - INFO - Leverage set to 5x for SOLUSDT
+2025-03-20 03:16:49,734 - binance_client - INFO - Client initialized successfully for SOLUSDT with 5x leverage
+2025-03-20 03:16:49,735 - telegram_notifier - INFO - Telegram notifications enabled
+2025-03-20 03:16:50,595 - risk_manager - INFO - Risk Manager initialized: risk=1%, SL=2%, TP=3%
+2025-03-20 03:16:50,596 - strategy - INFO - Initialized SMACrossoverStrategy for BTCUSDT on 1h timeframe
+2025-03-20 03:16:50,596 - strategy - INFO - SMA Crossover: short_period=9, long_period=21
+2025-03-20 03:16:50,596 - __main__ - INFO - Trading bot initialized for BTCUSDT using SMA_CROSSOVER strategy
+2025-03-20 03:16:50,596 - __main__ - INFO - [BTCUSDT] Starting trading bot...
+2025-03-20 03:16:50,596 - __main__ - INFO - Started trading bot for BTCUSDT
+2025-03-20 03:16:51,056 - __main__ - INFO - [BTCUSDT] Fetched 200 initial historical candles
+2025-03-20 03:16:51,076 - websocket_client - INFO - Using Binance Futures Testnet WebSocket
+2025-03-20 03:16:51,630 - websocket - INFO - Websocket connected
+2025-03-20 03:16:51,630 - websocket_client - INFO - Websocket connection established
+2025-03-20 03:16:51,631 - websocket_client - INFO - Subscribed to btcusdt@kline_1m
+2025-03-20 03:16:51,680 - websocket_client - INFO - Connected to Binance websocket
+2025-03-20 03:16:51,680 - websocket_client - INFO - Subscribed to btcusdt@kline_1h
+2025-03-20 03:16:51,681 - websocket_client - INFO - Subscribed to btcusdt@bookTicker
+2025-03-20 03:16:51,681 - websocket_client - INFO - Subscribed to btcusdt@markPrice@1s
+2025-03-20 03:16:51,681 - __main__ - INFO - [BTCUSDT] WebSocket connections initialized
+2025-03-20 03:16:52,264 - __main__ - INFO - [BTCUSDT] Initial account balance: 9808.40478809 USDT
+2025-03-20 03:16:52,445 - binance_client - INFO - Leverage set to 5x for BTCUSDT
+2025-03-20 03:16:52,607 - binance_client - INFO - Initializing Binance Futures client in TEST mode
+2025-03-20 03:16:53,898 - binance_client - INFO - Leverage set to 5x for BTCUSDT
+2025-03-20 03:16:53,898 - binance_client - INFO - Client initialized successfully for BTCUSDT with 5x leverage
+2025-03-20 03:16:54,340 - binance_client - INFO - Leverage set to 5x for ETHUSDT
+2025-03-20 03:16:54,340 - binance_client - INFO - Client initialized successfully for ETHUSDT with 5x leverage
+2025-03-20 03:16:54,798 - binance_client - INFO - Leverage set to 5x for SOLUSDT
+2025-03-20 03:16:54,798 - binance_client - INFO - Client initialized successfully for SOLUSDT with 5x leverage
+2025-03-20 03:16:54,798 - telegram_notifier - INFO - Telegram notifications enabled
+2025-03-20 03:16:55,618 - risk_manager - INFO - Risk Manager initialized: risk=1%, SL=2%, TP=3%
+2025-03-20 03:16:55,620 - strategy - INFO - Initialized RSIStrategy for ETHUSDT on 1h timeframe
+2025-03-20 03:16:55,620 - strategy - INFO - RSI Strategy: period=14, overbought=70, oversold=30
+2025-03-20 03:16:55,621 - __main__ - INFO - Trading bot initialized for ETHUSDT using RSI strategy
+2025-03-20 03:16:55,622 - __main__ - INFO - [ETHUSDT] Starting trading bot...
+2025-03-20 03:16:55,622 - __main__ - INFO - Started trading bot for ETHUSDT
+2025-03-20 03:16:56,070 - __main__ - INFO - [ETHUSDT] Fetched 200 initial historical candles
+2025-03-20 03:16:56,086 - websocket_client - INFO - Using Binance Futures Testnet WebSocket
+2025-03-20 03:16:56,613 - websocket - INFO - Websocket connected
+2025-03-20 03:16:56,613 - websocket_client - INFO - Websocket connection established
+2025-03-20 03:16:56,613 - websocket_client - INFO - Subscribed to ethusdt@kline_1m
+2025-03-20 03:16:56,690 - websocket_client - INFO - Connected to Binance websocket
+2025-03-20 03:16:56,691 - websocket_client - INFO - Subscribed to ethusdt@kline_1h
+2025-03-20 03:16:56,693 - websocket_client - INFO - Subscribed to ethusdt@bookTicker
+2025-03-20 03:16:56,694 - websocket_client - INFO - Subscribed to ethusdt@markPrice@1s
+2025-03-20 03:16:56,695 - __main__ - INFO - [ETHUSDT] WebSocket connections initialized
+2025-03-20 03:16:57,102 - __main__ - INFO - [ETHUSDT] Initial account balance: 9808.40478809 USDT
+2025-03-20 03:16:57,270 - binance_client - INFO - Leverage set to 5x for ETHUSDT
+2025-03-20 03:16:57,640 - binance_client - INFO - Initializing Binance Futures client in TEST mode
+2025-03-20 03:16:58,650 - binance_client - INFO - Leverage set to 5x for BTCUSDT
+2025-03-20 03:16:58,650 - binance_client - INFO - Client initialized successfully for BTCUSDT with 5x leverage
+2025-03-20 03:16:59,133 - binance_client - INFO - Leverage set to 5x for ETHUSDT
+2025-03-20 03:16:59,133 - binance_client - INFO - Client initialized successfully for ETHUSDT with 5x leverage
+2025-03-20 03:16:59,289 - binance_client - INFO - Leverage set to 5x for SOLUSDT
+2025-03-20 03:16:59,289 - binance_client - INFO - Client initialized successfully for SOLUSDT with 5x leverage
+2025-03-20 03:16:59,289 - telegram_notifier - INFO - Telegram notifications enabled
+2025-03-20 03:17:00,211 - __main__ - INFO - [BTCUSDT] Closed candle: 1742418960000 - Open: 85530.30, Close: 85506.40
+2025-03-20 03:17:00,243 - __main__ - INFO - [ETHUSDT] Closed candle: 1742418960000 - Open: 2040.75, Close: 2039.90
+2025-03-20 03:17:00,331 - risk_manager - INFO - Risk Manager initialized: risk=0.8%, SL=2.5%, TP=4%
+2025-03-20 03:17:00,331 - strategy - INFO - Initialized MACDStrategy for SOLUSDT on 1h timeframe
+2025-03-20 03:17:00,331 - strategy - INFO - MACD Strategy: fast_period=12, slow_period=26, signal_period=9
+2025-03-20 03:17:00,331 - __main__ - INFO - Trading bot initialized for SOLUSDT using MACD strategy
+2025-03-20 03:17:00,332 - __main__ - INFO - [SOLUSDT] Starting trading bot...
+2025-03-20 03:17:00,332 - __main__ - INFO - Started trading bot for SOLUSDT
+2025-03-20 03:17:00,490 - __main__ - INFO - [SOLUSDT] Fetched 200 initial historical candles
+2025-03-20 03:17:00,517 - websocket_client - INFO - Using Binance Futures Testnet WebSocket
+2025-03-20 03:17:01,058 - websocket - INFO - Websocket connected
+2025-03-20 03:17:01,058 - websocket_client - INFO - Websocket connection established
+2025-03-20 03:17:01,059 - websocket_client - INFO - Subscribed to solusdt@kline_1m
+2025-03-20 03:17:01,123 - websocket_client - INFO - Connected to Binance websocket
+2025-03-20 03:17:01,123 - websocket_client - INFO - Subscribed to solusdt@kline_1h
+2025-03-20 03:17:01,124 - websocket_client - INFO - Subscribed to solusdt@bookTicker
+2025-03-20 03:17:01,124 - websocket_client - INFO - Subscribed to solusdt@markPrice@1s
+2025-03-20 03:17:01,124 - __main__ - INFO - [SOLUSDT] WebSocket connections initialized
+2025-03-20 03:17:01,496 - __main__ - INFO - [SOLUSDT] Initial account balance: 9808.40478809 USDT
+2025-03-20 03:17:01,946 - binance_client - INFO - Leverage set to 5x for SOLUSDT
+2025-03-20 03:17:03,080 - __main__ - INFO - [SOLUSDT] Closed candle: 1742418960000 - Open: 140.1000, Close: 140.1000
+2025-03-20 03:17:23,354 - __main__ - INFO - Shutdown signal received, closing all trading bots...
+2025-03-20 03:17:24,195 - __main__ - INFO - Stopping all trading bots...
+2025-03-20 03:17:26,091 - __main__ - INFO - Sent detailed account status notification
+2025-03-20 03:17:26,100 - __main__ - INFO - Stopping bot for BTCUSDT...
+2025-03-20 03:17:26,112 - __main__ - INFO - [BTCUSDT] Stopping trading bot...
+2025-03-20 03:17:26,172 - websocket_client - INFO - Websocket connection closed: close_status_code=None, close_msg=None
+2025-03-20 03:17:26,173 - __main__ - WARNING - [BTCUSDT] WebSocket connection closed, attempting to reconnect...
+2025-03-20 03:17:26,305 - websocket_client - INFO - Websocket connection closed
+2025-03-20 03:17:26,478 - binance_client - ERROR - Error getting position info: APIError(code=-5000): Path /fapi/v1/positionRisk, Method GET is invalid
+2025-03-20 03:17:26,478 - __main__ - ERROR - [BTCUSDT] Error closing positions on shutdown: APIError(code=-5000): Path /fapi/v1/positionRisk, Method GET is invalid
+2025-03-20 03:17:27,866 - __main__ - INFO - 
+===== Trading Summary for BTCUSDT =====
+Strategy: SMA_CROSSOVER
+Initial Balance: 9808.40 USDT
+Final Balance: 9808.40 USDT
+Profit/Loss: 0.00 USDT (0.00%)
+Total Trades: 0
+Max Drawdown: 0.00 USDT
+==========================
+
+2025-03-20 03:17:28,721 - __main__ - INFO - Stopping bot for ETHUSDT...
+2025-03-20 03:17:28,723 - __main__ - INFO - [ETHUSDT] Stopping trading bot...
+2025-03-20 03:17:28,844 - websocket_client - INFO - Websocket connection closed: close_status_code=None, close_msg=None
+2025-03-20 03:17:28,844 - websocket_client - INFO - Websocket connection closed
+2025-03-20 03:17:28,845 - __main__ - WARNING - [ETHUSDT] WebSocket connection closed, attempting to reconnect...
+2025-03-20 03:17:29,004 - binance_client - ERROR - Error getting position info: APIError(code=-5000): Path /fapi/v1/positionRisk, Method GET is invalid
+2025-03-20 03:17:29,012 - __main__ - ERROR - [ETHUSDT] Error closing positions on shutdown: APIError(code=-5000): Path /fapi/v1/positionRisk, Method GET is invalid
+2025-03-20 03:17:30,266 - __main__ - INFO - 
+===== Trading Summary for ETHUSDT =====
+Strategy: RSI
+Initial Balance: 9808.40 USDT
+Final Balance: 9808.40 USDT
+Profit/Loss: 0.00 USDT (0.00%)
+Total Trades: 0
+Max Drawdown: 0.00 USDT
+==========================
+
+2025-03-20 03:17:31,116 - __main__ - INFO - Stopping bot for SOLUSDT...
+2025-03-20 03:17:31,117 - __main__ - INFO - [SOLUSDT] Stopping trading bot...
+2025-03-20 03:17:31,297 - websocket_client - INFO - Websocket connection closed
+2025-03-20 03:17:31,472 - binance_client - ERROR - Error getting position info: APIError(code=-5000): Path /fapi/v1/positionRisk, Method GET is invalid
+2025-03-20 03:17:31,473 - __main__ - ERROR - [SOLUSDT] Error closing positions on shutdown: APIError(code=-5000): Path /fapi/v1/positionRisk, Method GET is invalid
+2025-03-20 03:17:32,060 - websocket_client - INFO - Using Binance Futures Testnet WebSocket
+2025-03-20 03:17:32,601 - websocket - INFO - Websocket connected
+2025-03-20 03:17:32,602 - websocket_client - INFO - Websocket connection established
+2025-03-20 03:17:32,603 - websocket_client - INFO - Subscribed to btcusdt@kline_1m
+2025-03-20 03:17:32,670 - websocket_client - INFO - Connected to Binance websocket
+2025-03-20 03:17:32,673 - websocket_client - INFO - Subscribed to btcusdt@kline_1h
+2025-03-20 03:17:32,675 - websocket_client - INFO - Subscribed to btcusdt@bookTicker
+2025-03-20 03:17:32,677 - websocket_client - INFO - Subscribed to btcusdt@markPrice@1s
+2025-03-20 03:17:32,680 - __main__ - INFO - [BTCUSDT] WebSocket connections initialized
+2025-03-20 03:17:32,928 - __main__ - INFO - 
+===== Trading Summary for SOLUSDT =====
+Strategy: MACD
+Initial Balance: 9808.40 USDT
+Final Balance: 9808.40 USDT
+Profit/Loss: 0.00 USDT (0.00%)
+Total Trades: 0
+Max Drawdown: 0.00 USDT
+==========================
+
+2025-03-20 03:17:34,612 - __main__ - INFO - All trading bots stopped
+2025-03-20 03:20:35,187 - binance_client - INFO - Initializing Binance Futures client in TEST mode
+2025-03-20 03:20:36,604 - binance_client - INFO - Leverage set to 5x for BTCUSDT
+2025-03-20 03:20:36,604 - binance_client - INFO - Client initialized successfully for BTCUSDT with 5x leverage
+2025-03-20 03:20:37,044 - binance_client - INFO - Leverage set to 5x for ETHUSDT
+2025-03-20 03:20:37,044 - binance_client - INFO - Client initialized successfully for ETHUSDT with 5x leverage
+2025-03-20 03:20:37,203 - binance_client - INFO - Leverage set to 5x for SOLUSDT
+2025-03-20 03:20:37,203 - binance_client - INFO - Client initialized successfully for SOLUSDT with 5x leverage
+2025-03-20 03:20:37,203 - telegram_notifier - INFO - Telegram notifications enabled
+2025-03-20 03:20:38,085 - __main__ - INFO - Multi-symbol trading bot initialized
+2025-03-20 03:20:38,085 - __main__ - INFO - Starting multi-symbol trading bot...
+2025-03-20 03:20:40,654 - __main__ - INFO - Sent detailed account status notification
+2025-03-20 03:20:40,655 - binance_client - INFO - Initializing Binance Futures client in TEST mode
+2025-03-20 03:20:41,222 - binance_client - INFO - Leverage set to 5x for BTCUSDT
+2025-03-20 03:20:41,222 - binance_client - INFO - Client initialized successfully for BTCUSDT with 5x leverage
+2025-03-20 03:20:41,675 - binance_client - INFO - Leverage set to 5x for ETHUSDT
+2025-03-20 03:20:41,675 - binance_client - INFO - Client initialized successfully for ETHUSDT with 5x leverage
+2025-03-20 03:20:42,120 - binance_client - INFO - Leverage set to 5x for SOLUSDT
+2025-03-20 03:20:42,120 - binance_client - INFO - Client initialized successfully for SOLUSDT with 5x leverage
+2025-03-20 03:20:42,121 - telegram_notifier - INFO - Telegram notifications enabled
+2025-03-20 03:20:42,942 - risk_manager - INFO - Risk Manager initialized: risk=1%, SL=2%, TP=3%
+2025-03-20 03:20:42,946 - strategy - INFO - Initialized SMACrossoverStrategy for BTCUSDT on 1h timeframe
+2025-03-20 03:20:42,948 - strategy - INFO - SMA Crossover: short_period=9, long_period=21
+2025-03-20 03:20:42,949 - __main__ - INFO - Trading bot initialized for BTCUSDT using SMA_CROSSOVER strategy
+2025-03-20 03:20:42,953 - __main__ - INFO - [BTCUSDT] Starting trading bot...
+2025-03-20 03:20:42,954 - __main__ - INFO - Started trading bot for BTCUSDT
+2025-03-20 03:20:43,126 - __main__ - INFO - [BTCUSDT] Fetched 200 initial historical candles
+2025-03-20 03:20:43,161 - websocket_client - INFO - Using Binance Futures Testnet WebSocket
+2025-03-20 03:20:43,707 - websocket - INFO - Websocket connected
+2025-03-20 03:20:43,708 - websocket_client - INFO - Websocket connection established
+2025-03-20 03:20:43,709 - websocket_client - INFO - Subscribed to btcusdt@kline_1m
+2025-03-20 03:20:43,769 - websocket_client - INFO - Connected to Binance websocket
+2025-03-20 03:20:43,770 - websocket_client - INFO - Subscribed to btcusdt@kline_1h
+2025-03-20 03:20:43,772 - websocket_client - INFO - Subscribed to btcusdt@bookTicker
+2025-03-20 03:20:43,774 - websocket_client - INFO - Subscribed to btcusdt@markPrice@1s
+2025-03-20 03:20:43,775 - __main__ - INFO - [BTCUSDT] WebSocket connections initialized
+2025-03-20 03:20:44,348 - __main__ - INFO - [BTCUSDT] Initial account balance: 9808.40478809 USDT
+2025-03-20 03:20:44,790 - binance_client - INFO - Leverage set to 5x for BTCUSDT
+2025-03-20 03:20:44,965 - binance_client - INFO - Initializing Binance Futures client in TEST mode
+2025-03-20 03:20:45,940 - binance_client - INFO - Leverage set to 5x for BTCUSDT
+2025-03-20 03:20:45,940 - binance_client - INFO - Client initialized successfully for BTCUSDT with 5x leverage
+2025-03-20 03:20:46,374 - binance_client - INFO - Leverage set to 5x for ETHUSDT
+2025-03-20 03:20:46,374 - binance_client - INFO - Client initialized successfully for ETHUSDT with 5x leverage
+2025-03-20 03:20:46,539 - binance_client - INFO - Leverage set to 5x for SOLUSDT
+2025-03-20 03:20:46,539 - binance_client - INFO - Client initialized successfully for SOLUSDT with 5x leverage
+2025-03-20 03:20:46,539 - telegram_notifier - INFO - Telegram notifications enabled
+2025-03-20 03:20:47,426 - risk_manager - INFO - Risk Manager initialized: risk=1%, SL=2%, TP=3%
+2025-03-20 03:20:47,427 - strategy - INFO - Initialized RSIStrategy for ETHUSDT on 1h timeframe
+2025-03-20 03:20:47,429 - strategy - INFO - RSI Strategy: period=14, overbought=70, oversold=30
+2025-03-20 03:20:47,431 - __main__ - INFO - Trading bot initialized for ETHUSDT using RSI strategy
+2025-03-20 03:20:47,432 - __main__ - INFO - [ETHUSDT] Starting trading bot...
+2025-03-20 03:20:47,433 - __main__ - INFO - Started trading bot for ETHUSDT
+2025-03-20 03:20:47,597 - __main__ - INFO - [ETHUSDT] Fetched 200 initial historical candles
+2025-03-20 03:20:47,603 - websocket_client - INFO - Using Binance Futures Testnet WebSocket
+2025-03-20 03:20:48,127 - websocket - INFO - Websocket connected
+2025-03-20 03:20:48,128 - websocket_client - INFO - Websocket connection established
+2025-03-20 03:20:48,129 - websocket_client - INFO - Subscribed to ethusdt@kline_1m
+2025-03-20 03:20:48,206 - websocket_client - INFO - Connected to Binance websocket
+2025-03-20 03:20:48,207 - websocket_client - INFO - Subscribed to ethusdt@kline_1h
+2025-03-20 03:20:48,207 - websocket_client - INFO - Subscribed to ethusdt@bookTicker
+2025-03-20 03:20:48,208 - websocket_client - INFO - Subscribed to ethusdt@markPrice@1s
+2025-03-20 03:20:48,208 - __main__ - INFO - [ETHUSDT] WebSocket connections initialized
+2025-03-20 03:20:48,573 - __main__ - INFO - [ETHUSDT] Initial account balance: 9808.40478809 USDT
+2025-03-20 03:20:49,033 - binance_client - INFO - Leverage set to 5x for ETHUSDT
+2025-03-20 03:20:49,449 - binance_client - INFO - Initializing Binance Futures client in TEST mode
+2025-03-20 03:20:50,124 - binance_client - INFO - Leverage set to 5x for BTCUSDT
+2025-03-20 03:20:50,125 - binance_client - INFO - Client initialized successfully for BTCUSDT with 5x leverage
+2025-03-20 03:20:50,290 - binance_client - INFO - Leverage set to 5x for ETHUSDT
+2025-03-20 03:20:50,290 - binance_client - INFO - Client initialized successfully for ETHUSDT with 5x leverage
+2025-03-20 03:20:50,455 - binance_client - INFO - Leverage set to 5x for SOLUSDT
+2025-03-20 03:20:50,455 - binance_client - INFO - Client initialized successfully for SOLUSDT with 5x leverage
+2025-03-20 03:20:50,456 - telegram_notifier - INFO - Telegram notifications enabled
+2025-03-20 03:20:51,344 - risk_manager - INFO - Risk Manager initialized: risk=0.8%, SL=2.5%, TP=4%
+2025-03-20 03:20:51,352 - strategy - INFO - Initialized MACDStrategy for SOLUSDT on 1h timeframe
+2025-03-20 03:20:51,353 - strategy - INFO - MACD Strategy: fast_period=12, slow_period=26, signal_period=9
+2025-03-20 03:20:51,354 - __main__ - INFO - Trading bot initialized for SOLUSDT using MACD strategy
+2025-03-20 03:20:51,359 - __main__ - INFO - [SOLUSDT] Starting trading bot...
+2025-03-20 03:20:51,359 - __main__ - INFO - Started trading bot for SOLUSDT
+2025-03-20 03:20:51,806 - __main__ - INFO - [SOLUSDT] Fetched 200 initial historical candles
+2025-03-20 03:20:51,843 - websocket_client - INFO - Using Binance Futures Testnet WebSocket
+2025-03-20 03:20:52,370 - websocket - INFO - Websocket connected
+2025-03-20 03:20:52,370 - websocket_client - INFO - Websocket connection established
+2025-03-20 03:20:52,371 - websocket_client - INFO - Subscribed to solusdt@kline_1m
+2025-03-20 03:20:52,450 - websocket_client - INFO - Connected to Binance websocket
+2025-03-20 03:20:52,451 - websocket_client - INFO - Subscribed to solusdt@kline_1h
+2025-03-20 03:20:52,452 - websocket_client - INFO - Subscribed to solusdt@bookTicker
+2025-03-20 03:20:52,453 - websocket_client - INFO - Subscribed to solusdt@markPrice@1s
+2025-03-20 03:20:52,454 - __main__ - INFO - [SOLUSDT] WebSocket connections initialized
+2025-03-20 03:20:53,026 - __main__ - INFO - [SOLUSDT] Initial account balance: 9808.40478809 USDT
+2025-03-20 03:20:53,470 - binance_client - INFO - Leverage set to 5x for SOLUSDT
+2025-03-20 03:21:00,409 - __main__ - INFO - [BTCUSDT] Closed candle: 1742419200000 - Open: 85628.80, Close: 85664.70
+2025-03-20 03:21:00,893 - __main__ - INFO - [ETHUSDT] Closed candle: 1742419200000 - Open: 2041.63, Close: 2041.77
+2025-03-20 03:21:03,106 - __main__ - INFO - [SOLUSDT] Closed candle: 1742419200000 - Open: 140.1000, Close: 140.1000
+2025-03-20 03:21:22,652 - __main__ - INFO - Shutdown signal received, closing all trading bots...
+2025-03-20 03:21:23,476 - __main__ - INFO - Stopping all trading bots...
+2025-03-20 03:21:25,396 - __main__ - INFO - Sent detailed account status notification
+2025-03-20 03:21:25,398 - __main__ - INFO - Stopping bot for BTCUSDT...
+2025-03-20 03:21:25,398 - __main__ - INFO - [BTCUSDT] Stopping trading bot...
+2025-03-20 03:21:25,414 - websocket_client - INFO - Websocket connection closed: close_status_code=None, close_msg=None
+2025-03-20 03:21:25,415 - __main__ - WARNING - [BTCUSDT] WebSocket connection closed, attempting to reconnect...
+2025-03-20 03:21:25,531 - websocket_client - INFO - Websocket connection closed
+2025-03-20 03:21:26,496 - __main__ - INFO - 
+===== Trading Summary for BTCUSDT =====
+Strategy: SMA_CROSSOVER
+Initial Balance: 9808.40 USDT
+Final Balance: 9808.40 USDT
+Profit/Loss: 0.00 USDT (0.00%)
+Total Trades: 0
+Max Drawdown: 0.00 USDT
+==========================
+
+2025-03-20 03:21:27,336 - __main__ - INFO - Stopping bot for ETHUSDT...
+2025-03-20 03:21:27,337 - __main__ - INFO - [ETHUSDT] Stopping trading bot...
+2025-03-20 03:21:27,491 - websocket_client - INFO - Websocket connection closed: close_status_code=None, close_msg=None
+2025-03-20 03:21:27,491 - websocket_client - INFO - Websocket connection closed
+2025-03-20 03:21:27,491 - __main__ - WARNING - [ETHUSDT] WebSocket connection closed, attempting to reconnect...
+2025-03-20 03:21:28,054 - __main__ - INFO - 
+===== Trading Summary for ETHUSDT =====
+Strategy: RSI
+Initial Balance: 9808.40 USDT
+Final Balance: 9808.40 USDT
+Profit/Loss: 0.00 USDT (0.00%)
+Total Trades: 0
+Max Drawdown: 0.00 USDT
+==========================
+
+2025-03-20 03:21:28,873 - __main__ - INFO - Stopping bot for SOLUSDT...
+2025-03-20 03:21:28,874 - __main__ - INFO - [SOLUSDT] Stopping trading bot...
+2025-03-20 03:21:29,061 - websocket_client - INFO - Websocket connection closed: close_status_code=None, close_msg=None
+2025-03-20 03:21:29,062 - websocket_client - INFO - Websocket connection closed
+2025-03-20 03:21:29,062 - __main__ - WARNING - [SOLUSDT] WebSocket connection closed, attempting to reconnect...
+2025-03-20 03:21:29,659 - __main__ - INFO - 
+===== Trading Summary for SOLUSDT =====
+Strategy: MACD
+Initial Balance: 9808.40 USDT
+Final Balance: 9808.40 USDT
+Profit/Loss: 0.00 USDT (0.00%)
+Total Trades: 0
+Max Drawdown: 0.00 USDT
+==========================
+
+2025-03-20 03:21:31,283 - websocket_client - INFO - Using Binance Futures Testnet WebSocket
+2025-03-20 03:21:31,434 - __main__ - INFO - All trading bots stopped

@@ -1,0 +1,3 @@
+pytest tests/ -v --cov=. --cov-report=term-missing
+
+cd ~/binance-futuer-trading-bot && python trading_bot.py
