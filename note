@@ -3,3 +3,5 @@ pytest tests/ -v --cov=. --cov-report=term-missing
 cd ~/binance-futuer-trading-bot && python trading_bot.py
 //install required packages
 pip install -r requirements.txt
+
+chmod +x install.sh start.sh stop.sh restart.sh
