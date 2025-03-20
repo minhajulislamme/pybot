@@ -1068,44 +1068,62 @@ class TradingBot:
         current_price = df['close'].iloc[-1]
         atr_percentage = (atr / current_price) * 100
         
-        # Calculate ADX for trend strength
-        df['tr'] = np.max(np.vstack([tr1, tr2, tr3]).T, axis=1)
-        df['tr'] = pd.Series(df['tr'], index=df.index[1:])
+        # Create a new dataframe for ADX calculation to avoid length mismatch issues
+        adx_df = pd.DataFrame(index=df.index[1:])  # Create a new dataframe starting from second row
+        
+        # Calculate TR and add it to the new dataframe
+        adx_df['tr'] = np.max(np.vstack([tr1, tr2, tr3]).T, axis=1)
         
         # +DM and -DM
-        df['plus_dm'] = np.zeros(len(df))
-        df['minus_dm'] = np.zeros(len(df))
+        adx_df['plus_dm'] = np.zeros(len(adx_df))
+        adx_df['minus_dm'] = np.zeros(len(adx_df))
         
         # Calculate +DM and -DM
         for i in range(1, len(df)):
-            df['plus_dm'].iloc[i] = max(0, df['high'].iloc[i] - df['high'].iloc[i-1])
-            df['minus_dm'].iloc[i] = max(0, df['low'].iloc[i-1] - df['low'].iloc[i])
-            
-            # If +DM > -DM, then -DM = 0
-            if df['plus_dm'].iloc[i] > df['minus_dm'].iloc[i]:
-                df['minus_dm'].iloc[i] = 0
-            # If -DM > +DM, then +DM = 0
-            elif df['minus_dm'].iloc[i] > df['plus_dm'].iloc[i]:
-                df['plus_dm'].iloc[i] = 0
+            if i-1 < len(adx_df):  # Make sure we're within bounds
+                idx = adx_df.index[i-1]  # Get the proper index
+                
+                plus_dm = max(0, df['high'].iloc[i] - df['high'].iloc[i-1])
+                minus_dm = max(0, df['low'].iloc[i-1] - df['low'].iloc[i])
+                
+                # If +DM > -DM, then -DM = 0
+                if plus_dm > minus_dm:
+                    minus_dm = 0
+                # If -DM > +DM, then +DM = 0
+                elif minus_dm > plus_dm:
+                    plus_dm = 0
+                
+                adx_df.at[idx, 'plus_dm'] = plus_dm
+                adx_df.at[idx, 'minus_dm'] = minus_dm
         
         # Calculate smoothed +DM, -DM and TR
         period = 14
-        df['smoothed_tr'] = df['tr'].rolling(window=period).sum()
-        df['smoothed_plus_dm'] = df['plus_dm'].rolling(window=period).sum()
-        df['smoothed_minus_dm'] = df['minus_dm'].rolling(window=period).sum()
+        adx_df['smoothed_tr'] = adx_df['tr'].rolling(window=period).sum()
+        adx_df['smoothed_plus_dm'] = adx_df['plus_dm'].rolling(window=period).sum()
+        adx_df['smoothed_minus_dm'] = adx_df['minus_dm'].rolling(window=period).sum()
         
-        # Calculate +DI and -DI
-        df['+di'] = 100 * df['smoothed_plus_dm'] / df['smoothed_tr']
-        df['-di'] = 100 * df['smoothed_minus_dm'] / df['smoothed_tr']
+        # Calculate +DI and -DI, avoiding division by zero
+        adx_df['+di'] = 0.0  # Initialize with zeros
+        adx_df['-di'] = 0.0
+        mask = adx_df['smoothed_tr'] > 0  # Create a mask where tr is not zero
+        
+        # Only calculate for non-zero tr values
+        adx_df.loc[mask, '+di'] = 100 * adx_df.loc[mask, 'smoothed_plus_dm'] / adx_df.loc[mask, 'smoothed_tr']
+        adx_df.loc[mask, '-di'] = 100 * adx_df.loc[mask, 'smoothed_minus_dm'] / adx_df.loc[mask, 'smoothed_tr']
         
         # Calculate directional movement index (DX)
-        df['dx'] = 100 * np.abs(df['+di'] - df['-di']) / (df['+di'] + df['-di'])
+        adx_df['dx'] = 0.0  # Initialize with zeros
+        di_sum = adx_df['+di'] + adx_df['-di']
+        mask = di_sum > 0  # Avoid division by zero
+        
+        # Only calculate for non-zero denominator
+        adx_df.loc[mask, 'dx'] = 100 * np.abs(adx_df.loc[mask, '+di'] - adx_df.loc[mask, '-di']) / di_sum[mask]
         
         # Calculate ADX
-        df['adx'] = df['dx'].rolling(window=period).mean()
+        adx_df['adx'] = adx_df['dx'].rolling(window=period).mean()
         
         # Get most recent ADX value
-        recent_adx = df['adx'].iloc[-1] if not pd.isna(df['adx'].iloc[-1]) else 0
+        recent_adx = adx_df['adx'].iloc[-1] if not pd.isna(adx_df['adx'].iloc[-1]) else 0
         
         # Determine market condition
         if atr_percentage > 3.0:  # High volatility
