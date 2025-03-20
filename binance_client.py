@@ -260,17 +260,43 @@ class BinanceClient:
     def format_quantity(self, quantity, symbol):
         """Format quantity according to symbol precision requirements"""
         try:
-            precision = self.get_quantity_precision(symbol)
+            # Get symbol info (cached)
+            symbol_info = self.get_symbol_info(symbol)
+            if not symbol_info:
+                logger.warning(f"No symbol info found for {symbol}, using default precision of 3")
+                return float(format(float(quantity), ".3f"))
+                
+            # Get lot size filter for quantity precision
+            lot_size_filter = next((f for f in symbol_info['filters'] if f['filterType'] == 'LOT_SIZE'), None)
             
-            # Format with proper precision and avoid scientific notation
-            formatted_qty = format(float(quantity), f".{precision}f")
+            if not lot_size_filter:
+                logger.warning(f"No LOT_SIZE filter found for {symbol}, using default precision of 3")
+                return float(format(float(quantity), ".3f"))
             
-            logger.info(f"Formatted {quantity} to {formatted_qty} with precision {precision} for {symbol}")
-            return float(formatted_qty)
+            step_size = lot_size_filter['stepSize']
+            precision = 0
+            
+            # Extract precision from step size
+            if '.' in step_size:
+                decimal_part = step_size.split('.')[1].rstrip('0')
+                precision = len(decimal_part) if decimal_part else 0
+            
+            # Special handling for specific assets based on their known precision requirements
+            if symbol == 'SOLUSDT':
+                precision = 3  # Enforce exactly 3 decimal places for SOL
+            elif symbol == 'ADAUSDT':
+                precision = 1  # Enforce exactly 1 decimal place for ADA
+            
+            # Format with proper precision
+            formatted_str = format(float(quantity), f".{precision}f")
+            formatted_float = float(formatted_str)
+            
+            logger.info(f"Formatted {quantity} to {formatted_float} with precision {precision} for {symbol}")
+            return formatted_float
             
         except Exception as e:
             logger.error(f"Error formatting quantity for {symbol}: {e}")
-            return float(round(quantity, 3))  # Fallback with reasonable precision
+            return float(round(float(quantity), 3))  # Fallback with reasonable precision
 
     def place_market_order(self, symbol, side, quantity):
         """Place a market order"""
