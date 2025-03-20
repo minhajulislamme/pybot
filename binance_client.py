@@ -18,6 +18,8 @@ class BinanceClient:
         self.test_mode = config.TEST_MODE
         self.notifications_enabled = getattr(config, 'NOTIFICATIONS_ENABLED', False)
         self.initialize_client()
+        # Cache for symbol info to reduce API calls
+        self.symbol_info_cache = {}
 
     def initialize_client(self):
         """Initialize the Binance client with appropriate API keys"""
@@ -215,24 +217,83 @@ class BinanceClient:
         
         return position_size
 
+    def get_symbol_info(self, symbol):
+        """Get symbol info with caching to reduce API calls"""
+        if symbol not in self.symbol_info_cache:
+            try:
+                self.symbol_info_cache[symbol] = self.client.get_symbol_info(symbol)
+            except Exception as e:
+                logger.error(f"Error fetching symbol info for {symbol}: {e}")
+                return None
+                
+        return self.symbol_info_cache[symbol]
+        
+    def get_quantity_precision(self, symbol):
+        """Get the appropriate quantity precision for a symbol"""
+        try:
+            symbol_info = self.get_symbol_info(symbol)
+            if not symbol_info:
+                logger.warning(f"No symbol info found for {symbol}, using default precision of 3")
+                return 3  # Default precision if info not available
+                
+            # Get lot size filter for quantity precision
+            for filter_item in symbol_info['filters']:
+                if filter_item['filterType'] == 'LOT_SIZE':
+                    step_size = filter_item['stepSize']
+                    # Convert step size to precision
+                    precision = 0
+                    if '.' in step_size:
+                        decimal_part = step_size.split('.')[1].rstrip('0')
+                        if decimal_part:
+                            precision = len(decimal_part)
+                    
+                    logger.info(f"Determined quantity precision for {symbol}: {precision}")
+                    return precision
+            
+            logger.warning(f"No LOT_SIZE filter found for {symbol}, using default precision of 3")
+            return 3  # Default if no LOT_SIZE filter
+            
+        except Exception as e:
+            logger.error(f"Error getting quantity precision for {symbol}: {e}")
+            return 3  # Default in case of error
+    
+    def format_quantity(self, quantity, symbol):
+        """Format quantity according to symbol precision requirements"""
+        try:
+            precision = self.get_quantity_precision(symbol)
+            
+            # Format with proper precision and avoid scientific notation
+            formatted_qty = format(float(quantity), f".{precision}f")
+            
+            logger.info(f"Formatted {quantity} to {formatted_qty} with precision {precision} for {symbol}")
+            return float(formatted_qty)
+            
+        except Exception as e:
+            logger.error(f"Error formatting quantity for {symbol}: {e}")
+            return float(round(quantity, 3))  # Fallback with reasonable precision
+
     def place_market_order(self, symbol, side, quantity):
         """Place a market order"""
         try:
             symbol = symbol.replace('/', '')
+            
+            # Format quantity with proper precision
+            formatted_quantity = self.format_quantity(quantity, symbol)
+            
             order = self.client.futures_create_order(
                 symbol=symbol,
                 side=side,
                 type='MARKET',
-                quantity=quantity
+                quantity=formatted_quantity
             )
-            logger.info(f"Market order placed: {side} {quantity} {symbol}")
+            logger.info(f"Market order placed: {side} {formatted_quantity} {symbol}")
             
             # Send notification
             if self.notifications_enabled and config.NOTIFICATION_TYPES.get('trade_entry', False):
                 self.send_telegram_notification(
                     f"🔄 New {side} Order\n"
                     f"Symbol: {symbol}\n"
-                    f"Quantity: {quantity}\n"
+                    f"Quantity: {formatted_quantity}\n"
                     f"Type: Market\n"
                     f"Mode: {'TEST' if self.test_mode else 'REAL'}"
                 )
@@ -255,15 +316,19 @@ class BinanceClient:
         """Place a limit order"""
         try:
             symbol = symbol.replace('/', '')
+            
+            # Format quantity with proper precision
+            formatted_quantity = self.format_quantity(quantity, symbol)
+            
             order = self.client.futures_create_order(
                 symbol=symbol,
                 side=side,
                 type='LIMIT',
                 timeInForce='GTC',
-                quantity=quantity,
+                quantity=formatted_quantity,
                 price=str(price)
             )
-            logger.info(f"Limit order placed: {side} {quantity} {symbol} @ {price}")
+            logger.info(f"Limit order placed: {side} {formatted_quantity} {symbol} @ {price}")
             return order
         except BinanceAPIException as e:
             logger.error(f"Error placing limit order: {e}")
@@ -273,6 +338,10 @@ class BinanceClient:
         """Place a stop loss order"""
         try:
             symbol = symbol.replace('/', '')
+            
+            # Format quantity with proper precision
+            formatted_quantity = self.format_quantity(quantity, symbol)
+            
             params = {
                 'symbol': symbol,
                 'side': 'SELL' if side == 'BUY' else 'BUY',  # Opposite of position side
@@ -292,6 +361,10 @@ class BinanceClient:
         """Place a take profit order"""
         try:
             symbol = symbol.replace('/', '')
+            
+            # Format quantity with proper precision
+            formatted_quantity = self.format_quantity(quantity, symbol)
+            
             params = {
                 'symbol': symbol,
                 'side': 'SELL' if side == 'BUY' else 'BUY',  # Opposite of position side

@@ -43,6 +43,17 @@ TRADING_PAIRS = [
         "fast_period": 12,
         "slow_period": 26,
         "signal_period": 9
+    },
+    {
+        "symbol": "ADAUSDT",
+        "leverage": 4,
+        "risk_percentage": 0.7,
+        "stop_loss_percentage": 2.5,
+        "take_profit_percentage": 3.5,
+        "strategy": "MACD",
+        "fast_period": 12,
+        "slow_period": 26,
+        "signal_period": 9
     }
 ]
 
