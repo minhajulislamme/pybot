@@ -2,6 +2,14 @@
 # Set TEST_MODE to True for testnet, False for real trading
 TEST_MODE = True
 
+# API hosts
+TESTNET_API_HOST = "https://testnet.binancefuture.com"
+PRODUCTION_API_HOST = "https://fapi.binance.com"
+
+# WebSocket hosts
+TESTNET_WS_HOST = "wss://stream.binancefuture.com"
+PRODUCTION_WS_HOST = "wss://fstream.binance.com"
+
 # Testnet API credentials
 TEST_API_KEY = "bb0ba32b12f6188db14096d2b2e4c1bc43592b2e265b5fd2ca81d5df56316884"
 TEST_API_SECRET = "7d95dcd173e0e24eef369713fa716ff04a23cf3de5ec42e0470365ab32fac237"
@@ -34,22 +42,22 @@ TRADING_PAIRS = [
         "rsi_oversold": 30
     },
     {
-        "symbol": "SOLUSDT",
+        "symbol": "BNBUSDT",
         "leverage": 5,
-        "risk_percentage": 0.8,
-        "stop_loss_percentage": 2.5,
-        "take_profit_percentage": 4,
+        "risk_percentage": 1,
+        "stop_loss_percentage": 2,
+        "take_profit_percentage": 3,
         "strategy": "MACD",
         "fast_period": 12,
         "slow_period": 26,
         "signal_period": 9
     },
     {
-        "symbol": "ADAUSDT",
-        "leverage": 4,
-        "risk_percentage": 0.7,
+        "symbol": "SOLUSDT",
+        "leverage": 5,
+        "risk_percentage": 0.8,
         "stop_loss_percentage": 2.5,
-        "take_profit_percentage": 3.5,
+        "take_profit_percentage": 4,
         "strategy": "MACD",
         "fast_period": 12,
         "slow_period": 26,
@@ -96,3 +104,20 @@ NOTIFICATION_TYPES = {
 
 # Logging configuration
 LOG_LEVEL = "INFO"  # Available: DEBUG, INFO, WARNING, ERROR
+
+# Maximum retries for API calls
+MAX_RETRIES = 3
+RETRY_DELAY = 1  # seconds
+
+# Connection timeouts
+API_TIMEOUT = 10  # seconds
+WEBSOCKET_TIMEOUT = 30  # seconds
+
+# Trading restrictions
+MAX_LEVERAGE = 20  # Maximum allowed leverage
+MIN_TRADE_AMOUNT = 5  # Minimum trade amount in USDT
+MAX_ACTIVE_POSITIONS = 5  # Maximum number of active positions
+
+# Error handling
+FATAL_ERRORS = [-2015, -1021, -1001]  # Error codes that should trigger bot shutdown
+RETRY_ERRORS = [-1000, -1001, -1002]  # Error codes that should trigger retry

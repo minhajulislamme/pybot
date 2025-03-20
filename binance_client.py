@@ -36,32 +36,67 @@ class BinanceClient:
                 self.api_secret = config.REAL_API_SECRET
                 self.client = Client(self.api_key, self.api_secret)
                 self.api_url = PRODUCTION_API_HOST
-            
-            # Set leverage for the trading pair
-            for pair_config in config.TRADING_PAIRS:
-                symbol = pair_config.get("symbol")
-                leverage = pair_config.get("leverage", config.DEFAULT_LEVERAGE)
-                if symbol:
-                    self.set_leverage(symbol, leverage)
-                    logger.info(f"Client initialized successfully for {symbol} with {leverage}x leverage")
-            
+
+            # Verify connection first
+            self.client.futures_account_balance()
+            logger.info("Successfully connected to Binance Futures API")
+
         except BinanceAPIException as e:
             logger.error(f"Error initializing Binance client: {e}")
+            raise
+        except Exception as e:
+            logger.error(f"Unexpected error initializing Binance client: {e}")
             raise
 
     def set_leverage(self, symbol, leverage):
         """Set leverage for a specific symbol"""
         try:
             symbol = symbol.replace('/', '')
-            response = self.client.futures_change_leverage(
-                symbol=symbol,
-                leverage=leverage
-            )
-            logger.info(f"Leverage set to {leverage}x for {symbol}")
-            return response
-        except BinanceAPIException as e:
-            logger.error(f"Error setting leverage: {e}")
-            raise
+            max_retries = 3
+            retry_count = 0
+            
+            while retry_count < max_retries:
+                try:
+                    response = self.client.futures_change_leverage(
+                        symbol=symbol,
+                        leverage=leverage
+                    )
+                    logger.info(f"Leverage set to {leverage}x for {symbol}")
+                    return response
+                except BinanceAPIException as e:
+                    if e.code == -1000:  # Unknown error
+                        retry_count += 1
+                        if retry_count < max_retries:
+                            logger.warning(f"Retrying leverage setting for {symbol} (attempt {retry_count + 1})")
+                            time.sleep(1)  # Add delay between retries
+                            continue
+                    logger.error(f"Error setting leverage for {symbol}: {e}")
+                    return None  # Return None instead of raising to allow trading to continue
+                except Exception as e:
+                    logger.error(f"Unexpected error setting leverage for {symbol}: {e}")
+                    return None
+                
+            logger.error(f"Failed to set leverage for {symbol} after {max_retries} attempts")
+            return None
+                    
+        except Exception as e:
+            logger.error(f"Error in set_leverage: {e}")
+            return None  # Return None instead of raising to allow trading to continue
+            
+    def setup_trading_pairs(self):
+        """Set up leverage for all trading pairs after successful client initialization"""
+        success = True
+        for pair_config in config.TRADING_PAIRS:
+            symbol = pair_config.get("symbol")
+            leverage = pair_config.get("leverage", config.DEFAULT_LEVERAGE)
+            if symbol:
+                result = self.set_leverage(symbol, leverage)
+                if result is None:
+                    logger.warning(f"Could not set leverage for {symbol}, will use exchange default")
+                    success = False
+                else:
+                    logger.info(f"Successfully set {leverage}x leverage for {symbol}")
+        return success
 
     def get_account_balance(self):
         """Get futures account balance"""
@@ -195,27 +230,50 @@ class BinanceClient:
             logger.error(f"Error getting position info: {e}")
             raise
 
-    def calculate_position_size(self, price):
+    def calculate_position_size(self, price, symbol=None):
         """Calculate position size based on risk percentage"""
-        balance = self.get_account_balance()
-        risk_amount = balance * (config.RISK_PERCENTAGE / 100)
-        
-        # Calculate position size based on leverage
-        position_size = (risk_amount * config.LEVERAGE) / price
-        
-        # Round to appropriate precision for the asset
-        symbol_info = self.client.get_symbol_info(config.SYMBOL)
-        step_size = 0.001  # Default if not found
-        
-        for filter in symbol_info['filters']:
-            if filter['filterType'] == 'LOT_SIZE':
-                step_size = float(filter['stepSize'])
-                break
-                
-        precision = len(str(step_size).rstrip('0').split('.')[1]) if '.' in str(step_size) else 0
-        position_size = round(position_size, precision)
-        
-        return position_size
+        try:
+            balance = self.get_account_balance()
+            risk_amount = balance * (config.RISK_PERCENTAGE / 100)
+            
+            # Calculate position size based on leverage
+            symbol = symbol or config.TRADING_PAIRS[0]["symbol"]
+            
+            # Find the leverage for this symbol
+            leverage = None
+            for pair in config.TRADING_PAIRS:
+                if pair.get("symbol") == symbol:
+                    leverage = pair.get("leverage", config.DEFAULT_LEVERAGE)
+                    break
+            
+            if leverage is None:
+                leverage = config.DEFAULT_LEVERAGE
+            
+            position_size = (risk_amount * leverage) / price
+            
+            # Special handling for SOLUSDT
+            if symbol == 'SOLUSDT':
+                # Ensure minimum 1 unit and round to whole number
+                position_size = max(1, int(position_size))
+                return position_size
+            
+            # For other symbols, use standard precision handling
+            symbol_info = self.client.get_symbol_info(symbol)
+            step_size = 0.001  # Default if not found
+            
+            for filter in symbol_info['filters']:
+                if filter['filterType'] == 'LOT_SIZE':
+                    step_size = float(filter['stepSize'])
+                    break
+                    
+            precision = len(str(step_size).rstrip('0').split('.')[1]) if '.' in str(step_size) else 0
+            position_size = round(position_size, precision)
+            
+            return position_size
+            
+        except Exception as e:
+            logger.error(f"Error calculating position size: {e}")
+            raise
 
     def get_symbol_info(self, symbol):
         """Get symbol info with caching to reduce API calls"""
@@ -260,18 +318,24 @@ class BinanceClient:
     def format_quantity(self, quantity, symbol):
         """Format quantity according to symbol precision requirements"""
         try:
-            # Get symbol info (cached)
+            # Handle specific symbols with known precision requirements
+            if symbol == 'BTCUSDT':
+                return f"{float(quantity):.3f}"  # Exactly 3 decimal places
+            elif symbol == 'ETHUSDT':
+                return f"{float(quantity):.3f}"  # Exactly 3 decimal places
+            elif symbol == 'SOLUSDT':
+                return str(int(float(quantity)))  # Convert to whole number
+            
+            # For other symbols, get precision from exchange info
             symbol_info = self.get_symbol_info(symbol)
             if not symbol_info:
                 logger.warning(f"No symbol info found for {symbol}, using default precision of 3")
-                return float(format(float(quantity), ".3f"))
-                
-            # Get lot size filter for quantity precision
-            lot_size_filter = next((f for f in symbol_info['filters'] if f['filterType'] == 'LOT_SIZE'), None)
+                return f"{float(quantity):.3f}"
             
+            lot_size_filter = next((f for f in symbol_info['filters'] if f['filterType'] == 'LOT_SIZE'), None)
             if not lot_size_filter:
                 logger.warning(f"No LOT_SIZE filter found for {symbol}, using default precision of 3")
-                return float(format(float(quantity), ".3f"))
+                return f"{float(quantity):.3f}"
             
             step_size = lot_size_filter['stepSize']
             precision = 0
@@ -281,30 +345,35 @@ class BinanceClient:
                 decimal_part = step_size.split('.')[1].rstrip('0')
                 precision = len(decimal_part) if decimal_part else 0
             
-            # Special handling for specific assets based on their known precision requirements
-            if symbol == 'SOLUSDT':
-                precision = 3  # Enforce exactly 3 decimal places for SOL
-            elif symbol == 'ADAUSDT':
-                precision = 1  # Enforce exactly 1 decimal place for ADA
+            # Round to step size
+            step_size = float(step_size)
+            qty = float(quantity)
+            qty = round(qty / step_size) * step_size
             
             # Format with proper precision
-            formatted_str = format(float(quantity), f".{precision}f")
-            formatted_float = float(formatted_str)
-            
-            logger.info(f"Formatted {quantity} to {formatted_float} with precision {precision} for {symbol}")
-            return formatted_float
+            formatted_qty = f"{{:.{precision}f}}".format(qty)
+            logger.info(f"Formatted {quantity} to {formatted_qty} with precision {precision} for {symbol}")
+            return formatted_qty
             
         except Exception as e:
             logger.error(f"Error formatting quantity for {symbol}: {e}")
-            return float(round(float(quantity), 3))  # Fallback with reasonable precision
+            return f"{float(quantity):.3f}"  # Fallback with reasonable precision
 
     def place_market_order(self, symbol, side, quantity):
         """Place a market order"""
         try:
             symbol = symbol.replace('/', '')
             
+            # Add extra validation for SOLUSDT
+            if symbol == 'SOLUSDT':
+                quantity = max(1, int(float(quantity)))  # Ensure minimum 1 unit and whole number
+            
             # Format quantity with proper precision
             formatted_quantity = self.format_quantity(quantity, symbol)
+            
+            # Final validation to prevent zero quantity
+            if float(formatted_quantity) <= 0:
+                raise ValueError(f"Invalid quantity: {formatted_quantity} for {symbol}")
             
             order = self.client.futures_create_order(
                 symbol=symbol,
@@ -325,8 +394,10 @@ class BinanceClient:
                 )
             
             return order
-        except BinanceAPIException as e:
-            logger.error(f"Error placing market order: {e}")
+            
+        except Exception as e:
+            error_msg = f"Error placing market order: {e}"
+            logger.error(error_msg)
             
             # Send error notification
             if self.notifications_enabled and config.NOTIFICATION_TYPES.get('error', False):

@@ -34,80 +34,86 @@ class TradingBot:
     """Trading bot class for a single cryptocurrency pair"""
     
     def __init__(self, trading_config):
-        self.client = BinanceClient()
-        self.telegram = TelegramNotifier()
-        
-        # Initialize trading parameters from config
-        self.symbol = trading_config.get("symbol")
-        self.timeframe = config.BACKTEST_TIMEFRAME
-        self.leverage = trading_config.get("leverage", config.DEFAULT_LEVERAGE)
-        self.strategy_name = trading_config.get("strategy", config.DEFAULT_STRATEGY)
-        self.risk_percentage = trading_config.get("risk_percentage", config.DEFAULT_RISK_PERCENTAGE)
-        self.stop_loss_percentage = trading_config.get("stop_loss_percentage", config.DEFAULT_STOP_LOSS_PERCENTAGE)
-        self.take_profit_percentage = trading_config.get("take_profit_percentage", config.DEFAULT_TAKE_PROFIT_PERCENTAGE)
-        
-        # Initialize risk manager with symbol-specific parameters
-        self.risk_manager = RiskManager(
-            self.client, 
-            risk_percentage=self.risk_percentage,
-            stop_loss_percentage=self.stop_loss_percentage,
-            take_profit_percentage=self.take_profit_percentage
-        )
-        
-        # Create strategy instance with symbol-specific parameters
-        strategy_params = {}
-        
-        if self.strategy_name == "SMA_CROSSOVER":
-            strategy_params = {
-                'short_period': trading_config.get("short_sma", config.DEFAULT_SHORT_SMA),
-                'long_period': trading_config.get("long_sma", config.DEFAULT_LONG_SMA)
-            }
-        elif self.strategy_name == "RSI":
-            strategy_params = {
-                'period': trading_config.get("rsi_period", config.DEFAULT_RSI_PERIOD),
-                'overbought': trading_config.get("rsi_overbought", config.DEFAULT_RSI_OVERBOUGHT),
-                'oversold': trading_config.get("rsi_oversold", config.DEFAULT_RSI_OVERSOLD)
-            }
-        elif self.strategy_name == "MACD":
-            strategy_params = {
-                'fast_period': trading_config.get("fast_period", 12),
-                'slow_period': trading_config.get("slow_period", 26),
-                'signal_period': trading_config.get("signal_period", 9)
+        try:
+            self.client = BinanceClient()
+            self.telegram = TelegramNotifier()
+            
+            # Initialize trading parameters from config
+            self.symbol = trading_config.get("symbol")
+            self.timeframe = config.BACKTEST_TIMEFRAME
+            self.leverage = trading_config.get("leverage", config.DEFAULT_LEVERAGE)
+            self.strategy_name = trading_config.get("strategy", config.DEFAULT_STRATEGY)
+            self.risk_percentage = trading_config.get("risk_percentage", config.DEFAULT_RISK_PERCENTAGE)
+            self.stop_loss_percentage = trading_config.get("stop_loss_percentage", config.DEFAULT_STOP_LOSS_PERCENTAGE)
+            self.take_profit_percentage = trading_config.get("take_profit_percentage", config.DEFAULT_TAKE_PROFIT_PERCENTAGE)
+            
+            # Initialize risk manager with symbol-specific parameters
+            self.risk_manager = RiskManager(
+                self.client, 
+                risk_percentage=self.risk_percentage,
+                stop_loss_percentage=self.stop_loss_percentage,
+                take_profit_percentage=self.take_profit_percentage
+            )
+            
+            # Create strategy instance with symbol-specific parameters
+            strategy_params = {}
+            
+            if self.strategy_name == "SMA_CROSSOVER":
+                strategy_params = {
+                    'short_period': trading_config.get("short_sma", config.DEFAULT_SHORT_SMA),
+                    'long_period': trading_config.get("long_sma", config.DEFAULT_LONG_SMA)
+                }
+            elif self.strategy_name == "RSI":
+                strategy_params = {
+                    'period': trading_config.get("rsi_period", config.DEFAULT_RSI_PERIOD),
+                    'overbought': trading_config.get("rsi_overbought", config.DEFAULT_RSI_OVERBOUGHT),
+                    'oversold': trading_config.get("rsi_oversold", config.DEFAULT_RSI_OVERSOLD)
+                }
+            elif self.strategy_name == "MACD":
+                strategy_params = {
+                    'fast_period': trading_config.get("fast_period", 12),
+                    'slow_period': trading_config.get("slow_period", 26),
+                    'signal_period': trading_config.get("signal_period", 9)
+                }
+                
+            self.strategy = create_strategy(self.strategy_name, self.symbol, self.timeframe, **strategy_params)
+            
+            # Initialize trading state
+            self.is_running = False
+            self.initial_balance = 0
+            self.current_position = None
+            self.current_orders = {}
+            self.klines_data = []
+            self.klines_df = None
+            self.latest_bid = 0
+            self.latest_ask = 0
+            self.latest_mark_price = 0
+            
+            # Trading performance stats
+            self.trading_stats = {
+                'total_trades': 0,
+                'winning_trades': 0,
+                'losing_trades': 0,
+                'total_profit_loss': 0,
+                'start_balance': 0,
+                'current_balance': 0,
+                'max_drawdown': 0
             }
             
-        self.strategy = create_strategy(self.strategy_name, self.symbol, self.timeframe, **strategy_params)
-        
-        # Initialize trading state
-        self.is_running = False
-        self.initial_balance = 0
-        self.current_position = None
-        self.current_orders = {}
-        self.klines_data = []
-        self.klines_df = None
-        self.latest_bid = 0
-        self.latest_ask = 0
-        self.latest_mark_price = 0
-        
-        # Trading performance stats
-        self.trading_stats = {
-            'total_trades': 0,
-            'winning_trades': 0,
-            'losing_trades': 0,
-            'total_profit_loss': 0,
-            'start_balance': 0,
-            'current_balance': 0,
-            'max_drawdown': 0
-        }
-        
-        # Daily stats reset
-        self.daily_stats = self.trading_stats.copy()
-        self.daily_reset_time = datetime.now()
-        
-        # Create lock for thread safety
-        self.lock = threading.Lock()
-        
-        logger.info(f"Trading bot initialized for {self.symbol} using {self.strategy_name} strategy")
-    
+            # Daily stats reset
+            self.daily_stats = self.trading_stats.copy()
+            self.daily_reset_time = datetime.now()
+            
+            # Create lock for thread safety
+            self.lock = threading.Lock()
+            
+            logger.info(f"Trading bot initialized for {self.symbol} using {self.strategy_name} strategy")
+            
+        except Exception as e:
+            error_msg = f"Error initializing trading bot: {e}"
+            logger.error(error_msg)
+            raise
+
     def initialize_websocket(self):
         """Initialize and connect to Binance websocket"""
         try:
@@ -446,11 +452,25 @@ class TradingBot:
             if not hasattr(self, 'trade_validator'):
                 self.trade_validator = TradeValidator(self.client, self.risk_manager)
             
-            # Position side
+            # Position side and quantity formatting
             position_side = "BUY" if signal > 0 else "SELL"
             
-            # Get additional confirmation from multiple timeframes
+            # Get quantity with proper precision based on symbol
+            def format_quantity(qty, symbol):
+                if symbol == 'BTCUSDT':
+                    return f"{qty:.3f}"  # 3 decimal places for BTC
+                elif symbol == 'ETHUSDT':
+                    return f"{qty:.3f}"  # 3 decimal places for ETH
+                elif symbol == 'BNBUSDT':
+                    return f"{qty:.2f}"  # 2 decimal places for BNB
+                elif symbol == 'SOLUSDT':
+                    return str(int(qty))  # Whole numbers for SOL
+                else:
+                    return f"{qty:.3f}"  # Default 3 decimal places
+            
+            # Get trend confirmation and market condition analysis
             trend_confirmation = self.get_trend_confirmation()
+            market_condition = self.analyze_market_condition()
             
             # Add order book imbalance to the confirmation
             if hasattr(self, 'book_imbalance'):
@@ -702,6 +722,11 @@ class TradingBot:
         try:
             logger.info(f"[{self.symbol}] Starting trading bot...")
             
+            # Setup leverage for trading pairs after successful client initialization
+            setup_success = self.client.setup_trading_pairs()
+            if not setup_success:
+                logger.warning(f"[{self.symbol}] Some trading pairs could not be configured with custom leverage. Continuing with exchange defaults.")
+            
             # Fetch initial historical data
             self.fetch_initial_data()
             
@@ -716,9 +741,6 @@ class TradingBot:
             self.trading_stats['start_balance'] = balance
             self.trading_stats['current_balance'] = balance
             logger.info(f"[{self.symbol}] Initial account balance: {balance} USDT")
-            
-            # Set leverage for this symbol
-            self.client.set_leverage(self.symbol, self.leverage)
             
             # Notify about bot start with account details
             self.telegram.send_message(f"🚀 <b>[{self.symbol}] Bot Started</b>\n\nStrategy: {self.strategy_name}\nLeverage: {self.leverage}x\nRisk: {self.risk_percentage}%")
@@ -928,7 +950,6 @@ class TradingBot:
             volatility_ratio = atr / price
             
             # Adjust risk based on volatility
-            # Lower risk for high volatility, higher risk for low volatility
             volatility_adjusted_risk = base_risk_percentage
             
             if (volatility_ratio > 0.02):  # High volatility (>2%)
@@ -951,17 +972,45 @@ class TradingBot:
             position_size_in_usd = risk_amount * leverage
             quantity = position_size_in_usd / price
             
-            # Round to appropriate precision
-            symbol_info = self.client.client.get_symbol_info(symbol)
-            quantity_precision = 3  # Default
-            
-            for filter in symbol_info['filters']:
-                if filter['filterType'] == 'LOT_SIZE':
-                    step_size = float(filter['stepSize'])
-                    quantity_precision = len(str(step_size).rstrip('0').split('.')[1]) if '.' in str(step_size) else 0
-                    break
+            # Symbol-specific precision handling using proper string formatting
+            # instead of round() to handle Binance's exact precision requirements
+            if symbol == 'BTCUSDT':
+                # For BTCUSDT, Binance requires exactly 3 decimal places
+                quantity = float(f"{quantity:.3f}")
+            elif symbol == 'ETHUSDT':
+                # For ETHUSDT, Binance requires exactly 3 decimal places
+                quantity = float(f"{quantity:.3f}")
+            elif symbol == 'BNBUSDT':
+                # For BNBUSDT, Binance requires exactly 2 decimal places
+                quantity = float(f"{quantity:.2f}")
+            elif symbol == 'SOLUSDT':
+                # For SOLUSDT, Binance requires whole numbers (0 decimals)
+                quantity = int(quantity)  # Convert directly to integer
+            else:
+                # Get precision from exchange info
+                try:
+                    symbol_info = self.client.client.get_symbol_info(symbol)
+                    quantity_precision = 3  # Default
                     
-            quantity = round(quantity, quantity_precision)
+                    if symbol_info and 'filters' in symbol_info:
+                        for filter_item in symbol_info['filters']:
+                            if filter_item['filterType'] == 'LOT_SIZE':
+                                step_size = filter_item['stepSize']
+                                # Calculate precision from step size
+                                precision = 0
+                                if '.' in step_size:
+                                    decimal_part = step_size.split('.')[1].rstrip('0')
+                                    precision = len(decimal_part) if decimal_part else 0
+                                
+                                quantity_precision = precision
+                                break
+                    
+                    # Use string formatting to ensure exact precision
+                    quantity = float(f"{{:.{quantity_precision}f}}".format(quantity))
+                except Exception as e:
+                    logger.error(f"Error getting precision for {symbol}: {e}")
+                    # Fallback to default precision with string formatting
+                    quantity = float(f"{quantity:.3f}")
             
             logger.info(f"[{symbol}] Volatility-adjusted risk: {volatility_adjusted_risk:.2f}%, Position size: {quantity}")
             return quantity
@@ -969,7 +1018,7 @@ class TradingBot:
         except Exception as e:
             logger.error(f"[{symbol}] Error calculating volatility-adjusted position: {e}")
             return None
-    
+
     def set_trailing_stop_loss(self, symbol, side, quantity, activation_price, callback_rate=0.8):
         """Set a trailing stop loss order"""
         try:

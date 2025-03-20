@@ -14,6 +14,30 @@ class RiskManager:
         self.take_profit_percentage = take_profit_percentage if take_profit_percentage is not None else config.DEFAULT_TAKE_PROFIT_PERCENTAGE
         logger.info(f"Risk Manager initialized: risk={self.risk_percentage}%, SL={self.stop_loss_percentage}%, TP={self.take_profit_percentage}%")
     
+    def set_leverage_safely(self, symbol, leverage):
+        """Safely set leverage with fallback options"""
+        try:
+            # First try to set the specified leverage
+            response = self.client.set_leverage(symbol, leverage)
+            if response:
+                logger.info(f"[{symbol}] Successfully set leverage to {leverage}x")
+                return True
+                
+            # If that fails with None response, try default leverage
+            if leverage != config.DEFAULT_LEVERAGE:
+                logger.warning(f"[{symbol}] Failed to set custom leverage {leverage}x, trying default {config.DEFAULT_LEVERAGE}x")
+                response = self.client.set_leverage(symbol, config.DEFAULT_LEVERAGE)
+                if response:
+                    logger.info(f"[{symbol}] Successfully set default leverage {config.DEFAULT_LEVERAGE}x")
+                    return True
+            
+            logger.warning(f"[{symbol}] Could not set leverage, will use exchange default")
+            return False
+            
+        except Exception as e:
+            logger.error(f"[{symbol}] Error setting leverage: {e}")
+            return False
+
     def calculate_position_size(self, entry_price, symbol=None):
         """Calculate the position size based on account balance and risk parameters"""
         try:

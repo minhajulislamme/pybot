@@ -69,17 +69,45 @@ class TradeValidator:
     def format_quantity(self, quantity, symbol):
         """Format quantity according to symbol precision requirements"""
         try:
-            precision = self.get_quantity_precision(symbol)
+            if symbol == 'BTCUSDT':
+                # BTCUSDT requires exactly 3 decimal places
+                qty = round(float(quantity), 3)
+                return f"{qty:.3f}"
+            elif symbol == 'ETHUSDT':
+                # ETHUSDT requires exactly 3 decimal places
+                qty = round(float(quantity), 3)
+                return f"{qty:.3f}"
+            elif symbol == 'SOLUSDT':
+                # SOLUSDT requires whole numbers
+                return str(int(float(quantity)))
+
+            # For other symbols, get precision from exchange info
+            symbol_info = self.get_symbol_info(symbol)
+            if not symbol_info:
+                return f"{float(quantity):.3f}"
+
+            lot_size_filter = next((f for f in symbol_info['filters'] if f['filterType'] == 'LOT_SIZE'), None)
+            if not lot_size_filter:
+                return f"{float(quantity):.3f}"
+
+            step_size = lot_size_filter['stepSize']
+            precision = 0
+            if '.' in step_size:
+                decimal_part = step_size.split('.')[1].rstrip('0')
+                precision = len(decimal_part) if decimal_part else 0
+
+            qty = float(quantity)
+            # Round to step size
+            step_size = float(step_size)
+            qty = round(qty / step_size) * step_size
             
-            # Format with proper precision and avoid scientific notation
-            formatted_qty = f"{{:.{precision}f}}".format(quantity)
-            
+            formatted_qty = f"{{:.{precision}f}}".format(qty)
             logger.info(f"Formatted {quantity} to {formatted_qty} with precision {precision} for {symbol}")
             return formatted_qty
-            
+
         except Exception as e:
             logger.error(f"Error formatting quantity for {symbol}: {e}")
-            return str(round(quantity, 3))  # Fallback with reasonable precision
+            return f"{float(quantity):.3f}"
             
     def validate_and_calculate_position(self, symbol, entry_price):
         """Calculate valid position size based on account balance and risk settings"""
@@ -107,22 +135,47 @@ class TradeValidator:
             risk_amount = balance * (risk_percentage / Decimal('100'))
             max_position_size_usd = risk_amount * leverage
             
-            # Calculate quantity based on entry price
+            # Set minimum notional values and quantity requirements per symbol
+            min_notional = Decimal('25')  # Default minimum notional
+            if symbol == 'BTCUSDT':
+                min_notional = Decimal('100')  # Higher minimum for BTC
+            elif symbol == 'ETHUSDT':
+                min_notional = Decimal('25')
+            elif symbol == 'SOLUSDT':
+                min_notional = Decimal('25')
+            
+            # Calculate initial quantity
             quantity = max_position_size_usd / entry_price
             
-            # Round down to respect quantity precision
-            quantity = quantity.quantize(Decimal('0.' + '0' * quantity_precision), rounding=ROUND_DOWN)
+            # Special handling for SOLUSDT
+            if symbol == 'SOLUSDT':
+                # Ensure minimum 1 unit for SOLUSDT and round up to whole number
+                quantity = max(Decimal('1'), quantity.quantize(Decimal('1'), rounding=ROUND_DOWN))
+            else:
+                # Ensure we meet minimum notional value for other pairs
+                if quantity * entry_price < min_notional:
+                    quantity = (min_notional * Decimal('1.1')) / entry_price  # Add 10% buffer
+                
+                # Round down to respect quantity precision
+                quantity = quantity.quantize(Decimal('0.' + '0' * quantity_precision), rounding=ROUND_DOWN)
             
-            # Validate minimum notional value (typically 5-10 USDT for futures)
-            min_notional = Decimal('5')  # Minimum notional value in USDT
-            if quantity * entry_price < min_notional:
+            # Format quantity according to symbol requirements
+            formatted_quantity = self.format_quantity(float(quantity), symbol)
+            
+            # Final validation of notional value
+            final_quantity = Decimal(str(formatted_quantity))
+            final_notional = final_quantity * entry_price
+            
+            # Ensure the final quantity is valid
+            if final_quantity <= 0:
+                logger.warning(f"Invalid quantity calculated: {final_quantity} {symbol}")
+                return None
+            
+            if final_notional < min_notional:
                 logger.warning(f"Position size too small. Minimum notional value: {min_notional} USDT")
                 return None
             
-            # Convert to string with proper formatting to avoid precision errors
-            formatted_quantity = self.format_quantity(float(quantity), symbol)
-            
-            logger.info(f"Calculated position size: {formatted_quantity} {symbol} (Value: {float(quantity * entry_price):.2f} USDT) with {int(leverage)}x leverage")
+            logger.info(f"Calculated position size: {formatted_quantity} {symbol} (Value: {float(final_notional):.2f} USDT) with {int(leverage)}x leverage")
             return float(formatted_quantity)
             
         except Exception as e:
