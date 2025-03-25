@@ -23,6 +23,7 @@ from backtesting.backtester import Backtester
 
 def setup_logging():
     """Configure logging with enhanced format"""
+    # Set root logger to INFO level
     logging.basicConfig(
         level=logging.INFO,
         format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
@@ -31,6 +32,13 @@ def setup_logging():
             logging.StreamHandler(sys.stdout)
         ]
     )
+
+    # Set specific loggers to appropriate levels
+    logging.getLogger('websocket').setLevel(logging.INFO)
+    logging.getLogger('urllib3').setLevel(logging.INFO)
+    logging.getLogger('binance').setLevel(logging.INFO)
+    
+    # Get the main logger
     return logging.getLogger(__name__)
 
 def optimize_strategy(strategy_class, client, symbol: str, timeframe: str) -> Dict[str, Any]:
@@ -96,10 +104,35 @@ def generate_status_report(client, risk_manager, strategies, symbols: List[str])
     balance = client.get_account_balance()
     report += f"*Account Balance*: {balance:.2f} USDT\n"
     
+    # Add trade history for the last 6 hours
+    last_6h = datetime.now() - timedelta(hours=6)
+    trades_history = risk_manager.open_trades
+    
+    report += "\n*Recent Trade History (Last 6 Hours):*\n"
+    if trades_history:
+        for symbol, trade in trades_history.items():
+            if trade['entry_time'] >= last_6h:
+                pnl = 0
+                if 'exit_time' in trade:
+                    pnl = trade.get('pnl', 0)
+                    report += f"  - {symbol}: {trade['side']} @ {trade['entry_price']:.2f}\n"
+                    report += f"    Exit: {trade['exit_price']:.2f} | PnL: {pnl:.2f} USDT\n"
+                else:
+                    current_price = client.get_ticker_price(symbol)
+                    if current_price:
+                        if trade['side'] == 'BUY':
+                            pnl = (current_price - trade['entry_price']) * trade.get('quantity', 0)
+                        else:
+                            pnl = (trade['entry_price'] - current_price) * trade.get('quantity', 0)
+                    report += f"  - {symbol}: {trade['side']} @ {trade['entry_price']:.2f}\n"
+                    report += f"    Current: {current_price:.2f} | Unrealized PnL: {pnl:.2f} USDT\n"
+    else:
+        report += "  No trades in the last 6 hours\n"
+    
     # Add open positions
     positions = client.get_open_positions()
     if positions:
-        report += "\n*Open Positions*:\n"
+        report += "\n*Open Positions:*\n"
         for pos in positions:
             symbol = pos['symbol']
             amt = float(pos['positionAmt'])
@@ -115,7 +148,7 @@ def generate_status_report(client, risk_manager, strategies, symbols: List[str])
         report += "\nNo open positions\n"
     
     # Add recent signals for each strategy and symbol
-    report += "\n*Recent Strategy Signals*:\n"
+    report += "\n*Recent Strategy Signals:*\n"
     for symbol in symbols:
         report += f"\n{symbol}:\n"
         for strategy_name, strategy in strategies[symbol].items():
@@ -124,7 +157,7 @@ def generate_status_report(client, risk_manager, strategies, symbols: List[str])
             report += f"  - {strategy_name}: {signal_text}\n"
     
     # Add market conditions
-    report += "\n*Market Conditions*:\n"
+    report += "\n*Market Conditions:*\n"
     for symbol in symbols:
         price = client.get_ticker_price(symbol)
         report += f"  - {symbol}: {price:.2f} USDT\n"
@@ -159,16 +192,29 @@ def execute_test_trade(client, telegram, logger):
         if telegram:
             telegram.send_message_sync(f"🧪 *EXECUTING TEST TRADE*\nSymbol: {symbol}\nPrice: ${price:.2f}\nBalance: ${balance:.2f}")
         
-        # Binance Futures requires minimum notional value of 100 USDT
-        min_notional = 101  # Slightly above the 100 USDT minimum to be safe
+        # Calculate position size that ensures at least 100 USDT notional value
+        # Use 102 USDT to be safely above the minimum
+        target_notional = 102
+        position_size = target_notional / float(price)
         
-        # Calculate position size to meet minimum notional requirement
-        position_size = min_notional / price
-        
-        # Round to 3 decimal places as that's commonly accepted for BTC
+        # Round to 3 decimal places and ensure we're above minimum notional
         position_size = round(position_size, 3)
+        trade_value = position_size * float(price)
         
-        logger.info(f"Test trade position size: {position_size} BTC (approx. ${position_size * price:.2f})")
+        # Double check and adjust if needed
+        while trade_value < 100:
+            position_size = round(position_size + 0.001, 3)  # Increment by 0.001 BTC
+            trade_value = position_size * float(price)
+        
+        # Check if we have enough balance with a 10% buffer for fees
+        required_balance = trade_value * 1.1
+        if balance < required_balance:
+            logger.error(f"Insufficient balance ({balance:.2f} USDT) for test trade. Need at least {required_balance:.2f} USDT")
+            if telegram:
+                telegram.send_error("Test Trade", f"Insufficient balance ({balance:.2f} USDT) for test trade")
+            return False
+        
+        logger.info(f"Test trade position size: {position_size} BTC (approx. ${trade_value:.2f})")
         
         # Create a market order
         order_result = client.create_market_order(

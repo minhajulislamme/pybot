@@ -1,18 +1,21 @@
 """
 WebSocket client for real-time Binance data.
 """
-
 import json
 import logging
 import threading
 import websocket
 import time
 import queue
+import ssl
 from collections import deque
 from datetime import datetime, timedelta
 from config.config import config
 
+# Configure module loggers
 logger = logging.getLogger(__name__)
+logging.getLogger('websocket').setLevel(logging.INFO)
+websocket.enableTrace(False)  # Disable websocket debug tracing globally
 
 class BinanceWebsocketClient:
     def __init__(self, symbols=None, callbacks=None, buffer_size=1000):
@@ -23,7 +26,7 @@ class BinanceWebsocketClient:
         self.ws = None
         self.ws_thread = None
         self.running = False
-        self.ws_url = config.ws_url
+        self.ws_url = config.ws_url  # Use WebSocket URL from config
         self.reconnect_delay = 1
         self.max_reconnect_delay = 300
         self.message_buffer = {}
@@ -32,14 +35,16 @@ class BinanceWebsocketClient:
         self.processor_thread = None
         self.last_heartbeat = time.time()
         self.heartbeat_interval = 30
-        self.streams = []  # Initialize streams list
+        self.streams = []
+        self.connection_retries = 0
+        self.max_connection_retries = 10
         
         # Initialize buffers for different stream types
         for symbol in self.symbols:
             self.message_buffer[f"{symbol.lower()}_trade"] = deque(maxlen=buffer_size)
             self.message_buffer[f"{symbol.lower()}_kline"] = deque(maxlen=buffer_size)
             self.message_buffer[f"{symbol.lower()}_book"] = deque(maxlen=buffer_size)
-    
+
     def is_connected(self):
         """Check if websocket connection is active
         
@@ -113,54 +118,59 @@ class BinanceWebsocketClient:
         except Exception as e:
             logger.error(f"Error handling message: {e}")
     
-    def _on_message(self, ws, message):
-        """Queue message for processing"""
-        try:
-            self.message_queue.put(message)
-        except Exception as e:
-            logger.error(f"Error queueing message: {e}")
-    
     def _on_error(self, ws, error):
-        """Handle WebSocket errors with reconnection logic"""
+        """Handle WebSocket errors with improved reconnection logic"""
         logger.error(f"WebSocket error: {error}")
         
+        if isinstance(error, websocket.WebSocketConnectionClosedException):
+            logger.info("Connection was closed, attempting to reconnect...")
+            self.reconnect_delay = 1  # Reset delay on connection close
+        
         # Check if we need to reconnect
-        if self.running:
-            # Use exponential backoff for reconnection
+        if self.running and self.connection_retries < self.max_connection_retries:
             delay = min(self.reconnect_delay, self.max_reconnect_delay)
             logger.info(f"Attempting to reconnect in {delay} seconds...")
             time.sleep(delay)
             self.reconnect_delay *= 2  # Double the delay for next attempt
             self._connect()
-    
+        elif self.connection_retries >= self.max_connection_retries:
+            logger.error("Max connection retries reached. Stopping WebSocket client.")
+            self.stop()
+
     def _on_close(self, ws, close_status_code, close_msg):
-        """Handle WebSocket closure with reconnection"""
+        """Handle WebSocket closure with improved reconnection logic"""
         logger.info(f"WebSocket closed: {close_status_code} {close_msg}")
         
-        # Attempt to reconnect if closed unexpectedly
-        if self.running:
+        # Clear the current WebSocket instance
+        self.ws = None
+        
+        # Attempt to reconnect if closed unexpectedly and within retry limits
+        if self.running and self.connection_retries < self.max_connection_retries:
             delay = min(self.reconnect_delay, self.max_reconnect_delay)
             logger.info(f"Attempting to reconnect in {delay} seconds...")
             time.sleep(delay)
             self.reconnect_delay *= 2
             self._connect()
-    
+        elif self.connection_retries >= self.max_connection_retries:
+            logger.error("Max connection retries reached. Stopping WebSocket client.")
+            self.stop()
+
     def _on_open(self, ws):
         """Initialize connection and subscribe to streams"""
         logger.info("WebSocket connection established")
         self.reconnect_delay = 1  # Reset reconnection delay
+        self.connection_retries = 0  # Reset retry counter on successful connection
         self.last_heartbeat = time.time()
         
         # Subscribe to streams
-        if self.streams:
-            subscribe_msg = json.dumps({
-                "method": "SUBSCRIBE",
-                "params": self.streams,
-                "id": 1
-            })
-            ws.send(subscribe_msg)
-            logger.info(f"Subscribed to streams: {', '.join(self.streams)}")
-    
+        subscribe_request = {
+            "method": "SUBSCRIBE",
+            "params": self.streams,
+            "id": int(time.time() * 1000)
+        }
+        ws.send(json.dumps(subscribe_request))
+        logger.info(f"Sent subscription request for streams: {', '.join(self.streams)}")
+
     def _heartbeat(self):
         """Send periodic heartbeat to keep connection alive"""
         while self.running:
@@ -207,24 +217,27 @@ class BinanceWebsocketClient:
     def _connect(self):
         """Connect to WebSocket and setup streams"""
         try:
+            # Reset connection retries if we've been connected before
+            if self.ws:
+                self.connection_retries = 0
+
             # Create streams for each symbol
             streams = []
             for symbol in self.symbols:
                 symbol = symbol.lower()
                 streams.extend([
-                    f"{symbol}@kline_{self.timeframe}",  # Kline/candlestick stream
-                    f"{symbol}@bookTicker",  # Best bid/ask stream
-                    f"{symbol}@aggTrade"     # Aggregated trades stream
+                    f"{symbol}@kline_{self.timeframe}",
+                    f"{symbol}@bookTicker",
+                    f"{symbol}@aggTrade"
                 ])
             
-            # Store streams for later use in reconnection/subscription    
+            # Store streams for later use
             self.streams = streams
-                
-            # Create WebSocket URL - using stream path instead of combined URL
-            # This is more reliable for multiple streams
+            
+            # For futures, we need to use /stream endpoint with a subscription message
             stream_url = f"{self.ws_url}/stream"
             
-            # Setup WebSocket connection
+            # Setup WebSocket connection with appropriate options
             self.ws = websocket.WebSocketApp(
                 stream_url,
                 on_message=self._on_message,
@@ -235,16 +248,27 @@ class BinanceWebsocketClient:
                 on_pong=self._on_pong
             )
             
-            # Use ping/pong for better keep-alive
-            self.ws.run_forever(ping_interval=30, ping_timeout=10)
+            # Run with more aggressive ping/pong settings
+            self.ws.run_forever(
+                ping_interval=20,
+                ping_timeout=15,
+                ping_payload='{"ping": true}',
+                sslopt={"cert_reqs": ssl.CERT_NONE}
+            )
             
         except Exception as e:
             logger.error(f"Error connecting to WebSocket: {e}")
-            time.sleep(self.reconnect_delay)
-            self.reconnect_delay = min(self.reconnect_delay * 2, self.max_reconnect_delay)
-            if self.running:
-                self._connect()  # Attempt to reconnect
-    
+            self.connection_retries += 1
+            
+            if self.connection_retries < self.max_connection_retries:
+                time.sleep(self.reconnect_delay)
+                self.reconnect_delay = min(self.reconnect_delay * 2, self.max_reconnect_delay)
+                if self.running:
+                    self._connect()
+            else:
+                logger.error("Max connection retries reached. Stopping WebSocket client.")
+                self.stop()
+
     def _run_websocket(self):
         """Run WebSocket in a loop with automatic reconnection"""
         try:
@@ -329,3 +353,19 @@ class BinanceWebsocketClient:
         """Handle pong responses"""
         self.last_heartbeat = time.time()
         logger.debug("Received pong from server")
+    
+    def _on_message(self, ws, message):
+        """Queue message for processing"""
+        try:
+            data = json.loads(message)
+            
+            # Handle subscription response
+            if 'stream' in data:
+                # Queue the actual market data from the stream
+                self.message_queue.put(json.dumps(data['data']))
+            else:
+                # Direct market data or other message types
+                self.message_queue.put(message)
+
+        except Exception as e:
+            logger.error(f"Error in message handler: {e}")

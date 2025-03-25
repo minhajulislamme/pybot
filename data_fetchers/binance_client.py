@@ -232,10 +232,8 @@ class BinanceClient:
                 if position['symbol'] == symbol and float(position['positionAmt']) != 0:
                     side = "SELL" if float(position['positionAmt']) > 0 else "BUY"
                     self.create_market_order(
-                        symbol=symbol,
                         side=side,
-                        quantity=abs(float(position['positionAmt'])),
-                        reduce_only=True
+                        quantity=abs(float(position['positionAmt']))
                     )
             return True
         except Exception as e:

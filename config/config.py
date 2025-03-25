@@ -27,18 +27,19 @@ class BotConfig:
             test_mode (bool): If True, use testnet API credentials
         """
         self.test_mode = test_mode
+        self.testnet = test_mode  # Add testnet property for compatibility
         
         # API credentials
         if test_mode:
             self.api_key = os.getenv('BINANCE_TESTNET_API_KEY', '')
             self.api_secret = os.getenv('BINANCE_TESTNET_API_SECRET', '')
-            self.testnet_api_key = self.api_key  # Add testnet-specific attributes
+            self.testnet_api_key = self.api_key
             self.testnet_api_secret = self.api_secret
-            self.ws_url = "wss://stream.binancefuture.com"  # Testnet WebSocket URL
+            self.ws_url = "wss://fstream.binancefuture.com"  # Updated testnet WebSocket URL
         else:
             self.api_key = os.getenv('BINANCE_API_KEY', '')
             self.api_secret = os.getenv('BINANCE_API_SECRET', '')
-            self.ws_url = "wss://fstream.binance.com"  # Live WebSocket URL
+            self.ws_url = "wss://fstream.binance.com"  # Production WebSocket URL
             
         # Trading symbols - only BTCUSDT
         self.symbols = ["BTCUSDT"]
