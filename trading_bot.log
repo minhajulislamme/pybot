@@ -1,0 +1,67 @@
+2025-03-26 03:56:21,142 - __main__ - INFO - Starting trading bot in test mode
+2025-03-26 03:56:22,447 - risk_management.risk_manager - INFO - Risk Manager initialized: Max Risk=1.0%, Stop Loss=2.0%, Take Profit=4.0%
+2025-03-26 03:56:22,585 - telegram_notifications.telegram_bot - INFO - Telegram bot initialized
+2025-03-26 03:56:23,404 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8170894475:AAHRkjWwFa9vEXj-BnoWhsiRd_oJAjZzsxM/sendMessage "HTTP/1.1 200 OK"
+2025-03-26 03:56:23,779 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8170894475:AAHRkjWwFa9vEXj-BnoWhsiRd_oJAjZzsxM/sendMessage "HTTP/1.1 200 OK"
+2025-03-26 03:56:25,209 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8170894475:AAHRkjWwFa9vEXj-BnoWhsiRd_oJAjZzsxM/sendMessage "HTTP/1.1 200 OK"
+2025-03-26 03:56:25,210 - __main__ - INFO - Account information sent to Telegram
+2025-03-26 03:56:25,210 - __main__ - INFO - Executing test trade to verify system functionality
+2025-03-26 03:56:25,526 - __main__ - INFO - Current BTCUSDT price: 87805.3
+2025-03-26 03:56:25,526 - __main__ - INFO - Current USDT balance: 9304.6894509
+2025-03-26 03:56:25,905 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8170894475:AAHRkjWwFa9vEXj-BnoWhsiRd_oJAjZzsxM/sendMessage "HTTP/1.1 200 OK"
+2025-03-26 03:56:25,906 - __main__ - INFO - Test trade position size: 0.001 BTC (approx. $87.81)
+2025-03-26 03:56:26,344 - data_fetchers.binance_client - ERROR - Error creating market order: APIError(code=-4164): Order's notional must be no smaller than 100 (unless you choose reduce only).
+2025-03-26 03:56:26,345 - __main__ - ERROR - Test trade failed to execute
+2025-03-26 03:56:26,723 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8170894475:AAHRkjWwFa9vEXj-BnoWhsiRd_oJAjZzsxM/sendMessage "HTTP/1.1 200 OK"
+2025-03-26 03:56:26,724 - __main__ - INFO - Optimizing strategies...
+2025-03-26 03:56:26,724 - __main__ - INFO - Optimizing MACrossoverStrategy for BTCUSDT...
+2025-03-26 03:56:26,732 - backtesting.backtester - INFO - Enhanced backtester initialized for BTCUSDT
+2025-03-26 03:56:26,926 - backtesting.backtester - INFO - Starting strategy optimization with 8 combinations
+2025-03-26 03:56:34,049 - backtesting.backtester - INFO - Optimization complete. Best sharpe_ratio: 0
+2025-03-26 03:56:34,050 - __main__ - INFO - Optimized parameters for MACrossoverStrategy: {'fast_ma_period': 20, 'slow_ma_period': 100, 'ma_type': 'sma'}
+2025-03-26 03:56:34,050 - __main__ - INFO - Optimizing RSIStrategy for BTCUSDT...
+2025-03-26 03:56:34,052 - backtesting.backtester - INFO - Enhanced backtester initialized for BTCUSDT
+2025-03-26 03:56:34,315 - backtesting.backtester - INFO - Starting strategy optimization with 27 combinations
+2025-03-26 03:56:46,292 - backtesting.backtester - INFO - Optimization complete. Best sharpe_ratio: 0
+2025-03-26 03:56:46,293 - __main__ - INFO - Optimized parameters for RSIStrategy: {'rsi_period': 7, 'base_overbought': 70, 'base_oversold': 20}
+2025-03-26 03:56:46,293 - __main__ - INFO - Optimizing BollingerBandsStrategy for BTCUSDT...
+2025-03-26 03:56:46,295 - backtesting.backtester - INFO - Enhanced backtester initialized for BTCUSDT
+2025-03-26 03:56:46,830 - backtesting.backtester - INFO - Starting strategy optimization with 1 combinations
+2025-03-26 03:56:47,116 - backtesting.backtester - INFO - Optimization complete. Best sharpe_ratio: 0
+2025-03-26 03:56:47,117 - __main__ - INFO - Optimized parameters for BollingerBandsStrategy: {'bb_period': 20, 'bb_std': 2.0, 'volume_factor': 2.0, 'trend_period': 200}
+2025-03-26 03:56:47,832 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8170894475:AAHRkjWwFa9vEXj-BnoWhsiRd_oJAjZzsxM/sendMessage "HTTP/1.1 200 OK"
+2025-03-26 03:56:47,835 - data_fetchers.websocket_client - INFO - Starting WebSocket client
+2025-03-26 03:56:48,339 - data_fetchers.websocket_client - INFO - WebSocket client started
+2025-03-26 03:56:48,340 - __main__ - INFO - WebSocket connection started
+2025-03-26 03:56:48,409 - websocket - INFO - Websocket connected
+2025-03-26 03:56:48,411 - data_fetchers.websocket_client - INFO - WebSocket connection established
+2025-03-26 03:56:48,413 - data_fetchers.websocket_client - INFO - Subscribed to streams: btcusdt@kline_1h, btcusdt@bookTicker, btcusdt@aggTrade
+2025-03-26 03:56:49,226 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8170894475:AAHRkjWwFa9vEXj-BnoWhsiRd_oJAjZzsxM/sendMessage "HTTP/1.1 200 OK"
+2025-03-26 03:56:49,227 - __main__ - INFO - Initial status report sent
+2025-03-26 03:56:53,575 - __main__ - INFO - Symbol: BTCUSDT, Price: 87835.0, Signals: {'MACrossoverStrategy': 0, 'RSIStrategy': 0, 'BollingerBandsStrategy': 0}, Combined: 0.00
+2025-03-26 03:57:19,000 - data_fetchers.websocket_client - INFO - WebSocket closed: 1008 Invalid request
+2025-03-26 03:57:19,001 - data_fetchers.websocket_client - INFO - Attempting to reconnect in 1 seconds...
+2025-03-26 03:57:20,609 - websocket - INFO - Websocket connected
+2025-03-26 03:57:20,610 - data_fetchers.websocket_client - INFO - WebSocket connection established
+2025-03-26 03:57:20,611 - data_fetchers.websocket_client - INFO - Subscribed to streams: btcusdt@kline_1h, btcusdt@bookTicker, btcusdt@aggTrade
+2025-03-26 03:57:51,041 - data_fetchers.websocket_client - INFO - WebSocket closed: 1008 Invalid request
+2025-03-26 03:57:51,042 - data_fetchers.websocket_client - INFO - Attempting to reconnect in 1 seconds...
+2025-03-26 03:57:52,654 - websocket - INFO - Websocket connected
+2025-03-26 03:57:52,656 - data_fetchers.websocket_client - INFO - WebSocket connection established
+2025-03-26 03:57:52,656 - data_fetchers.websocket_client - INFO - Subscribed to streams: btcusdt@kline_1h, btcusdt@bookTicker, btcusdt@aggTrade
+2025-03-26 03:57:59,807 - __main__ - INFO - Symbol: BTCUSDT, Price: 87791.8, Signals: {'MACrossoverStrategy': 0, 'RSIStrategy': 0, 'BollingerBandsStrategy': 0}, Combined: 0.00
+2025-03-26 03:58:23,036 - data_fetchers.websocket_client - INFO - WebSocket closed: 1008 Invalid request
+2025-03-26 03:58:23,037 - data_fetchers.websocket_client - INFO - Attempting to reconnect in 1 seconds...
+2025-03-26 03:58:24,691 - websocket - INFO - Websocket connected
+2025-03-26 03:58:24,692 - data_fetchers.websocket_client - INFO - WebSocket connection established
+2025-03-26 03:58:24,693 - data_fetchers.websocket_client - INFO - Subscribed to streams: btcusdt@kline_1h, btcusdt@bookTicker, btcusdt@aggTrade
+2025-03-26 03:58:55,020 - data_fetchers.websocket_client - INFO - WebSocket closed: 1008 Invalid request
+2025-03-26 03:58:55,021 - data_fetchers.websocket_client - INFO - Attempting to reconnect in 1 seconds...
+2025-03-26 03:58:56,673 - websocket - INFO - Websocket connected
+2025-03-26 03:58:56,673 - data_fetchers.websocket_client - INFO - WebSocket connection established
+2025-03-26 03:58:56,673 - data_fetchers.websocket_client - INFO - Subscribed to streams: btcusdt@kline_1h, btcusdt@bookTicker, btcusdt@aggTrade
+2025-03-26 03:58:58,572 - __main__ - INFO - Stopping trading bot...
+2025-03-26 03:58:59,013 - data_fetchers.websocket_client - INFO - Stopping WebSocket client
+2025-03-26 03:58:59,170 - data_fetchers.websocket_client - INFO - WebSocket closed: None None
+2025-03-26 03:58:59,866 - data_fetchers.websocket_client - INFO - WebSocket client stopped
+2025-03-26 03:59:00,654 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8170894475:AAHRkjWwFa9vEXj-BnoWhsiRd_oJAjZzsxM/sendMessage "HTTP/1.1 200 OK"

@@ -1,0 +1,20 @@
+[Unit]
+Description=Cryptocurrency Trading Bot
+After=network.target
+
+[Service]
+Type=simple
+User=minhajul-islam
+WorkingDirectory=/home/minhajul-islam/py-bot
+ExecStart=/home/minhajul-islam/py-bot/venv/bin/python /home/minhajul-islam/py-bot/main.py --mode test
+Restart=always
+RestartSec=60
+StandardOutput=journal
+StandardError=journal
+Environment=PYTHONUNBUFFERED=1
+
+# Switch to live mode when you're ready
+# ExecStart=/home/minhajul-islam/py-bot/venv/bin/python /home/minhajul-islam/py-bot/main.py --mode live
+
+[Install]
+WantedBy=multi-user.target
