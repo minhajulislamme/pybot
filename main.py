@@ -309,20 +309,71 @@ def send_account_info(client, telegram, logger):
         logger.error(f"Error sending account info: {e}")
         return False
 
+def process_trading_data(symbol, strategies, client, risk_manager, logger, telegram):
+    """Process trading data for a single symbol and return signals"""
+    # Get current price using WebSocket data (faster than REST API)
+    price = ws_client.get_current_price(symbol)
+    if not price:
+        # Fallback to REST API if WebSocket data not available
+        price = client.get_ticker_price(symbol)
+        
+    if not price:
+        logger.warning(f"Failed to fetch price for {symbol}, skipping")
+        return None
+    
+    # Generate signals from all strategies
+    signals = {}
+    valid_signals = 0
+    
+    for strategy_name, strategy in strategies[symbol].items():
+        if strategy.prepare_data():
+            strategy.calculate_indicators()
+            signals[strategy_name] = strategy.generate_signal()
+            valid_signals += 1
+        else:
+            signals[strategy_name] = 0
+    
+    # Skip if we don't have enough valid signals
+    if valid_signals < len(strategies[symbol]):
+        return None
+    
+    # Combine signals using weighted voting
+    weights = {
+        'MACrossoverStrategy': 0.3,
+        'RSIStrategy': 0.3,
+        'BollingerBandsStrategy': 0.4
+    }
+    
+    combined_signal = 0
+    for name, signal in signals.items():
+        strategy_weight = weights.get(name, 0.3)
+        combined_signal += signal * strategy_weight
+    
+    # Log all signals (formatted to 2 decimal places)
+    logger.info(f"Symbol: {symbol}, Price: {price}, Signals: {signals}, Combined: {combined_signal:.2f}")
+    
+    return {
+        'symbol': symbol,
+        'price': price,
+        'signals': signals,
+        'combined_signal': combined_signal
+    }
+
 def main():
     """Enhanced main function with improved trading logic and status reporting"""
-    global BOT_START_TIME
+    global BOT_START_TIME, ws_client
     BOT_START_TIME = datetime.now()
     
     # Parse command line arguments
     parser = argparse.ArgumentParser(description='Trading Bot')
     parser.add_argument('--mode', choices=['live', 'test', 'backtest'], default='test')
     parser.add_argument('--skip-test-trade', action='store_true', help='Skip executing test trade on startup')
+    parser.add_argument('--fast-update', action='store_true', help='Update and log signal data every second', default=True)
     args = parser.parse_args()
     
     # Setup logging
     logger = setup_logging()
-    logger.info(f"Starting trading bot in {args.mode} mode")
+    logger.info(f"Starting trading bot in {args.mode} mode with fast updates: {args.fast_update}")
     
     # Initialize components
     client = BinanceClient(
@@ -354,7 +405,7 @@ def main():
         
         # Send startup notification
         mode_emoji = "🔴" if args.mode == "live" else "🟡" if args.mode == "test" else "🔵"
-        telegram.send_message_sync(f"{mode_emoji} Trading bot started in *{args.mode.upper()}* mode")
+        telegram.send_message_sync(f"{mode_emoji} Trading bot started in *{args.mode.upper()}* mode with fast updates: {args.fast_update}")
         
         # Send account information at startup
         send_account_info(client, telegram, logger)
@@ -389,6 +440,12 @@ def main():
     ws_client.start()
     logger.info("WebSocket connection started")
     
+    # Start real-time market data display thread
+    if 'market_logger' in globals():
+        display_thread = threading.Thread(target=display_realtime_market_data)
+        display_thread.start()
+        logger.info("Real-time market data display thread started")
+    
     # Send initial status report
     if telegram:
         initial_status = generate_status_report(client, risk_manager, strategies, config.symbols)
@@ -397,8 +454,15 @@ def main():
     
     # Variables for status reporting
     last_status_time = datetime.now()
+    last_check_time = datetime.now()
     status_interval = timedelta(hours=6)  # Send status every 6 hours
+    trading_check_interval = timedelta(minutes=1)  # Check for actual trades every minute
     
+    # Variables to track trade execution
+    last_signals = {}
+    for symbol in config.symbols:
+        last_signals[symbol] = None
+        
     try:
         while True:
             try:
@@ -412,81 +476,58 @@ def main():
                     last_status_time = current_time
                     logger.info("Sent periodic status report")
                 
+                # Process real-time data for all symbols
                 for symbol in config.symbols:
-                    # Skip if price fetch fails
-                    price = client.get_ticker_price(symbol)
-                    if not price:
-                        logger.warning(f"Failed to fetch price for {symbol}, skipping")
-                        continue
+                    # Process trading data and generate signals
+                    result = process_trading_data(symbol, strategies, client, risk_manager, logger, telegram)
                     
-                    # Generate signals from all strategies
-                    signals = {}
-                    valid_signals = 0
-                    for strategy_name, strategy in strategies[symbol].items():
-                        if strategy.prepare_data():
-                            strategy.calculate_indicators()
-                            signals[strategy_name] = strategy.generate_signal()
-                            valid_signals += 1
-                        else:
-                            logger.warning(f"Failed to prepare data for {strategy_name} on {symbol}, skipping")
-                            signals[strategy_name] = 0
-                    
-                    # Skip if we don't have enough valid signals
-                    if valid_signals < len(strategies[symbol]):
-                        logger.warning(f"Not enough valid signals for {symbol}, skipping")
-                        continue
-                    
-                    # Combine signals using weighted voting
-                    weights = {
-                        'MACrossoverStrategy': 0.3,
-                        'RSIStrategy': 0.3,
-                        'BollingerBandsStrategy': 0.4
-                    }
-                    
-                    combined_signal = 0
-                    for name, signal in signals.items():
-                        strategy_weight = weights.get(name, 0.3)
-                        combined_signal += signal * strategy_weight
-                    
-                    # Log all signals
-                    logger.info(f"Symbol: {symbol}, Price: {price}, Signals: {signals}, Combined: {combined_signal:.2f}")
-                    
-                    # Execute trade if signal is strong enough
-                    if abs(combined_signal) >= 0.5:  # Threshold for signal strength
-                        trade_signal = 1 if combined_signal > 0 else -1
+                    if result:
+                        last_signals[symbol] = result
                         
-                        # Double-check market volatility
-                        market_ok = True
-                        try:
-                            market_ok = risk_manager.check_market_volatility(symbol)
-                        except Exception as e:
-                            logger.error(f"Error checking market volatility: {e}")
-                        
-                        if not market_ok:
-                            logger.warning(f"Market volatility too high for {symbol}, skipping trade")
-                            if telegram:
-                                telegram.send_message_sync(f"⚠️ Skipped {symbol} trade due to high market volatility")
-                            continue
+                        # Only execute trades on the minute interval to avoid over-trading
+                        # but still log the signals every second
+                        if (current_time - last_check_time) >= trading_check_interval:
+                            combined_signal = result['combined_signal']
+                            price = result['price']
                             
-                        # Execute trade through risk manager
-                        logger.info(f"Executing trade signal {trade_signal} for {symbol}")
-                        trade_result = risk_manager.execute_trade(
-                            symbol=symbol,
-                            signal=trade_signal,
-                            strategy_name="Combined"
-                        )
-                        
-                        # Send notification if trade was executed
-                        if trade_result and telegram:
-                            telegram.send_trade_notification(
-                                trade_type='entry',
-                                symbol=symbol,
-                                side="BUY" if trade_signal > 0 else "SELL",
-                                quantity=trade_result.get('orders', [{}])[0].get('units', 0),
-                                price=price
-                            )
-                            logger.info(f"Trade executed for {symbol}: {trade_result}")
-                    
+                            # Execute trade if signal is strong enough
+                            if abs(combined_signal) >= 0.5:  # Threshold for signal strength
+                                trade_signal = 1 if combined_signal > 0 else -1
+                                
+                                # Double-check market volatility
+                                market_ok = True
+                                try:
+                                    market_ok = risk_manager.check_market_volatility(symbol)
+                                except Exception as e:
+                                    logger.error(f"Error checking market volatility: {e}")
+                                
+                                if not market_ok:
+                                    logger.warning(f"Market volatility too high for {symbol}, skipping trade")
+                                    if telegram:
+                                        telegram.send_message_sync(f"⚠️ Skipped {symbol} trade due to high market volatility")
+                                    continue
+                                    
+                                # Execute trade through risk manager
+                                logger.info(f"Executing trade signal {trade_signal} for {symbol}")
+                                trade_result = risk_manager.execute_trade(
+                                    symbol=symbol,
+                                    signal=trade_signal,
+                                    strategy_name="Combined"
+                                )
+                                
+                                # Send notification if trade was executed
+                                if trade_result and telegram:
+                                    telegram.send_trade_notification(
+                                        trade_type='entry',
+                                        symbol=symbol,
+                                        side="BUY" if trade_signal > 0 else "SELL",
+                                        quantity=trade_result.get('orders', [{}])[0].get('units', 0),
+                                        price=price
+                                    )
+                                    logger.info(f"Trade executed for {symbol}: {trade_result}")
+                
+                # Update timing checks
+                if (current_time - last_check_time) >= trading_check_interval:
                     # Update trailing stops
                     updated = risk_manager.update_trailing_stops()
                     if updated > 0:
@@ -498,15 +539,18 @@ def main():
                         closed_positions = risk_manager.close_all_positions()
                         if telegram:
                             telegram.send_message_sync(f"⚠️ Maximum drawdown reached. Closed positions: {', '.join(closed_positions)}")
+                            
+                    # Reset the time
+                    last_check_time = current_time
                 
-                # Sleep between iterations
-                time.sleep(60)  # Check every minute
+                # Sleep between iterations - 1 second for fast updates
+                time.sleep(1)  # Check every second instead of minute
                 
             except Exception as e:
                 logger.error(f"Error in main loop: {e}", exc_info=True)
                 if telegram:
                     telegram.send_error("Main Loop", str(e))
-                time.sleep(60)  # Wait before retrying
+                time.sleep(5)  # Wait before retrying
                 
     except KeyboardInterrupt:
         logger.info("Stopping trading bot...")
@@ -515,6 +559,13 @@ def main():
         ws_client.stop()
         if telegram:
             telegram.send_message_sync("Trading bot stopped. All positions closed.")
+        
+        # Stop any display threads
+        if 'STOP_DISPLAY_THREADS' in globals():
+            global STOP_DISPLAY_THREADS
+            STOP_DISPLAY_THREADS = True
+            if 'display_thread' in locals() and display_thread.is_alive():
+                display_thread.join()
 
 if __name__ == "__main__":
     main()

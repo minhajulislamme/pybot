@@ -45,3 +45,478 @@
 2025-03-26 15:51:15,389 - __main__ - INFO - Initial status report sent
 2025-03-26 15:51:20,202 - __main__ - INFO - Symbol: BTCUSDT, Price: 87901.2, Signals: {'MACrossoverStrategy': 0, 'RSIStrategy': 0, 'BollingerBandsStrategy': 0}, Combined: 0.00
 2025-03-26 15:52:26,045 - __main__ - INFO - Symbol: BTCUSDT, Price: 87987.9, Signals: {'MACrossoverStrategy': 0, 'RSIStrategy': 0, 'BollingerBandsStrategy': 0}, Combined: 0.00
+2025-03-26 16:29:18,580 - __main__ - INFO - Starting trading bot in test mode with fast updates: True
+2025-03-26 16:29:19,852 - risk_management.risk_manager - INFO - Risk Manager initialized: Max Risk=1.0%, Stop Loss=2.0%, Take Profit=4.0%
+2025-03-26 16:29:19,976 - telegram_notifications.telegram_bot - INFO - Telegram bot initialized
+2025-03-26 16:29:20,849 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8170894475:AAHRkjWwFa9vEXj-BnoWhsiRd_oJAjZzsxM/sendMessage "HTTP/1.1 200 OK"
+2025-03-26 16:29:21,229 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8170894475:AAHRkjWwFa9vEXj-BnoWhsiRd_oJAjZzsxM/sendMessage "HTTP/1.1 200 OK"
+2025-03-26 16:29:22,710 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8170894475:AAHRkjWwFa9vEXj-BnoWhsiRd_oJAjZzsxM/sendMessage "HTTP/1.1 200 OK"
+2025-03-26 16:29:22,711 - __main__ - INFO - Account information sent to Telegram
+2025-03-26 16:29:22,711 - __main__ - INFO - Executing test trade to verify system functionality
+2025-03-26 16:29:23,605 - __main__ - INFO - Current BTCUSDT price: 88124.6
+2025-03-26 16:29:23,605 - __main__ - INFO - Current USDT balance: 9300.81028526
+2025-03-26 16:29:23,984 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8170894475:AAHRkjWwFa9vEXj-BnoWhsiRd_oJAjZzsxM/sendMessage "HTTP/1.1 200 OK"
+2025-03-26 16:29:23,987 - __main__ - INFO - Test trade position size: 0.002 BTC (approx. $176.25)
+2025-03-26 16:29:24,425 - __main__ - INFO - Test trade executed successfully: {'orderId': 4136863955, 'symbol': 'BTCUSDT', 'status': 'NEW', 'clientOrderId': 'x-Cb7ytekJ3394c9d14bcb375fe967a6', 'price': '0.00', 'avgPrice': '0.00', 'origQty': '0.002', 'executedQty': '0.000', 'cumQty': '0.000', 'cumQuote': '0.00000', 'timeInForce': 'GTC', 'type': 'MARKET', 'reduceOnly': False, 'closePosition': False, 'side': 'BUY', 'positionSide': 'BOTH', 'stopPrice': '0.00', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'MARKET', 'priceMatch': 'NONE', 'selfTradePreventionMode': 'EXPIRE_MAKER', 'goodTillDate': 0, 'updateTime': 1742984964324}
+2025-03-26 16:29:24,799 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8170894475:AAHRkjWwFa9vEXj-BnoWhsiRd_oJAjZzsxM/sendMessage "HTTP/1.1 200 OK"
+2025-03-26 16:29:27,240 - __main__ - INFO - Open positions after test trade: [{'symbol': 'BTCUSDT', 'positionSide': 'BOTH', 'positionAmt': '0.002', 'entryPrice': '88186.8', 'breakEvenPrice': '88222.07472', 'markPrice': '88165.60773643', 'unRealizedProfit': '-0.04238452', 'liquidationPrice': '0', 'isolatedMargin': '0', 'notional': '176.33121547', 'marginAsset': 'USDT', 'isolatedWallet': '0', 'initialMargin': '35.26624309', 'maintMargin': '0.70532486', 'positionInitialMargin': '35.26624309', 'openOrderInitialMargin': '0', 'adl': 0, 'bidNotional': '0', 'askNotional': '0', 'updateTime': 1742984964324}]
+2025-03-26 16:29:27,412 - __main__ - INFO - Balance after test trade: 9300.73973582
+2025-03-26 16:29:28,322 - __main__ - INFO - Test position closing result: True
+2025-03-26 16:29:28,773 - __main__ - INFO - Final balance after closing test position: 9300.58841871
+2025-03-26 16:29:29,146 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8170894475:AAHRkjWwFa9vEXj-BnoWhsiRd_oJAjZzsxM/sendMessage "HTTP/1.1 200 OK"
+2025-03-26 16:29:29,148 - __main__ - INFO - Optimizing strategies...
+2025-03-26 16:29:29,148 - __main__ - INFO - Optimizing MACrossoverStrategy for BTCUSDT...
+2025-03-26 16:29:29,159 - backtesting.backtester - INFO - Enhanced backtester initialized for BTCUSDT
+2025-03-26 16:29:29,360 - backtesting.backtester - INFO - Starting strategy optimization with 8 combinations
+2025-03-26 16:29:36,364 - backtesting.backtester - INFO - Optimization complete. Best sharpe_ratio: 0
+2025-03-26 16:29:36,364 - __main__ - INFO - Optimized parameters for MACrossoverStrategy: {'fast_ma_period': 20, 'slow_ma_period': 100, 'ma_type': 'sma'}
+2025-03-26 16:29:36,365 - __main__ - INFO - Optimizing RSIStrategy for BTCUSDT...
+2025-03-26 16:29:36,367 - backtesting.backtester - INFO - Enhanced backtester initialized for BTCUSDT
+2025-03-26 16:29:36,914 - backtesting.backtester - INFO - Starting strategy optimization with 27 combinations
+2025-03-26 16:29:49,713 - backtesting.backtester - INFO - Optimization complete. Best sharpe_ratio: 0
+2025-03-26 16:29:49,713 - __main__ - INFO - Optimized parameters for RSIStrategy: {'rsi_period': 7, 'base_overbought': 70, 'base_oversold': 20}
+2025-03-26 16:29:49,713 - __main__ - INFO - Optimizing BollingerBandsStrategy for BTCUSDT...
+2025-03-26 16:29:49,715 - backtesting.backtester - INFO - Enhanced backtester initialized for BTCUSDT
+2025-03-26 16:29:50,269 - backtesting.backtester - INFO - Starting strategy optimization with 1 combinations
+2025-03-26 16:29:50,848 - backtesting.backtester - INFO - Optimization complete. Best sharpe_ratio: 0
+2025-03-26 16:29:50,849 - __main__ - INFO - Optimized parameters for BollingerBandsStrategy: {'bb_period': 20, 'bb_std': 2.0, 'volume_factor': 2.0, 'trend_period': 200}
+2025-03-26 16:29:51,548 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8170894475:AAHRkjWwFa9vEXj-BnoWhsiRd_oJAjZzsxM/sendMessage "HTTP/1.1 200 OK"
+2025-03-26 16:29:51,550 - data_fetchers.websocket_client - INFO - Starting WebSocket client
+2025-03-26 16:29:51,553 - data_fetchers.websocket_client - INFO - Setting up connection for streams: ['btcusdt@kline_1h', 'btcusdt@bookTicker', 'btcusdt@aggTrade']
+2025-03-26 16:29:51,553 - data_fetchers.websocket_client - INFO - Using combined stream URL method: wss://fstream.binancefuture.com/stream?streams=btcusdt@kline_1h/btcusdt@bookTicker/btcusdt@aggTrade
+2025-03-26 16:29:52,053 - data_fetchers.websocket_client - INFO - WebSocket client started
+2025-03-26 16:29:52,054 - __main__ - INFO - WebSocket connection started
+2025-03-26 16:29:52,552 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,553 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,554 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,554 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,555 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,555 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,556 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,556 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,557 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,557 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,558 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,558 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,559 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,559 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,560 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,561 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,561 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,562 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,563 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,564 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,564 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,565 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,566 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,566 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,567 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,567 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,568 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,569 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,569 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,570 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,571 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,571 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,572 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,573 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,573 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,574 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,574 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,575 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,576 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,576 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,577 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,577 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,578 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,579 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,579 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,580 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,581 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,581 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,582 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,582 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,583 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,584 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,584 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,585 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,585 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,586 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,587 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,587 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,588 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,588 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,589 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,590 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,590 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,591 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,591 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,592 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,593 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,593 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,594 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,594 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,595 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,596 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,596 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,597 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,597 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,598 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,599 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,599 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,600 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,601 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,602 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,603 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,604 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,604 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,605 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,606 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,607 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,607 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,612 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,613 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,614 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,616 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,617 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,618 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,619 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,621 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,622 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,622 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,623 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,624 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,625 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,625 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,626 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,627 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,627 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,628 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,629 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,629 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,630 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,630 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,631 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,632 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,632 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,633 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,634 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,635 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,635 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,636 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,637 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,637 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,638 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,639 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,639 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,640 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,640 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,641 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,642 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,642 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,643 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,643 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,644 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,645 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,645 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,646 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,647 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,647 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,648 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,649 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,649 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,650 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,650 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,651 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,652 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,653 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,654 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,654 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,655 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,655 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,656 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,656 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,657 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,657 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,657 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,658 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,658 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,659 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,659 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,659 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,660 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,660 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,661 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,661 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,662 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,662 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,662 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,663 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,663 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,664 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,664 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,664 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,665 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,665 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,665 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,666 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,666 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,666 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,667 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,667 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,668 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,668 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,668 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,668 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,669 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,669 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,669 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,670 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,670 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,670 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,671 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,671 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,671 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,671 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,672 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,672 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,672 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,673 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,673 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,673 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,673 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,674 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,674 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,674 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,674 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,675 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,675 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,675 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,675 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,675 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,676 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,676 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,676 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,676 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,680 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,680 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,680 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,680 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,681 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,681 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,681 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,681 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,682 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,682 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,682 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,682 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,683 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,683 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,683 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,683 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,684 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,684 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,684 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,684 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,684 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,684 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,685 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,685 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,685 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,685 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,686 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,686 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,686 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,686 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,687 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,687 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,687 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,687 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,687 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,688 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,688 - data_fetchers.websocket_client - ERROR - Error in heartbeat: socket is already closed.
+2025-03-26 16:29:52,807 - websocket - INFO - Websocket connected
+2025-03-26 16:29:52,808 - data_fetchers.websocket_client - INFO - WebSocket connection established
+2025-03-26 16:29:52,944 - data_fetchers.websocket_client - INFO - WebSocket closed: 1008 Invalid request
+2025-03-26 16:29:52,944 - data_fetchers.websocket_client - INFO - Attempting to reconnect in 1 seconds...
+2025-03-26 16:29:53,481 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8170894475:AAHRkjWwFa9vEXj-BnoWhsiRd_oJAjZzsxM/sendMessage "HTTP/1.1 200 OK"
+2025-03-26 16:29:53,483 - __main__ - INFO - Initial status report sent
+2025-03-26 16:29:53,484 - __main__ - ERROR - Error in main loop: 'BinanceWebsocketClient' object has no attribute 'get_current_price'
+Traceback (most recent call last):
+  File "/home/minhajul-islam/py-bot/main.py", line 482, in main
+    result = process_trading_data(symbol, strategies, client, risk_manager, logger, telegram)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/minhajul-islam/py-bot/main.py", line 315, in process_trading_data
+    price = ws_client.get_current_price(symbol)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'BinanceWebsocketClient' object has no attribute 'get_current_price'
+2025-03-26 16:29:53,871 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8170894475:AAHRkjWwFa9vEXj-BnoWhsiRd_oJAjZzsxM/sendMessage "HTTP/1.1 200 OK"
+2025-03-26 16:29:53,945 - data_fetchers.websocket_client - INFO - Setting up connection for streams: ['btcusdt@kline_1h', 'btcusdt@bookTicker', 'btcusdt@aggTrade']
+2025-03-26 16:29:53,945 - data_fetchers.websocket_client - INFO - Using combined stream URL method: wss://fstream.binancefuture.com/stream?streams=btcusdt@kline_1h/btcusdt@bookTicker/btcusdt@aggTrade
+2025-03-26 16:29:54,563 - websocket - INFO - Websocket connected
+2025-03-26 16:29:54,564 - data_fetchers.websocket_client - INFO - WebSocket connection established
+2025-03-26 16:29:58,875 - __main__ - ERROR - Error in main loop: 'BinanceWebsocketClient' object has no attribute 'get_current_price'
+Traceback (most recent call last):
+  File "/home/minhajul-islam/py-bot/main.py", line 482, in main
+    result = process_trading_data(symbol, strategies, client, risk_manager, logger, telegram)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/minhajul-islam/py-bot/main.py", line 315, in process_trading_data
+    price = ws_client.get_current_price(symbol)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'BinanceWebsocketClient' object has no attribute 'get_current_price'
+2025-03-26 16:29:59,635 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8170894475:AAHRkjWwFa9vEXj-BnoWhsiRd_oJAjZzsxM/sendMessage "HTTP/1.1 200 OK"
+2025-03-26 16:30:04,637 - __main__ - ERROR - Error in main loop: 'BinanceWebsocketClient' object has no attribute 'get_current_price'
+Traceback (most recent call last):
+  File "/home/minhajul-islam/py-bot/main.py", line 482, in main
+    result = process_trading_data(symbol, strategies, client, risk_manager, logger, telegram)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/minhajul-islam/py-bot/main.py", line 315, in process_trading_data
+    price = ws_client.get_current_price(symbol)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'BinanceWebsocketClient' object has no attribute 'get_current_price'
+2025-03-26 16:30:05,410 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8170894475:AAHRkjWwFa9vEXj-BnoWhsiRd_oJAjZzsxM/sendMessage "HTTP/1.1 200 OK"
+2025-03-26 16:30:10,412 - __main__ - ERROR - Error in main loop: 'BinanceWebsocketClient' object has no attribute 'get_current_price'
+Traceback (most recent call last):
+  File "/home/minhajul-islam/py-bot/main.py", line 482, in main
+    result = process_trading_data(symbol, strategies, client, risk_manager, logger, telegram)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/minhajul-islam/py-bot/main.py", line 315, in process_trading_data
+    price = ws_client.get_current_price(symbol)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'BinanceWebsocketClient' object has no attribute 'get_current_price'
+2025-03-26 16:30:11,208 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8170894475:AAHRkjWwFa9vEXj-BnoWhsiRd_oJAjZzsxM/sendMessage "HTTP/1.1 200 OK"
+2025-03-26 16:30:16,210 - __main__ - ERROR - Error in main loop: 'BinanceWebsocketClient' object has no attribute 'get_current_price'
+Traceback (most recent call last):
+  File "/home/minhajul-islam/py-bot/main.py", line 482, in main
+    result = process_trading_data(symbol, strategies, client, risk_manager, logger, telegram)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/minhajul-islam/py-bot/main.py", line 315, in process_trading_data
+    price = ws_client.get_current_price(symbol)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'BinanceWebsocketClient' object has no attribute 'get_current_price'
+2025-03-26 16:30:16,989 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8170894475:AAHRkjWwFa9vEXj-BnoWhsiRd_oJAjZzsxM/sendMessage "HTTP/1.1 200 OK"
+2025-03-26 16:30:21,995 - __main__ - ERROR - Error in main loop: 'BinanceWebsocketClient' object has no attribute 'get_current_price'
+Traceback (most recent call last):
+  File "/home/minhajul-islam/py-bot/main.py", line 482, in main
+    result = process_trading_data(symbol, strategies, client, risk_manager, logger, telegram)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/minhajul-islam/py-bot/main.py", line 315, in process_trading_data
+    price = ws_client.get_current_price(symbol)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'BinanceWebsocketClient' object has no attribute 'get_current_price'
+2025-03-26 16:30:22,730 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8170894475:AAHRkjWwFa9vEXj-BnoWhsiRd_oJAjZzsxM/sendMessage "HTTP/1.1 200 OK"
+2025-03-26 16:30:27,731 - __main__ - ERROR - Error in main loop: 'BinanceWebsocketClient' object has no attribute 'get_current_price'
+Traceback (most recent call last):
+  File "/home/minhajul-islam/py-bot/main.py", line 482, in main
+    result = process_trading_data(symbol, strategies, client, risk_manager, logger, telegram)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/minhajul-islam/py-bot/main.py", line 315, in process_trading_data
+    price = ws_client.get_current_price(symbol)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'BinanceWebsocketClient' object has no attribute 'get_current_price'
+2025-03-26 16:30:28,483 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8170894475:AAHRkjWwFa9vEXj-BnoWhsiRd_oJAjZzsxM/sendMessage "HTTP/1.1 200 OK"
+2025-03-26 16:30:33,484 - __main__ - ERROR - Error in main loop: 'BinanceWebsocketClient' object has no attribute 'get_current_price'
+Traceback (most recent call last):
+  File "/home/minhajul-islam/py-bot/main.py", line 482, in main
+    result = process_trading_data(symbol, strategies, client, risk_manager, logger, telegram)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/minhajul-islam/py-bot/main.py", line 315, in process_trading_data
+    price = ws_client.get_current_price(symbol)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'BinanceWebsocketClient' object has no attribute 'get_current_price'
+2025-03-26 16:30:34,208 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8170894475:AAHRkjWwFa9vEXj-BnoWhsiRd_oJAjZzsxM/sendMessage "HTTP/1.1 200 OK"
+2025-03-26 16:30:39,210 - __main__ - ERROR - Error in main loop: 'BinanceWebsocketClient' object has no attribute 'get_current_price'
+Traceback (most recent call last):
+  File "/home/minhajul-islam/py-bot/main.py", line 482, in main
+    result = process_trading_data(symbol, strategies, client, risk_manager, logger, telegram)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/minhajul-islam/py-bot/main.py", line 315, in process_trading_data
+    price = ws_client.get_current_price(symbol)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'BinanceWebsocketClient' object has no attribute 'get_current_price'
+2025-03-26 16:30:39,980 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8170894475:AAHRkjWwFa9vEXj-BnoWhsiRd_oJAjZzsxM/sendMessage "HTTP/1.1 200 OK"
+2025-03-26 16:30:44,577 - __main__ - INFO - Stopping trading bot...
+2025-03-26 16:30:45,044 - data_fetchers.websocket_client - INFO - Stopping WebSocket client
+2025-03-26 16:30:45,197 - data_fetchers.websocket_client - INFO - WebSocket closed: None None
+2025-03-26 16:30:45,853 - data_fetchers.websocket_client - INFO - WebSocket client stopped
+2025-03-26 16:30:46,597 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8170894475:AAHRkjWwFa9vEXj-BnoWhsiRd_oJAjZzsxM/sendMessage "HTTP/1.1 200 OK"
+2025-03-26 16:33:44,840 - __main__ - INFO - Starting trading bot in test mode with fast updates: True
+2025-03-26 16:33:45,604 - risk_management.risk_manager - INFO - Risk Manager initialized: Max Risk=1.0%, Stop Loss=2.0%, Take Profit=4.0%
+2025-03-26 16:33:45,706 - telegram_notifications.telegram_bot - INFO - Telegram bot initialized
+2025-03-26 16:33:46,488 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8170894475:AAHRkjWwFa9vEXj-BnoWhsiRd_oJAjZzsxM/sendMessage "HTTP/1.1 200 OK"
+2025-03-26 16:33:46,857 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8170894475:AAHRkjWwFa9vEXj-BnoWhsiRd_oJAjZzsxM/sendMessage "HTTP/1.1 200 OK"
+2025-03-26 16:33:48,309 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8170894475:AAHRkjWwFa9vEXj-BnoWhsiRd_oJAjZzsxM/sendMessage "HTTP/1.1 200 OK"
+2025-03-26 16:33:48,312 - __main__ - INFO - Account information sent to Telegram
+2025-03-26 16:33:48,312 - __main__ - INFO - Executing test trade to verify system functionality
+2025-03-26 16:33:49,208 - __main__ - INFO - Current BTCUSDT price: 88148.2
+2025-03-26 16:33:49,209 - __main__ - INFO - Current USDT balance: 9300.58841871
+2025-03-26 16:33:49,585 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8170894475:AAHRkjWwFa9vEXj-BnoWhsiRd_oJAjZzsxM/sendMessage "HTTP/1.1 200 OK"
+2025-03-26 16:33:49,587 - __main__ - INFO - Test trade position size: 0.002 BTC (approx. $176.30)
+2025-03-26 16:33:50,026 - __main__ - INFO - Test trade executed successfully: {'orderId': 4136867929, 'symbol': 'BTCUSDT', 'status': 'NEW', 'clientOrderId': 'x-Cb7ytekJ40b7ef3fd356390385b970', 'price': '0.00', 'avgPrice': '0.00', 'origQty': '0.002', 'executedQty': '0.000', 'cumQty': '0.000', 'cumQuote': '0.00000', 'timeInForce': 'GTC', 'type': 'MARKET', 'reduceOnly': False, 'closePosition': False, 'side': 'BUY', 'positionSide': 'BOTH', 'stopPrice': '0.00', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'MARKET', 'priceMatch': 'NONE', 'selfTradePreventionMode': 'EXPIRE_MAKER', 'goodTillDate': 0, 'updateTime': 1742985229935}
+2025-03-26 16:33:50,390 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8170894475:AAHRkjWwFa9vEXj-BnoWhsiRd_oJAjZzsxM/sendMessage "HTTP/1.1 200 OK"
+2025-03-26 16:33:52,833 - __main__ - INFO - Open positions after test trade: [{'symbol': 'BTCUSDT', 'positionSide': 'BOTH', 'positionAmt': '0.002', 'entryPrice': '88192.6', 'breakEvenPrice': '88227.87704', 'markPrice': '88192.60000000', 'unRealizedProfit': '0.00000000', 'liquidationPrice': '0', 'isolatedMargin': '0', 'notional': '176.38520000', 'marginAsset': 'USDT', 'isolatedWallet': '0', 'initialMargin': '35.27704000', 'maintMargin': '0.70554080', 'positionInitialMargin': '35.27704000', 'openOrderInitialMargin': '0', 'adl': 0, 'bidNotional': '0', 'askNotional': '0', 'updateTime': 1742985229935}]
+2025-03-26 16:33:52,995 - __main__ - INFO - Balance after test trade: 9300.51786463
+2025-03-26 16:33:53,880 - __main__ - INFO - Test position closing result: True
+2025-03-26 16:33:54,324 - __main__ - INFO - Final balance after closing test position: 9300.41692272
+2025-03-26 16:33:54,687 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8170894475:AAHRkjWwFa9vEXj-BnoWhsiRd_oJAjZzsxM/sendMessage "HTTP/1.1 200 OK"
+2025-03-26 16:33:54,689 - __main__ - INFO - Optimizing strategies...
+2025-03-26 16:33:54,690 - __main__ - INFO - Optimizing MACrossoverStrategy for BTCUSDT...
+2025-03-26 16:33:54,699 - backtesting.backtester - INFO - Enhanced backtester initialized for BTCUSDT
+2025-03-26 16:33:56,791 - backtesting.backtester - INFO - Starting strategy optimization with 8 combinations
+2025-03-26 16:34:04,950 - backtesting.backtester - INFO - Optimization complete. Best sharpe_ratio: 0
+2025-03-26 16:34:04,951 - __main__ - INFO - Optimized parameters for MACrossoverStrategy: {'fast_ma_period': 20, 'slow_ma_period': 100, 'ma_type': 'sma'}
+2025-03-26 16:34:04,951 - __main__ - INFO - Optimizing RSIStrategy for BTCUSDT...
+2025-03-26 16:34:04,952 - backtesting.backtester - INFO - Enhanced backtester initialized for BTCUSDT
+2025-03-26 16:34:05,504 - backtesting.backtester - INFO - Starting strategy optimization with 27 combinations
+2025-03-26 16:34:18,931 - backtesting.backtester - INFO - Optimization complete. Best sharpe_ratio: 0
+2025-03-26 16:34:18,931 - __main__ - INFO - Optimized parameters for RSIStrategy: {'rsi_period': 7, 'base_overbought': 70, 'base_oversold': 20}
+2025-03-26 16:34:18,931 - __main__ - INFO - Optimizing BollingerBandsStrategy for BTCUSDT...
+2025-03-26 16:34:18,933 - backtesting.backtester - INFO - Enhanced backtester initialized for BTCUSDT
+2025-03-26 16:34:19,491 - backtesting.backtester - INFO - Starting strategy optimization with 1 combinations
+2025-03-26 16:34:19,799 - backtesting.backtester - INFO - Optimization complete. Best sharpe_ratio: 0
+2025-03-26 16:34:19,800 - __main__ - INFO - Optimized parameters for BollingerBandsStrategy: {'bb_period': 20, 'bb_std': 2.0, 'volume_factor': 2.0, 'trend_period': 200}
+2025-03-26 16:34:20,584 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8170894475:AAHRkjWwFa9vEXj-BnoWhsiRd_oJAjZzsxM/sendMessage "HTTP/1.1 200 OK"
+2025-03-26 16:34:20,587 - data_fetchers.websocket_client - INFO - Starting WebSocket client
+2025-03-26 16:34:20,588 - data_fetchers.websocket_client - INFO - Setting up connection for streams: ['btcusdt@kline_1h', 'btcusdt@bookTicker', 'btcusdt@aggTrade']
+2025-03-26 16:34:20,588 - data_fetchers.websocket_client - INFO - Using combined stream URL method: wss://fstream.binancefuture.com/stream?streams=btcusdt@kline_1h/btcusdt@bookTicker/btcusdt@aggTrade
+2025-03-26 16:34:21,088 - data_fetchers.websocket_client - INFO - WebSocket client started
+2025-03-26 16:34:21,089 - __main__ - INFO - WebSocket connection started
+2025-03-26 16:34:21,132 - websocket - INFO - Websocket connected
+2025-03-26 16:34:21,134 - data_fetchers.websocket_client - INFO - WebSocket connection established
+2025-03-26 16:34:22,504 - httpx - INFO - HTTP Request: POST https://api.telegram.org/bot8170894475:AAHRkjWwFa9vEXj-BnoWhsiRd_oJAjZzsxM/sendMessage "HTTP/1.1 200 OK"
+2025-03-26 16:34:22,506 - __main__ - INFO - Initial status report sent
+2025-03-26 16:34:26,676 - __main__ - INFO - Symbol: BTCUSDT, Price: 88200.9, Signals: {'MACrossoverStrategy': 0, 'RSIStrategy': 0, 'BollingerBandsStrategy': 0}, Combined: 0.00
+2025-03-26 16:34:32,833 - __main__ - INFO - Symbol: BTCUSDT, Price: 88205.5, Signals: {'MACrossoverStrategy': 0, 'RSIStrategy': 0, 'BollingerBandsStrategy': 0}, Combined: 0.00
+2025-03-26 16:34:39,021 - __main__ - INFO - Symbol: BTCUSDT, Price: 88201.05, Signals: {'MACrossoverStrategy': 0, 'RSIStrategy': 0, 'BollingerBandsStrategy': 0}, Combined: 0.00
+2025-03-26 16:34:43,671 - __main__ - INFO - Symbol: BTCUSDT, Price: 88203.2, Signals: {'MACrossoverStrategy': 0, 'RSIStrategy': 0, 'BollingerBandsStrategy': 0}, Combined: 0.00
+2025-03-26 16:34:48,320 - __main__ - INFO - Symbol: BTCUSDT, Price: 88202.4, Signals: {'MACrossoverStrategy': 0, 'RSIStrategy': 0, 'BollingerBandsStrategy': 0}, Combined: 0.00
+2025-03-26 16:34:52,304 - __main__ - INFO - Symbol: BTCUSDT, Price: 88203.45000000001, Signals: {'MACrossoverStrategy': 0, 'RSIStrategy': 0, 'BollingerBandsStrategy': 0}, Combined: 0.00
+2025-03-26 16:34:57,224 - __main__ - INFO - Symbol: BTCUSDT, Price: 88196.5, Signals: {'MACrossoverStrategy': 0, 'RSIStrategy': 0, 'BollingerBandsStrategy': 0}, Combined: 0.00
+2025-03-26 16:35:02,145 - __main__ - INFO - Symbol: BTCUSDT, Price: 88207.35, Signals: {'MACrossoverStrategy': 0, 'RSIStrategy': 0, 'BollingerBandsStrategy': 0}, Combined: 0.00
+2025-03-26 16:35:06,643 - __main__ - INFO - Symbol: BTCUSDT, Price: 88197.25, Signals: {'MACrossoverStrategy': 0, 'RSIStrategy': 0, 'BollingerBandsStrategy': 0}, Combined: 0.00
+2025-03-26 16:35:11,297 - __main__ - INFO - Symbol: BTCUSDT, Price: 88198.95000000001, Signals: {'MACrossoverStrategy': 0, 'RSIStrategy': 0, 'BollingerBandsStrategy': 0}, Combined: 0.00
+2025-03-26 16:35:17,473 - __main__ - INFO - Symbol: BTCUSDT, Price: 88209.55, Signals: {'MACrossoverStrategy': 0, 'RSIStrategy': 0, 'BollingerBandsStrategy': 0}, Combined: 0.00
+2025-03-26 16:35:23,400 - __main__ - INFO - Symbol: BTCUSDT, Price: 88204.75, Signals: {'MACrossoverStrategy': 0, 'RSIStrategy': 0, 'BollingerBandsStrategy': 0}, Combined: 0.00
+2025-03-26 16:35:28,109 - __main__ - INFO - Symbol: BTCUSDT, Price: 88201.75, Signals: {'MACrossoverStrategy': 0, 'RSIStrategy': 0, 'BollingerBandsStrategy': 0}, Combined: 0.00
+2025-03-26 16:35:35,480 - __main__ - INFO - Symbol: BTCUSDT, Price: 88213.2, Signals: {'MACrossoverStrategy': 0, 'RSIStrategy': 0, 'BollingerBandsStrategy': 0}, Combined: 0.00
+2025-03-26 16:35:40,538 - __main__ - INFO - Symbol: BTCUSDT, Price: 88188.35, Signals: {'MACrossoverStrategy': 0, 'RSIStrategy': 0, 'BollingerBandsStrategy': 0}, Combined: 0.00
+2025-03-26 16:35:45,129 - __main__ - INFO - Symbol: BTCUSDT, Price: 88217.6, Signals: {'MACrossoverStrategy': 0, 'RSIStrategy': 0, 'BollingerBandsStrategy': 0}, Combined: 0.00
+2025-03-26 16:35:48,960 - __main__ - INFO - Symbol: BTCUSDT, Price: 88217.6, Signals: {'MACrossoverStrategy': 0, 'RSIStrategy': 0, 'BollingerBandsStrategy': 0}, Combined: 0.00
+2025-03-26 16:35:54,593 - __main__ - INFO - Symbol: BTCUSDT, Price: 88202.70000000001, Signals: {'MACrossoverStrategy': 0, 'RSIStrategy': 0, 'BollingerBandsStrategy': 0}, Combined: 0.00
+2025-03-26 16:35:59,949 - __main__ - INFO - Symbol: BTCUSDT, Price: 88203.55, Signals: {'MACrossoverStrategy': 0, 'RSIStrategy': 0, 'BollingerBandsStrategy': 0}, Combined: 0.00
+2025-03-26 16:36:04,614 - __main__ - INFO - Symbol: BTCUSDT, Price: 88216.85, Signals: {'MACrossoverStrategy': 0, 'RSIStrategy': 0, 'BollingerBandsStrategy': 0}, Combined: 0.00
+2025-03-26 16:36:09,247 - __main__ - INFO - Symbol: BTCUSDT, Price: 88213.4, Signals: {'MACrossoverStrategy': 0, 'RSIStrategy': 0, 'BollingerBandsStrategy': 0}, Combined: 0.00
+2025-03-26 16:36:14,761 - __main__ - INFO - Symbol: BTCUSDT, Price: 88218.5, Signals: {'MACrossoverStrategy': 0, 'RSIStrategy': 0, 'BollingerBandsStrategy': 0}, Combined: 0.00
+2025-03-26 16:36:19,658 - __main__ - INFO - Symbol: BTCUSDT, Price: 88215.1, Signals: {'MACrossoverStrategy': 0, 'RSIStrategy': 0, 'BollingerBandsStrategy': 0}, Combined: 0.00
+2025-03-26 16:36:24,458 - __main__ - INFO - Symbol: BTCUSDT, Price: 88215.25, Signals: {'MACrossoverStrategy': 0, 'RSIStrategy': 0, 'BollingerBandsStrategy': 0}, Combined: 0.00
+2025-03-26 16:36:28,966 - __main__ - INFO - Symbol: BTCUSDT, Price: 88192.2, Signals: {'MACrossoverStrategy': 0, 'RSIStrategy': 0, 'BollingerBandsStrategy': 0}, Combined: 0.00
+2025-03-26 16:36:36,258 - __main__ - INFO - Symbol: BTCUSDT, Price: 88217.35, Signals: {'MACrossoverStrategy': 0, 'RSIStrategy': 0, 'BollingerBandsStrategy': 0}, Combined: 0.00
+2025-03-26 16:36:41,546 - __main__ - INFO - Symbol: BTCUSDT, Price: 88213.8, Signals: {'MACrossoverStrategy': 0, 'RSIStrategy': 0, 'BollingerBandsStrategy': 0}, Combined: 0.00
+2025-03-26 16:36:47,784 - __main__ - INFO - Symbol: BTCUSDT, Price: 88222.05, Signals: {'MACrossoverStrategy': 0, 'RSIStrategy': 0, 'BollingerBandsStrategy': 0}, Combined: 0.00
+2025-03-26 16:36:52,695 - __main__ - INFO - Symbol: BTCUSDT, Price: 88218.4, Signals: {'MACrossoverStrategy': 0, 'RSIStrategy': 0, 'BollingerBandsStrategy': 0}, Combined: 0.00
+2025-03-26 16:36:57,376 - __main__ - INFO - Symbol: BTCUSDT, Price: 88211.1, Signals: {'MACrossoverStrategy': 0, 'RSIStrategy': 0, 'BollingerBandsStrategy': 0}, Combined: 0.00
+2025-03-26 16:37:01,937 - __main__ - INFO - Symbol: BTCUSDT, Price: 88221.85, Signals: {'MACrossoverStrategy': 0, 'RSIStrategy': 0, 'BollingerBandsStrategy': 0}, Combined: 0.00
+2025-03-26 16:37:07,991 - __main__ - INFO - Symbol: BTCUSDT, Price: 88220.95000000001, Signals: {'MACrossoverStrategy': 0, 'RSIStrategy': 0, 'BollingerBandsStrategy': 0}, Combined: 0.00
+2025-03-26 16:37:13,493 - __main__ - INFO - Symbol: BTCUSDT, Price: 88206.8, Signals: {'MACrossoverStrategy': 0, 'RSIStrategy': 0, 'BollingerBandsStrategy': 0}, Combined: 0.00
+2025-03-26 16:37:19,048 - __main__ - INFO - Symbol: BTCUSDT, Price: 88213.35, Signals: {'MACrossoverStrategy': 0, 'RSIStrategy': 0, 'BollingerBandsStrategy': 0}, Combined: 0.00
+2025-03-26 16:37:24,734 - __main__ - INFO - Symbol: BTCUSDT, Price: 88220.8, Signals: {'MACrossoverStrategy': 0, 'RSIStrategy': 0, 'BollingerBandsStrategy': 0}, Combined: 0.00

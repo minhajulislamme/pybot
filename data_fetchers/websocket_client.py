@@ -190,20 +190,33 @@ class BinanceWebsocketClient:
                 
                 # Send ping if needed
                 if current_time - self.last_heartbeat > self.heartbeat_interval:
-                    if self.ws and self.ws.sock:
-                        self.ws.send("ping")
-                        self.last_heartbeat = current_time
-                        logger.debug("Sent ping to keep connection alive")
+                    # Only try to send ping if we have a valid connection
+                    if self.ws and hasattr(self.ws, 'sock') and self.ws.sock:
+                        try:
+                            self.ws.send("ping")
+                            self.last_heartbeat = current_time
+                            logger.debug("Sent ping to keep connection alive")
+                        except websocket.WebSocketConnectionClosedException:
+                            # Socket already closed, will be handled by reconnection logic
+                            logger.debug("Cannot send heartbeat - connection already closed")
+                        except Exception as e:
+                            logger.debug(f"Failed to send heartbeat: {e}")
                 
                 # Check for activity timeout
                 if current_time - self.last_stream_activity > self.activity_timeout:
                     logger.warning(f"No WebSocket activity for {self.activity_timeout} seconds, forcing reconnection")
-                    if self.ws:
-                        self.ws.close()
-                        
+                    if self.ws and hasattr(self.ws, 'sock') and self.ws.sock:
+                        try:
+                            self.ws.close()
+                        except:
+                            # Already closed, just ignore
+                            pass
+                            
                 time.sleep(1)
             except Exception as e:
-                logger.error(f"Error in heartbeat: {e}")
+                # Log at debug level to avoid filling logs
+                logger.debug(f"Error in heartbeat: {e}")
+                time.sleep(1)
     
     def get_trade_data(self, symbol, lookback_seconds=None):
         """Get recent trade data from buffer"""
@@ -421,3 +434,38 @@ class BinanceWebsocketClient:
             logger.error(f"Failed to decode message: {message[:100]}...")
         except Exception as e:
             logger.error(f"Error in message handler: {e}")
+
+    def get_current_price(self, symbol):
+        """Get the latest price for a symbol from WebSocket data
+        
+        Args:
+            symbol (str): Symbol to get price for (e.g., 'BTCUSDT')
+            
+        Returns:
+            float: Latest price or None if no data available
+        """
+        symbol = symbol.lower()
+        
+        # First try to get from orderbook (most accurate and frequent updates)
+        orderbook = self.get_orderbook_data(symbol)
+        if orderbook:
+            # Use mid price from book ticker (average of bid and ask)
+            bid_price = orderbook.get('bid_price')
+            ask_price = orderbook.get('ask_price')
+            if bid_price is not None and ask_price is not None:
+                return (bid_price + ask_price) / 2
+        
+        # If no orderbook data, try to get from trades
+        trades = self.get_trade_data(symbol, 5)  # Get trades from last 5 seconds
+        if trades:
+            # Use the most recent trade price
+            return trades[-1]['price']
+        
+        # If no trade data, try to get from klines
+        klines = self.get_kline_data(symbol, 60)  # Get klines from last minute
+        if klines:
+            # Use the most recent kline close price
+            return klines[-1]['close']
+        
+        # No price data available from WebSocket
+        return None
