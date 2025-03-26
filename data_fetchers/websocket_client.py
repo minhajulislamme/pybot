@@ -1,5 +1,5 @@
 """
-WebSocket client for real-time Binance data.
+WebSocket client for real-time Binance data with enhanced error handling and reconnection logic.
 """
 import json
 import logging
@@ -19,7 +19,7 @@ websocket.enableTrace(False)  # Disable websocket debug tracing globally
 
 class BinanceWebsocketClient:
     def __init__(self, symbols=None, callbacks=None, buffer_size=1000):
-        """Initialize with message buffering"""
+        """Initialize with message buffering and enhanced connection handling"""
         self.symbols = symbols or config.symbols
         self.timeframe = "1h"  # Default timeframe
         self.callbacks = callbacks or {}
@@ -38,6 +38,9 @@ class BinanceWebsocketClient:
         self.streams = []
         self.connection_retries = 0
         self.max_connection_retries = 10
+        self.last_stream_activity = time.time()
+        self.activity_timeout = 60  # Consider connection dead if no activity for 60 seconds
+        self.use_combined_streams = True  # Flag to switch between stream methods
         
         # Initialize buffers for different stream types
         for symbol in self.symbols:
@@ -128,8 +131,13 @@ class BinanceWebsocketClient:
         
         # Check if we need to reconnect
         if self.running and self.connection_retries < self.max_connection_retries:
+            # If we keep getting errors and not using combined streams yet, try that approach
+            if self.connection_retries >= 2 and not self.use_combined_streams:
+                logger.info("Switching to combined streams URL after errors")
+                self.use_combined_streams = True
+                
             delay = min(self.reconnect_delay, self.max_reconnect_delay)
-            logger.info(f"Attempting to reconnect in {delay} seconds...")
+            logger.info(f"Attempting to reconnect in {delay} seconds... (Attempt {self.connection_retries+1}/{self.max_connection_retries})")
             time.sleep(delay)
             self.reconnect_delay *= 2  # Double the delay for next attempt
             self._connect()
@@ -161,24 +169,38 @@ class BinanceWebsocketClient:
         self.reconnect_delay = 1  # Reset reconnection delay
         self.connection_retries = 0  # Reset retry counter on successful connection
         self.last_heartbeat = time.time()
+        self.last_stream_activity = time.time()
         
-        # Subscribe to streams
-        subscribe_request = {
-            "method": "SUBSCRIBE",
-            "params": self.streams,
-            "id": int(time.time() * 1000)
-        }
-        ws.send(json.dumps(subscribe_request))
-        logger.info(f"Sent subscription request for streams: {', '.join(self.streams)}")
+        # Only send subscription if not using combined streams URL
+        if not self.use_combined_streams:
+            # Subscribe to streams
+            subscribe_request = {
+                "method": "SUBSCRIBE",
+                "params": self.streams,
+                "id": int(time.time() * 1000)
+            }
+            ws.send(json.dumps(subscribe_request))
+            logger.info(f"Sent subscription request for streams: {', '.join(self.streams)}")
 
     def _heartbeat(self):
-        """Send periodic heartbeat to keep connection alive"""
+        """Send periodic heartbeat and monitor connection health"""
         while self.running:
             try:
-                if time.time() - self.last_heartbeat > self.heartbeat_interval:
+                current_time = time.time()
+                
+                # Send ping if needed
+                if current_time - self.last_heartbeat > self.heartbeat_interval:
                     if self.ws and self.ws.sock:
                         self.ws.send("ping")
-                        self.last_heartbeat = time.time()
+                        self.last_heartbeat = current_time
+                        logger.debug("Sent ping to keep connection alive")
+                
+                # Check for activity timeout
+                if current_time - self.last_stream_activity > self.activity_timeout:
+                    logger.warning(f"No WebSocket activity for {self.activity_timeout} seconds, forcing reconnection")
+                    if self.ws:
+                        self.ws.close()
+                        
                 time.sleep(1)
             except Exception as e:
                 logger.error(f"Error in heartbeat: {e}")
@@ -215,12 +237,12 @@ class BinanceWebsocketClient:
         return self.message_buffer[buffer_key][-1]
     
     def _connect(self):
-        """Connect to WebSocket and setup streams"""
+        """Connect to WebSocket and setup streams with enhanced error handling"""
         try:
             # Reset connection retries if we've been connected before
             if self.ws:
                 self.connection_retries = 0
-
+                
             # Create streams for each symbol
             streams = []
             for symbol in self.symbols:
@@ -234,8 +256,19 @@ class BinanceWebsocketClient:
             # Store streams for later use
             self.streams = streams
             
-            # For futures, we need to use /stream endpoint with a subscription message
-            stream_url = f"{self.ws_url}/stream"
+            # Log streams being used
+            logger.info(f"Setting up connection for streams: {streams}")
+            
+            # Choose between combined streams URL or subscription method
+            if self.use_combined_streams:
+                # Combined streams approach
+                combined_stream = '/'.join(streams)
+                stream_url = f"{self.ws_url}/stream?streams={combined_stream}"
+                logger.info(f"Using combined stream URL method: {stream_url}")
+            else:
+                # Multiple streams using subscription method
+                stream_url = f"{self.ws_url}/stream"
+                logger.info(f"Using subscription method with endpoint: {stream_url}")
             
             # Setup WebSocket connection with appropriate options
             self.ws = websocket.WebSocketApp(
@@ -248,10 +281,10 @@ class BinanceWebsocketClient:
                 on_pong=self._on_pong
             )
             
-            # Run with more aggressive ping/pong settings
+            # Run with more aggressive ping/pong settings to detect disconnections earlier
             self.ws.run_forever(
-                ping_interval=20,
-                ping_timeout=15,
+                ping_interval=15,
+                ping_timeout=10,
                 ping_payload='{"ping": true}',
                 sslopt={"cert_reqs": ssl.CERT_NONE}
             )
@@ -261,8 +294,16 @@ class BinanceWebsocketClient:
             self.connection_retries += 1
             
             if self.connection_retries < self.max_connection_retries:
-                time.sleep(self.reconnect_delay)
+                delay = min(self.reconnect_delay, self.max_reconnect_delay)
+                logger.info(f"Attempting to reconnect in {delay} seconds... (Attempt {self.connection_retries}/{self.max_connection_retries})")
+                time.sleep(delay)
                 self.reconnect_delay = min(self.reconnect_delay * 2, self.max_reconnect_delay)
+                
+                # If we've tried the subscription method several times, switch to combined streams
+                if self.connection_retries >= 3 and not self.use_combined_streams:
+                    logger.info("Switching to combined streams URL method after repeated connection failures")
+                    self.use_combined_streams = True
+                
                 if self.running:
                     self._connect()
             else:
@@ -355,11 +396,20 @@ class BinanceWebsocketClient:
         logger.debug("Received pong from server")
     
     def _on_message(self, ws, message):
-        """Queue message for processing"""
+        """Queue message for processing with improved handling"""
         try:
+            # Update activity timestamp
+            self.last_stream_activity = time.time()
+            
             data = json.loads(message)
             
-            # Handle subscription response
+            # Handle subscription response or other non-data messages
+            if 'result' in data or 'id' in data:
+                if 'result' in data and data['result'] is None:
+                    logger.info("Successfully subscribed to streams")
+                return
+                
+            # Handle combined streams format
             if 'stream' in data:
                 # Queue the actual market data from the stream
                 self.message_queue.put(json.dumps(data['data']))
@@ -367,5 +417,7 @@ class BinanceWebsocketClient:
                 # Direct market data or other message types
                 self.message_queue.put(message)
 
+        except json.JSONDecodeError:
+            logger.error(f"Failed to decode message: {message[:100]}...")
         except Exception as e:
             logger.error(f"Error in message handler: {e}")

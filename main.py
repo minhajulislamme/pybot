@@ -4,6 +4,7 @@ Enhanced main trading bot entry point with improved strategy management and peri
 """
 
 import logging
+import logging.handlers  # Add this import for RotatingFileHandler
 import time
 import argparse
 import sys
@@ -22,7 +23,7 @@ from telegram_notifications.telegram_bot import TelegramNotifier
 from backtesting.backtester import Backtester
 
 def setup_logging():
-    """Configure logging with enhanced format"""
+    """Configure logging with enhanced format and rotation"""
     # Set root logger to INFO level
     logging.basicConfig(
         level=logging.INFO,
@@ -32,11 +33,26 @@ def setup_logging():
             logging.StreamHandler(sys.stdout)
         ]
     )
-
+    
+    # Create file handler which logs even debug messages with rotation
+    file_handler = logging.handlers.RotatingFileHandler(
+        'trading_bot.log', 
+        maxBytes=10*1024*1024,  # 10MB
+        backupCount=5
+    )
+    file_handler.setLevel(logging.INFO)
+    formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+    file_handler.setFormatter(formatter)
+    
     # Set specific loggers to appropriate levels
+    root_logger = logging.getLogger()
+    root_logger.handlers = [file_handler, logging.StreamHandler(sys.stdout)]
+    
+    # Configure module-specific loggers
     logging.getLogger('websocket').setLevel(logging.INFO)
     logging.getLogger('urllib3').setLevel(logging.INFO)
     logging.getLogger('binance').setLevel(logging.INFO)
+    logging.getLogger('data_fetchers.websocket_client').setLevel(logging.INFO)
     
     # Get the main logger
     return logging.getLogger(__name__)
